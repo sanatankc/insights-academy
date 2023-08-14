@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-import Hero from '../components/Hero.astro';
 import TopNavigationBar from '../components/TopNavigationBar.astro';
 
 import Updates from '../components/landingPage/Updates/index.astro'
@@ -11,7 +10,7 @@ import Campus from '../components/landingPage/campus.astro';
 
 import Testimonial from '../components/landingPage/Testimonial.astro';
 import BigAdmissionCTA from '../components/BigAdmissionCTA.astro';
-
+import Hero from './Hero.astro';
 
 import '../global.css'
 
@@ -20,7 +19,12 @@ import GlentreeFamily from '../components/landingPage/GlentreeFamily.astro';
 import Footer from '../components/landingPage/Footer.astro';
 import Text from '../components/system/Text.astro';
 import YoutubeEmbed from '../components/YoutubeEmbed.astro';
-
+import Showcase from './Showcase.astro';
+import GoToCta from '../components/GoToCta.astro';
+import campus1 from "../images/campus/gas/gallery/1.jpeg"
+import campus2 from "../images/campus/gas/gallery/2.jpeg"
+import campus3 from "../images/campus/gas/gallery/3.jpeg"
+import HeroTitle from '../components/HeroTitle.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -34,39 +38,40 @@ import YoutubeEmbed from '../components/YoutubeEmbed.astro';
       }}
     >
     
-    <div class='flex flex-col h-screen'>
+    <div class='flex flex-col'>
       <TopNavigationBar />
-      <Hero />
+      <div 
+        class="h-[90vh] flex py-[40px] px-[24px] mt-[100px]"
+        style='background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);'
+        >
+          <Hero
+            config={{title:'Welcome to Glentree Academy',bgImage: campus1}}
+            showSlide={true}
+            slideImages={
+              [{slide: campus1, position: '50%'},
+              {slide: campus2, position: '120%'},
+              {slide: campus3, position: '20%'}]
+            }
+            contentDirection="items-end"
+            className="rounded-[20px] overflow-hidden font-roundo"
+
+            >
+            <HeroTitle slot='title' />
+           
+        </Hero>
+      </div>
     </div>
-      
-      <!-- Carousell/Updatexss -->      
-      <!-- Our MOttto -->
-      <!-- <Updates /> -->
-      
-      <LFL />
-      <!-- Why Glentreee -->
+      <Showcase />
       <WhyGlentree />
-
-
-      <!-- Our Campauses -->
+      <div class="w-full h-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="3" viewBox="0 0 3000 3" fill="none" class="astro-J7PV25F6">
+          <line x1="0" y1="0" x2="100%" y2="1.98047" stroke="#BCBCBC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 7" class="astro-J7PV25F6"></line>
+        </svg>
+        
+      </div>
       <Campus />
-
-      
-
-
-      <!-- Testimonials -->
-
-      <!-- <div class='w-5 h-32'></div> -->
       <Testimonial />
-
-      <!-- Admission BIG CTA -->
-      <BigAdmissionCTA />
-
-      <!-- Glentree Family -->
-      <GlentreeFamily />
-
-
-      <!-- Footer -->
+      <GoToCta />
     <Footer />
 
 

@@ -1,9 +1,9 @@
 ---
 
 interface Props {
-  type: 'h1' | 'h2' | 'h3' | 'h4' | 'base' | 'lg' | 'regular' | 'sm' | 'xs' | 'subtitle'
+  type: 'h1' | 'h2' | 'h3' | 'h4' | 'base' | 'lg' | 'regular' | 'sm' | 'xs' | 'subtitle' | 'p' | 'span',
   class?: string,
-  style?: {}
+  style?: {},
 }
 
 const { type = 'base', class: className, style = {}, ...props } = Astro.props
@@ -61,6 +61,32 @@ const { type = 'base', class: className, style = {}, ...props } = Astro.props
     <slot />
   </h2>
 )}
+{type === 'p' && (
+  <p
+    class:list={[
+      "text-lg max-md:text-base", 
+      className
+    ]}
+    style={style}
+    {...props}
+
+  >
+    <slot />
+  </p>
+)}
+{type === 'span' && (
+<span
+  class:list={[
+    "text-lg max-md:text-base", 
+    className
+  ]}
+  style={style}
+  {...props}
+
+>
+  <slot />
+</span>
+)}
 
 {type === 'lg' && (
   <div
@@ -93,7 +119,7 @@ const { type = 'base', class: className, style = {}, ...props } = Astro.props
   <div
     class:list={[
       "text-lg max-md:text-base", 
-      className
+      className,
     ]}
     style={style}
     {...props}
@@ -132,7 +158,7 @@ const { type = 'base', class: className, style = {}, ...props } = Astro.props
 {type === 'subtitle' && (
     <div
       class:list={[
-        "text-xl max-md:text-base uppercase font-extrabold",
+        "text-xl max-md:text-base uppercase font-extrabold text-center",
         className
       ]}
       style={{ 

@@ -1,28 +1,33 @@
 ---
 import FilledArrowCircle from '../icons/FilledArrowCircle.astro'
-const { title, secondary, icon, class: className } = Astro.props;
-const primary = !secondary;
-
+const { title, secondary, icon, class: className ,type="primary" } = Astro.props;
+const buttonType = type
 const Icon = icon ? icon : FilledArrowCircle;
+const buttonClassName = {
+    'primary': 'border-white/30 bg-primary primary border-[3px]',
+    'secondary': 'border-white bg-white secondary border-[3px]',
+    'default': 'default'
+}
+
+
 ---
 
-<div class={className}>
+<div class=`font-display ${className}` >
   <button 
     class:list={[
-      "flex flex-row items-center py-2 px-5 rounded-full border-[3px] button overflow-hidden relative",
-      primary ? "border-white/30" : "border-white" ,
-      primary ? "primary" : "secondary",
+      "flex flex-row items-center py-2 px-5 rounded-full  button overflow-hidden relative",
+      buttonClassName[buttonType]
     ]} 
     style={{
       boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
-      background: primary ? "linear-gradient(263.64deg, #4B916A 6.11%, #028339 95.99%)" : 'white'
+      // background: primary ? "linear-gradient(263.64deg, var(--primary) 6.11%, #028339 95.99%)" : 'white'
     }}>
-    <span class:list={[primary ? "text-white" : "text-green-400", "font-semibold", "text-lg max-md:text-base"]}>
+    <span class:list={[true ? "text-white" : "text-green-400", "font-semibold", "text-lg max-md:text-base"]}>
       <slot/>
     </span>
     <div class="w-5 h-5 ml-2 icon">
       <slot name="icon">
-        <Icon color={primary ? "white" : "#3C674F"} />
+        <Icon color={true ? "white" : "#3C674F"} />
       </slot>
     </div>
   </button>
@@ -55,7 +60,7 @@ const Icon = icon ? icon : FilledArrowCircle;
     animation: shine 1.5s ease-out infinite;
   }
 
-  .button.secondary:hover::before {
+  .button.secondary:hover::before,button.default:hover::before {
     animation: none;
   }
 

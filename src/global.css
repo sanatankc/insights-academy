@@ -1,16 +1,17 @@
 
 /* Register your custom font family and tell the browser where to find it. */
 @font-face {
-  font-family: 'MADE Gentle';
-  src: url('/fonts/MADE-Gentle.woff') format('woff');
-  font-weight: normal;
+  font-family: 'roundo';
+  src: url('/fonts/roundo.ttf');
   font-style: normal;
   font-display: swap;
 }
 
 html {
-  color: white;
-  font-family: 'Nunito Sans', sans-serif;
+  background: #fff;
+  scroll-behavior:smooth;
+  /* color: white; */
+  font-family: roundo, sans;
 }
 
 

@@ -1,76 +1,38 @@
 ---
+import config from '../../../config';
 import clubsThumb from '../../images/clubsThumb.png'
 import coscholasticsThumb from '../../images/coscholasticsThumb.png'
 import FilledArrowCircle from '../icons/FilledArrowCircle.astro';
+import Button from '../system/Button.astro';
 import Constrain from '../system/Constrain.astro';
+import Heading from '../system/Heading.astro';
+import Image from '../system/Image.astro';
 import Text from '../system/Text.astro';
 
 ---
-<div class="py-14 max-md:py-8 text-center flex flex-col items-center" style={{ background: 'linear-gradient(249.28deg, #FBFFF7 0%, #F6FFED 0%, #FFFAF7 100%)' }} >
-  <Text type={'subtitle'} style={{ opacity: 0.8, color: '#121212' }}>WHY GLENTREE?</Text>
-  <Text type={'h2'} class='text-black mt-6'>
-    Give your <span class='text-green-400'>child the best </span> <br class="hidden max-md:block"/> 
-    <div class="mt-4 inline max-md:block">
-      at <span class='bg-accent text-white px-3 py-1 rounded-md'>Glentree Academy</span>
+<div class="bg-white py-14 max-md:py-8 text-center flex flex-col items-center gap-20 max-md:gap-3">
+  <div class="flex gap-4 flex-col">
+    <Text type={'subtitle'} style={{ opacity: 0.8, color: '#121212' }}>EMBRACING QUALITY & INCLUSION</Text>
+    <div class="flex flex-row gap-4 items-center justify-start shrink-0 relative">
+      <Heading first="Why" second="Insight?" />
     </div>
-  </Text>
-  <Text type={'base'} class='mt-7 font-semibold text-black w-[45%] max-md:w-[90%]'>
-    At Glentree Academy, we prioritize practical learning that encourages children to explore and interact with the world consciously.
-  </Text>
+  </div>
   <Constrain>
-    <div class='flex flex-row mt-16 w-full justify-between px-56 max-md:mt-8 max-md:px-6 max-md:flex-col'>
-        <a href="/glentree-clubs/" class='group'>
-          <div class='flex flex-col items-center'>
-            <div class='w-[241px] h-[324px] max-md:w-[145.28px] max-md:h-[177.41px] border p-[6px] rounded-t-[100px] border-green-500 group-hover:bg-green-500/80 group-hover:border-green-500/80 group-hover:shadow-[0_0px_20px_15px_rgba(60,103,79,0.1)] overflow-hidden' style={{
-              overflow: 'hidden',
-              transition: 'all 0.3s ease-in-out',
-            }}>
-              <div class='w-full h-full overflow-hidden rounded-t-[100px]' style={{
-                transition: 'all 0.3s ease-in-out',
-              }}>
-                <img src={clubsThumb} alt='Glentree Clubs Thumbnail' class='w-full h-full object-cover' />
-              </div>
-            </div>
-            <div class='flex flex-row items-center'>
-              <Text type='h3' class="text-accent2 mt-3">Glentree Clubs</Text>
-              <div class="w-7 h-7 ml-3 top-3 relative group-hover:translate-x-1 transition-all" >
-                <FilledArrowCircle pathClass='fill-accent2' />
-              </div>
-            </div>
-            <Text type='regular' class='text-black w-[80%] max-md:w-[85%] max-md:mb-4'>
-              Discover dynamic student clubs for personalised learning
-            </Text>
-          </div>
-        </a>
-      
-      <a href="/co-scholastics/" class='group'>
-        <div class='flex flex-col items-center'>
-          <div class='w-[254.71px] h-[335.96px] rounded-xl border border-accent-bold group-hover:bg-accent-bold/80 group-hover:border-accent-bold/80 group-hover:shadow-accent-bold/10 group-hover:shadow-[0_0px_20px_15px] max-md:w-[145.28px] max-md:h-[177.41px] overflow-hidden p-[6px]' style={{
-            transition: 'all 0.3s ease-in-out',
-          }}>
-            <img 
-              src={coscholasticsThumb}
-              alt='Glentree Clubs Thumbnail'
-              class='w-full h-full object-cover rounded-xl'
-              style={{
-                transition: 'all 0.3s ease-in-out',
-              }}
-            />
-          </div>
-          <div class='flex flex-row items-center'>        
-            <Text type='h3' class="text-accent mt-3">Co-Scholastics</Text>
-            <div class="w-7 h-7 ml-3 top-3 relative group-hover:translate-x-1 transition-all" >
-              <FilledArrowCircle pathClass='fill-accent' />
-            </div>
-          </div>
-          
-    
-          <Text type='regular' class='text-black w-[80%] max-md:w-[85%]'>
-            Inspiring Co-Scholastic Programs for All-Round Development
-          </Text>
-        </div>
-      </a>
+    <div class="flex gap-20 justify-between item-center p-xl">
+      <Constrain width="778px" class="flex flex-col gap-l">
+        <p class='p-neutral-dark-grey text-[22px] text-left max-md:text-base'>
+            {config.school.discription}
+        </p>  
+        <Button type="primary" className="justify-start">
+          Read more about us
+        </Button>
+      </Constrain>
+        <Image
+          className="h-[133px] w-full max-w-md object-cover rounded-full max-sm:hidden"
+          src={clubsThumb}
+        />
     </div>
   </Constrain>
+ 
   
 </div>

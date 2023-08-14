@@ -1,0 +1,21 @@
+---
+import ConnectIcons from '../../images/campus/connectIcons.astro';
+import Text from '../system/Text.astro';
+import Connect from './Connect.astro';
+interface Props {
+    title: string | undefined,
+    label: string | undefined,
+    type: 'contact' | 'mail' | 'address' | undefined,
+}
+const {title,label,type}  = Astro.props
+---
+<div class='p-r border flex flex-row justify-between last:bottom-0 max-sm:flex-col ' style={{
+    borderBottom: '2px dotted #BCBCBC;'
+    }}>
+    <div class="flex gap-r font-display">
+        <ConnectIcons type={type} />
+        <Text type={'h4'} class="font-bold text-[#052B4C]">{label}</Text>
+    </div>
+        <Text type={'xs'} class='mt-2 text-[#282828] font-semibold max-sm:ml-12'>{title}</Text>
+    </div>
+    </div>
