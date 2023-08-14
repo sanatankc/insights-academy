@@ -42,16 +42,20 @@ const ctaButtons: Array<{
   link: string,
   type?: 'primary' | 'secondary' | 'default',
   icon?: any,
+  menu?: boolean
 }> = [
   {
     title: 'Apply Now',
     link: config.ctaLink,
+    menu: true,
     type: 'primary',
   },
   {
     title: 'Login',
     link: config.ctaLink,
     type: 'default',
+    menu: true,
+
     icon: ExternalIcon,
   }
 ]
@@ -97,7 +101,7 @@ const ctaButtons: Array<{
     {
       ctaButtons.map(item => {
         return (
-            <a href={item.link} target='_blank' class=''>
+            <a href={item.link} target='_blank' class={`${item.menu && 'max-sm:hidden'}`}>
               <Button class="font-display" type={item.type} icon={item?.icon}>{item.title}</Button>
             </a>
         )
