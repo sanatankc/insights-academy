@@ -20,8 +20,6 @@ const title = config?.title
 const subHeading = config?.subHeading
 const topHeading = config?.topHeading
 const description = config?.description
-console.log({slideImages})
-
 ---
 <div 
   class=`font-roundo w-full h-full bg-cover bg-top relative bg-black flex flex-col ${className}`
@@ -91,7 +89,6 @@ console.log({slideImages})
       const items = Array.from(document.querySelectorAll<HTMLElement>('.slideshow-item'));
         items.forEach((item, i) => {
         if (i === slideshowIndex) {
-          console.log('showing', item)
           item.style.opacity = '1';
           return;
         } else {
@@ -104,7 +101,6 @@ console.log({slideImages})
     slideshowIndex = 0
     clearInterval(interval)
     interval = setInterval(() => {
-      console.log('moving slides')
       moveSlides()
     }, 3000)
     moveSlides()

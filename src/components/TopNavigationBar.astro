@@ -113,7 +113,7 @@ const ctaButtons: Array<{
     <form autocomplete="off">
 
       <div id="menuToggle">
-        <input type="checkbox" />
+        <input class="menu-checkbox" type="checkbox" />
         <span></span>
         <span></span>
         <span></span>
@@ -326,9 +326,7 @@ const ctaButtons: Array<{
 
 <script>
   const menuParent = document.querySelectorAll('.menu-parent') as NodeListOf<HTMLDivElement>
-    
-
-    
+  const menuCheckBox = document.querySelector('.menu-checkbox') as HTMLInputElement
   menuParent.forEach((el) => {
     let removeTimeout: any = null
     const menu = el.querySelector('.menu') as HTMLDivElement
@@ -354,12 +352,9 @@ const ctaButtons: Array<{
   const menuToggle = document.querySelector('#menuToggle') as HTMLInputElement
   const mobileMenu = document.querySelector('.mobileMenu') as HTMLDivElement
 
-
   menuToggle.addEventListener('click', () => {
     mobileMenu.classList.toggle('visible')
   })
-
-
   const mobileMenuParents = document.querySelectorAll('.mobileMenuParent') as NodeListOf<HTMLDivElement>
   
   mobileMenuParents.forEach((el) => {
@@ -367,11 +362,15 @@ const ctaButtons: Array<{
     el.addEventListener('click', () => {
       subMenu.classList.toggle('visible')
       if (subMenu.classList.contains('visible')) {
-        subMenu.style.maxHeight = '1000vh'
+        subMenu.style.maxHeight = '100vh'
       } else {
         subMenu.style.maxHeight = '0px'
       }
     })
+  })
+  document.addEventListener('astro:beforeload', () => {
+    mobileMenu.classList.remove('visible')
+    menuCheckBox.checked = false
   })
  
   
