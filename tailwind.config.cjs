@@ -25,7 +25,7 @@ module.exports = {
 					DEFAULT: '#FF9D51'
 				},
 				green: {
-					300: '#65B086',
+					300: '#F5CC4F',
 					400: '#4A7C60',
 					500: '#3C674F',
 					600: '#0A5E2F'

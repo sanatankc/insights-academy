@@ -30,9 +30,9 @@ const navigationData = [
   {label: 'Contact Us', for: "contact-us"},
 ]
 const colors = [
-  ["blue-100","primary","neutral-dark-grey"],
-  ["yellow-100","black-100","neutral-dark-grey"],
-  ["blue-100","primary","neutral-dark-grey"],
+  ["#EFFAF8","primary","neutral-dark-grey"],
+  ["#FCF8EB","black-100","neutral-dark-grey"],
+  ["#EFFAF8","primary","neutral-dark-grey"],
 
 ]
 const rounded = [
@@ -93,13 +93,13 @@ const rounded = [
   </div>
 </div>
 <!-- section  -->
-<div id="academics" style="scroll-margin: 60px;" class="p-xl px-0  flex flex-col justify-center gap-l scroll-m-14 max-sm:p-m max-sm:gap-r">
+<div id="academics" style="scroll-margin: 60px;" class="p-xl px-0  flex flex-col justify-center gap-l scroll-m-14 max-sm:p-r max-sm:gap-r">
   <Heading first="Academic" second={"Landscape"} subtitle="Empowering Every Learner ">
   </Heading>
   {
     academic?.map((item,index) => {
       return <div class={`flex flex-col p-xl  justify-center gap-l max-sm:p-0`}> 
-                <div class={`bg-${colors[index][0]}`}>
+                <div style={`background: ${colors[index][0]}`}>
                   <div class="flex p-xl pr-0 justify-center gap-xl item-center max-md:flex-col max-md:p-r">
                     <div class="flex gap-r flex-col">
                       <div class="flex gap-r items-center">
@@ -211,10 +211,8 @@ const rounded = [
 </div>
 <!-- section  -->
 <div id="achievements" class="p-xl flex flex-col justify-center gap-l items-center scroll-m-14">
-  <Text type="subtitle">
-    INSPIRING FEATS
-  </Text>
-  <Heading first="Celebrating" second={"Achievements"}>
+  
+  <Heading first="Celebrating" second={"Achievements"} subtitle="INSPIRING FEATS">
   </Heading>
   <Text type="p" class="text-center">We take immense pride in celebrating academic triumphs that reflect the students’ dedication.</Text type="p">
     <div class="flex justify-center gap-[2px] overflow-scroll w-full max-sm:flex-col  max-sm:items-center max-sm:gap-[10px] ">
