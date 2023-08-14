@@ -60,7 +60,7 @@ const ctaButtons: Array<{
   }
 ]
 ---
-<header class="font-roundo w-screen bg-black py-1 px-14 max-md:px-5 box-border flex flex-row justify-between items-center backdrop-blur-md fixed z-[99] h-[100px]">
+<header transition:persist  class="font-roundo w-screen bg-black py-1 px-14 max-md:px-5 box-border flex flex-row justify-between items-center backdrop-blur-md fixed z-[99] h-[100px]">
   <a href="/" class='relative z-10 daisy daisy-fixed daisy-1'>
     <img src={logo} alt="Glentree's Logo" width="130px" >
   </a>
@@ -101,7 +101,7 @@ const ctaButtons: Array<{
     {
       ctaButtons.map(item => {
         return (
-            <a href={item.link} target='_blank' class={`${item.menu && 'max-sm:hidden'}`}>
+            <a href={item.link} target='_blank' class={`${item.menu && 'max-md:hidden'}`}>
               <Button class="font-display" type={item.type} icon={item?.icon}>{item.title}</Button>
             </a>
         )
@@ -373,5 +373,6 @@ const ctaButtons: Array<{
       }
     })
   })
+ 
   
 </script>

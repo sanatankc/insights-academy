@@ -5,7 +5,7 @@ import Text from './system/Text.astro';
 ---
 <div
   class="p-xl flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden
-        max-md:p-m max-sm:flex-col max-sm:items-start
+        max-md:p-m  max-sm:items-start
   "
   style=`
     background: linear-gradient(
@@ -23,30 +23,30 @@ import Text from './system/Text.astro';
       <div class="flex gap-8 flex-col">
 
         <p
-          class='text-clamp-1 uppercase  text-white font-display font-bold text-4xl max-sm:text-[28px]'
+          class='uppercase  text-white font-display font-bold text-4xl max-sm:text-[28px] max-s:text-2xl'
         >
           WE SAVED YOUR PART<br /> 
-          <span
-          >IN OUR <span class='text-yellow'>legacy</span>
+          IN OUR <span class='text-yellow'>legacy</span>
   
           </span> 
       
         </p>
         <p      
-          class='font-display uppercase text-gray-800 text-4xl font-bold max-sm:text-[28px] flex gap-3 items-center'>
+          class='font-display uppercase text-gray-800 text-4xl font-bold max-sm:text-[28px] flex gap-3 items-center max-s:text-2xl'>
             READY TO JOIN?
-            <!-- <span class="text-yellow max-sm:flex hidden">
-              <FilledArrowCircle 
-                  svgClass={"w-[40px] h-[40px]"} 
-                  color={"#F5CC4F"} 
-                />
-            </span> -->
+            <span class="max-s:flex hidden">
+                <FilledArrowCircle 
+                    svgClass={"w-[50px] h-[50px]"} 
+                    color={"#F5CC4F"} 
+                  />
+            </span>
+          
       </p> 
       </div>
      
     </div>
   </div>
-  <div class="text-yellow">
+  <div class="text-yellow max-s:hidden">
     <FilledArrowCircle 
         svgClass={"w-[100px] h-[100px] max-md:w-[80px] max-md:h-[80px]"} 
         color={"#F5CC4F"} 

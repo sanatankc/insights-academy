@@ -6,11 +6,14 @@ interface Props {
     title: string | undefined,
     label: string | undefined,
     type: 'contact' | 'mail' | 'address' | undefined,
+    class: string | undefined,
+    style: object | undefined
 }
-const {title,label,type}  = Astro.props
+const {title,label,type, class,style}  = Astro.props
 ---
-<div class='p-r border flex flex-row justify-between last:bottom-0 max-sm:flex-col ' style={{
-    borderBottom: '2px dotted #BCBCBC;'
+<div class='p-r border flex flex-row justify-between last:bottom-0 max-sm:flex-col' style={{
+        borderBottom: '2px dotted #BCBCBC;',
+        ...style
     }}>
     <div class="flex gap-r font-display">
         <ConnectIcons type={type} />

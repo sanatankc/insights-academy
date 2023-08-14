@@ -20,10 +20,12 @@ const title = config?.title
 const subHeading = config?.subHeading
 const topHeading = config?.topHeading
 const description = config?.description
+console.log({slideImages})
 
 ---
 <div 
   class=`font-roundo w-full h-full bg-cover bg-top relative bg-black flex flex-col ${className}`
+  
 >
   <!-- <div class='h-[72.6px] w-full bg-black'>
   </div> -->
@@ -35,7 +37,7 @@ const description = config?.description
   >
     {
       showSlide ? slideImages.map(({slide, position} : {slide: string, position: string}, i : {i: number}) => (
-      <div class:list={['slideshow-item w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover', i == 0 ? 'opacity-1' : 'opacity-0']} style={{
+      <div class:list={['slideshow-item w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover', i == 0 ? 'opacity-1' : 'opacity-0',`slide-${i}`]} style={{
         backgroundImage: `${bgImageBgColor}, url(${slide})`,
         transition: '1s all ease-in-out',
         backgroundPosition: position,
@@ -83,10 +85,13 @@ const description = config?.description
 <script>
   const slideshowItems = Array.from(document.querySelectorAll<HTMLElement>('.slideshow-item'));
   let slideshowIndex = 0;
+  let interval: string | number | NodeJS.Timer | undefined;
   if(slideshowItems.length !== 0) {
-    function moveSlides(items: Array<HTMLElement>) {
-      items.forEach((item, i) => {
+    function moveSlides() {
+      const items = Array.from(document.querySelectorAll<HTMLElement>('.slideshow-item'));
+        items.forEach((item, i) => {
         if (i === slideshowIndex) {
+          console.log('showing', item)
           item.style.opacity = '1';
           return;
         } else {
@@ -95,11 +100,21 @@ const description = config?.description
       })
       slideshowIndex = (slideshowIndex + 1) % items.length;
   }
+  const init = () => {
+    slideshowIndex = 0
+    clearInterval(interval)
+    interval = setInterval(() => {
+      console.log('moving slides')
+      moveSlides()
+    }, 3000)
+    moveSlides()
+  }
+  init()
+
+
+  document.addEventListener('astro:beforeload', () => init());
+
   
-  moveSlides(slideshowItems)
-  setInterval(() => {
-    moveSlides(slideshowItems)
-  }, 3000)
   }
 
   

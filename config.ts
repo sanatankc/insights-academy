@@ -1,4 +1,7 @@
 import campus1 from './src/images/campus/gas/gallery/1.jpeg';
+import campus2 from './src/images/campus/gas/gallery/2.jpeg';
+import campus3 from './src/images/campus/gas/gallery/3.jpeg';
+
 import testimonial1 from './src/images/testimonial/1.png';
 import testimonial2 from './src/images/testimonial/2.png';
 import testimonial3 from './src/images/testimonial/3.png';
@@ -123,6 +126,7 @@ const data: Data = {
   ctaLink: 'https://www.insightacademy.in/',
   school: {
     discription: 'Insight Academy, launched in 2007, ranks among the best schools in Bangalore. Upholding the principle of "Quality Education for All", we create an inclusive, secular educational landscape where all students can flourish, instilling strong academics and comprehensive growth beyond traditional classroom confines.',
+    
   },
   campus: [
     {
@@ -132,7 +136,7 @@ const data: Data = {
       topHeading: "Welcome to",
       description: 'Located near the peaceful ISRO Layout amidst greenery, we offer focused learning within our ICSE-affiliated institution.',
      
-      images: [campus1],
+      images: [campus1,campus2,campus3],
       bgImage: campus1,
       ctaText: 'Explore Campus',
       leaderMessage: [
@@ -208,18 +212,18 @@ const data: Data = {
       contact: {
         details: {
           phoneNo: {
-            label: 'Phone No',
-            value: '+91 7899738130',
+            label: 'Call us On',
+            value: '+91 80 26667333, +91 80 26667444',
             type: 'contact'
           },
           workingHours: {
-            label: 'Working Hours',
-            value: 'Monday to Saturday - 8:00 AM to 4:00 PM',
+            label: 'Mail us at',
+            value: 'info@insightacademy.in',
             type: 'mail'
           },
           address: {
-            label: 'Address',
-            value: 'Nallurhalli Rd, Palm Meadows, Nallurhalli, Whitefield, Bengaluru, Karnataka 560066',
+            label: 'We are here',
+            value: '#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore – 560 062',
             type: 'address'
           }
         },
@@ -261,7 +265,7 @@ const data: Data = {
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
       description: 'Conveniently positioned in Marathahalli, we foster comprehensive education in a CBSE-affiliated framework.',
-      images: [campus1],
+      images: [campus1,campus2,campus3],
       bgImage: campus1,
       ctaText: 'Explore Campus',
       leaderMessage: [

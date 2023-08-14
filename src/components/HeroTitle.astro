@@ -41,8 +41,9 @@ import Text from "./system/Text.astro";
     
 </style>
 <script>
-const texts = Array.from(document.querySelectorAll<HTMLElement>('.text'));
+let texts = Array.from(document.querySelectorAll<HTMLElement>('.text'));
 let counter = 0;
+let interval: string | number | NodeJS.Timer | undefined;
 
 const textArray = [
         "excellence",
@@ -63,7 +64,16 @@ function moveTextOneByOne(){
     })
     counter = (counter + 1) % texts.length;
 }
-moveTextOneByOne();
-setInterval(moveTextOneByOne, 3000);
+const init = () => {
+    counter = 0
+    clearInterval(interval);
+    interval = setInterval(() => moveTextOneByOne(), 3000);
+    texts = Array.from(document.querySelectorAll<HTMLElement>('.text'));
+    moveTextOneByOne();
+}
+init()
+
+document.addEventListener('astro:beforeload', () => init());
+
 
   </script>

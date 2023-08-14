@@ -6,6 +6,7 @@ module.exports = {
 			
 			screens: {
 				'md': '1000px',
+				's': '500px',
 			},
 			colors: {
 				accent:'#C07C47',
