@@ -113,7 +113,7 @@ const rounded = [
                           {item.title}
                         </Text>
                       </div>
-                      <p class="max-w-[70ch] text-xl">
+                      <p class="max-w-[70ch] text-xl max-sm:text-base">
                         {item.description}
                       </p>
                       <Text type="subtitle" class={`text-${colors[index][1]} `} style={{textAlign: "left"}}>
@@ -121,7 +121,7 @@ const rounded = [
                       </Text>
                       <ul class="flex flex-col gap-r">
                         {item.highlights?.map(item => {
-                          return <li class="text-xl flex gap-[7px] items-center">
+                          return <li class="text-xl flex gap-[7px] items-center max-sm:text-base">
                               <span class={`text-${colors[index][1]} w-6 h-6`}>
                                 <Star
                                   class={`text-${colors[index][1]}`}
@@ -191,7 +191,7 @@ const rounded = [
   <div class="flex items-center justify-center gap-r overflow-scroll max-sm:flex-col">
     {
       facilities?.map(item => {
-          return  <div class={`flex flex-col w-[400px] border-t-0 flex-shrink-0`}
+          return  <div class={`flex flex-col max-w-[400px] w-full border-t-0 flex-shrink-0`}
                        
                   >
                       <Image src={item.images[0]} className='border-b-[5px] border-yellow h-[450px] object-cover max-sm:h-[250px]' />
@@ -210,14 +210,14 @@ const rounded = [
  
 </div>
 <!-- section  -->
-<div id="achievements" class="p-xl flex flex-col justify-center gap-l items-center scroll-m-14">
+<div id="achievements" class="p-xl flex flex-col justify-center gap-l items-center scroll-m-14 max-sm:p-0">
   
   <Heading first="Celebrating" second={"Achievements"} subtitle="INSPIRING FEATS">
   </Heading>
   <Text type="p" class="text-center">We take immense pride in celebrating academic triumphs that reflect the students’ dedication.</Text type="p">
     <div class="flex justify-center gap-[2px] overflow-scroll w-full max-sm:flex-col  max-sm:items-center max-sm:gap-[10px] ">
       {toppers?.map((item,index) => {
-        return <div class="w-[287px] h-[525px] flex flex-col justify-end  topper-card relative overflow-hidden flex-shrink-0"
+        return <div class="max-w-[287px] h-[525px] w-full flex flex-col justify-end  topper-card relative overflow-hidden flex-shrink-0"
         >
           <div 
             class="absolute inset-0 -z-[1] saturate-0 topper-img"
