@@ -10,7 +10,7 @@ import Image from '../system/Image.astro';
 import Text from '../system/Text.astro';
 
 ---
-<div class="bg-white py-14 max-md:py-8 text-center flex flex-col items-center gap-20 max-md:gap-3">
+<div class="bg-white py-14 max-md:py-8 text-center flex flex-col items-center gap-xl max-md:gap-3">
   <div class="flex gap-4 flex-col">
     <Text type={'subtitle'} style={{ opacity: 0.8, color: '#121212' }}>EMBRACING QUALITY & INCLUSION</Text>
     <div class="flex flex-row gap-4 items-center justify-start shrink-0 relative">
@@ -18,7 +18,7 @@ import Text from '../system/Text.astro';
     </div>
   </div>
   <Constrain>
-    <div class="flex gap-20 justify-between item-center">
+    <div class="flex gap-20 justify-between item-center px-xl">
       <Constrain width="778px" class="flex flex-col gap-l">
         <p class='p-neutral-dark-grey text-[22px] text-left max-md:text-base'>
             {config.school.discription}
