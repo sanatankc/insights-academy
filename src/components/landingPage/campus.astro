@@ -19,9 +19,10 @@ const campus = config.campus;
     {
     campus.map((item,index) => {
       return <CampusCard
-                image={item.images[0]}
+                image={item.images}
                 name={item.title}
                 desc={item.description}
+                index={index}
                 ctaText={item.ctaText}
                 path={`${item.internalName}`}
                 class={index === 1 ? 'items-end' : ""}
