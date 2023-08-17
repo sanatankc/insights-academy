@@ -47,7 +47,9 @@ const toppers = campusConfig?.toppers
     <div class='flex flex-col'>
       <TopNavigationBar />
       <div 
-        class="h-[90vh] flex py-[40px] px-[24px] mt-[100px]"
+        class="h-[90vh] flex py-[40px] px-[24px] mt-[100px]
+              max-sm:px-r max-sm:py-[20px]
+        "
         style='background: linear-gradient(360deg, #1B2226 0%, #052B4C 52.08%, #1370A7 100%);'
         >
           <Hero
@@ -78,7 +80,7 @@ const toppers = campusConfig?.toppers
       <Campus />
       <Testimonial />
       
-      <div id="achievements" class="px-xl pb-xl pt-xl  flex flex-col justify-center gap-l  scroll-m-14 max-sm:p-0">
+      <div id="achievements" class="px-xl pb-xl pt-xl  flex flex-col justify-center gap-l  scroll-m-14 max-sm:p-m">
         <div class="px-m flex flex-col gap-l max-sm:gap-r">
           <Heading first="Celebrating" second={"Achievements"} subtitle="INSPIRING FEATS">
           </Heading>
