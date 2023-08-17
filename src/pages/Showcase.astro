@@ -5,7 +5,7 @@ import DoctorDay from "../images/campus/events/doctorDay.png"
 import CarouselCard from "../components/carousel/CarouselCard.astro";
 import Star from "../components/icons/Star.astro";
 import Heading from "../components/system/Heading.astro";
-
+import arrow from "../icons/arrow.svg?raw"
 
 interface Item {
   title: string;
@@ -111,18 +111,79 @@ const heading = title || "Feature Updates"
         </div>}
         
     </div>
-    <div class="overflow-x-auto no-scrollbar ">
-      <div class="p-l pl-xl pb-0 flex gap-20 max-md:px-l max-md:gap-4 snap-x snap-mandatory">
-
-        {
-          config.map((item, index) => (
-            <CarouselCard
-              title={item.title}
-              img={item.img} 
-              index={index}
-              />
-          ))
-        }
+    <div class="w-full relative">
+      <div class="w-screen absolute h-full top-0 left-0 z-50 flex flex-row items-center p-10 justify-between pointer-events-none">
+        <div class="w-10 h-10 pointer-events-auto cursor-pointer" id="prev-button">
+          <div class="w-full h-full -scale-100 bg-neutral-dark-grey text-white flex items-center justify-center rounded-full">
+            <Fragment set:html={arrow} />
+          </div>
+        </div>
+        <div class="w-10 h-10 pointer-events-auto cursor-pointer" id="next-button">
+          <div class="w-full h-full scale-100 bg-neutral-dark-grey flex text-white items-center justify-center rounded-full">
+            <Fragment set:html={arrow}  />
+          </div>
+          </div>
+      </div>
+      <div id="scroll-container" class="overflow-x-auto no-scrollbar" style={{
+              overflowX: 'scroll',
+              overflowY: 'hidden',
+              scrollSnapType: 'x mandatory',
+        }}>
+        <div class="p-l pl-xl pb-0 flex gap-20 max-md:px-l max-md:gap-4 snap-x snap-mandatory">
+          {
+            config.map((item, index) => (
+              <CarouselCard
+                title={item.title}
+                img={item.img} 
+                index={index}
+                />
+            ))
+          }
+        </div>
       </div>
     </div>
+    
 </div>
+
+<script>
+  const prevButton = document.querySelector('#prev-button')
+  const nextButton = document.querySelector('#next-button')
+  
+  const scrollContainer = document.querySelector('#scroll-container')
+
+  console.log(scrollContainer?.scrollWidth,scrollContainer?.clientWidth)
+  const checkOverflow = () => {
+    if(scrollContainer?.scrollWidth){
+      if (scrollContainer?.scrollWidth > scrollContainer?.clientWidth) {
+        prevButton?.classList.remove('hidden')
+        nextButton?.classList.remove('hidden')
+      } else {
+        prevButton?.classList.add('hidden')
+        nextButton?.classList.add('hidden')
+      }
+    }
+
+  }
+  window.addEventListener('resize', checkOverflow);
+  checkOverflow();
+
+  if (prevButton && nextButton && scrollContainer) {
+    const scroll = (scrollOffset: number) => {
+      scrollContainer.scrollBy({
+        top: 0,
+        left: scrollOffset,
+        behavior: 'smooth'
+      })
+    }
+  
+    const scrollOffset = document.querySelector('.scroll-card')?.offsetWidth
+  
+    prevButton.addEventListener('click', () => {
+      scroll(scrollOffset * -1)
+    })
+  
+    nextButton.addEventListener('click', () => {
+      scroll(scrollOffset)
+    })
+  }
+</script>
