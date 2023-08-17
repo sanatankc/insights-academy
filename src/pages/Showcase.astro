@@ -169,6 +169,7 @@ const heading = title || "Feature Updates"
   }
   window.addEventListener('resize', checkOverflow);
   checkOverflow();
+  document.addEventListener('astro:beforeload',checkOverflow)
 
   if (prevButton && nextButton && scrollContainer) {
     const scroll = (scrollOffset: number) => {
