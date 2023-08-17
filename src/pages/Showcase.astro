@@ -1,5 +1,7 @@
 ---
-import DummyImage from "../images/slides/1.jpg" 
+import YogaDay from "../images/campus/events/YogaaDay.png" 
+import RedDay from "../images/campus/events/RedDay.png" 
+import DoctorDay from "../images/campus/events/doctorDay.png" 
 import CarouselCard from "../components/carousel/CarouselCard.astro";
 import Star from "../components/icons/Star.astro";
 import Heading from "../components/system/Heading.astro";
@@ -10,9 +12,9 @@ interface Item {
   img: string;
 }
 const config: Item[] = [
-  { title: "Yogaa Day 2", img: DummyImage},
-  { title: "Yogaa Day 1", img: DummyImage},
-  { title: "Yogaa Day 3", img: DummyImage}
+  { title: "Celebrating Yoga Day ‘23", img: YogaDay},
+  { title: "Happy Red Day!", img: RedDay},
+  { title: "Doctor’s Day 2023", img: DoctorDay}
 ]
 const {title,showSocial=true} = Astro.props
 const heading = title || "Feature Updates"
@@ -109,7 +111,7 @@ const heading = title || "Feature Updates"
         </div>}
         
     </div>
-    <div class="overflow-x-auto">
+    <div class="overflow-x-auto no-scrollbar">
       <div class="p-l pl-xl pb-0 flex gap-20 max-md:px-l max-md:gap-4">
 
         {

@@ -37,17 +37,25 @@ const menu: Array<Menu> = [
   }
 ]
 
+
+
+// get route from path
+const {campusName} = Astro.params
+const campusConfig = config.campus.find(c => c.internalName === campusName)
+const admissionLink = campusConfig?.admissionLink
 const ctaButtons: Array<{
   title: string
-  link: string,
+  link: string | undefined,
   type?: 'primary' | 'secondary' | 'default',
   icon?: any,
+  className?: string,
   menu?: boolean
 }> = [
   {
     title: 'Apply Now',
-    link: config.ctaLink,
+    link: admissionLink,
     menu: true,
+    className: "apply-now-button",
     type: 'primary',
   },
   {
@@ -101,7 +109,7 @@ const ctaButtons: Array<{
     {
       ctaButtons.map(item => {
         return (
-            <a href={item.link} target='_blank' class={`${item.menu && 'max-md:hidden'}`}>
+            <a href={item.link} target='_blank' class={`${item.menu && 'max-md:hidden'} ${item?.className}`}>
               <Button class="font-display" type={item.type} icon={item?.icon}>{item.title}</Button>
             </a>
         )
@@ -324,7 +332,8 @@ const ctaButtons: Array<{
   }
 </style>
 
-<script>
+<script >
+  import config from '../../config'; 
   const menuParent = document.querySelectorAll('.menu-parent') as NodeListOf<HTMLDivElement>
   const menuCheckBox = document.querySelector('.menu-checkbox') as HTMLInputElement
   menuParent.forEach((el) => {
@@ -369,6 +378,16 @@ const ctaButtons: Array<{
     })
   })
   document.addEventListener('astro:beforeload', () => {
+    const path = window.location.pathname
+    const campuseName = path.split('-')[1]
+    const campusConfig = config.campus.find(c => c.internalName === campuseName)
+    const admissionLink = campusConfig?.admissionLink
+    const button = document.querySelector('.apply-now-button') as HTMLDivElement
+    if(admissionLink){
+      button.setAttribute('href', admissionLink)
+    }
+
+
     mobileMenu.classList.remove('visible')
     menuCheckBox.checked = false
   })

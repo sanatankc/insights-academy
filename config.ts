@@ -1,4 +1,7 @@
 import campus1 from './src/images/campus/gas/gallery/1.jpeg';
+import preview1 from './src/images/campus/gas/preview.png'
+import preview2 from './src/images/campus/gaw/preview.png';
+
 import campus2 from './src/images/campus/gas/gallery/2.jpeg';
 import campus3 from './src/images/campus/gas/gallery/3.jpeg';
 
@@ -11,6 +14,13 @@ import topper1 from "./src/images/campus/toppers/topper.png"
 import topper2 from "./src/images/campus/toppers/topper2.png"
 import topper3 from "./src/images/campus/toppers/topper3.png"
 import topper4 from "./src/images/campus/toppers/topper4.png"
+import Kindergarten from "./src/images/campus/gaw/updates/1.jpeg"
+import Primary from "./src/images/campus/gaw/updates/1.jpeg"
+import Secondary from "./src/images/campus/gaw/updates/1.jpeg"
+import RoboticClass from "./src/images/campus/events/robotic.png"
+import ComputerClass from "./src/images/campus/events/computerClass.png"
+import KgClass from "./src/images/campus/events/kgClass.png"
+
 
 type Campus = {
   title: string;
@@ -27,6 +37,7 @@ type Campus = {
   facilities?: Facilities[];
   contact?: Contact;
   toppers?: Toppers[];
+  admissionLink?: string;
 };
 export type ContactDetails = {
   label: string;
@@ -135,8 +146,8 @@ const data: Data = {
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
       description: 'Located near the peaceful ISRO Layout amidst greenery, we offer focused learning within our ICSE-affiliated institution.',
-     
-      images: [campus1,campus2,campus3],
+      admissionLink: "https://admissions.neverskip.com/767a2f61336a6e5954447361627856657465723575773d3d/utms-705168We8&utmc-395849Sc9",
+      images: [preview2,campus2,campus3],
       bgImage: campus1,
       ctaText: 'Explore Campus',
       leaderMessage: [
@@ -149,9 +160,9 @@ const data: Data = {
       ],
       academic: [
         {
-          title: 'Academic',
+          title: 'Kindergarten',
           description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
-          images: [campus1],
+          images: [Kindergarten],
           highlights: [
            "1:25 Student-to-Teacher ratio",
            "Multi-sensory, experiential learning approach",
@@ -160,53 +171,48 @@ const data: Data = {
           ],
         },
         {
-          title: 'Academic',
-          description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
-          images: [campus1],
+          title: 'Class 1-5',
+          description: 'At Insight Academy, students from class 1-5 are nurtured in an environment that is sensitive to their social and emotional needs, fostering them into compassionate individuals.',
+          images: [Primary],
           highlights: [
-            "1:25 Student-to-Teacher ratio",
-            "Multi-sensory, experiential learning approach",
-            "Emphasis on communication skills",
-            "Extracurriculars activities like swimming, tennis, music & art"
+            "Limited class sizes",
+            "Innovative 'Creative Worksheet' monitoring",
+            "Engaging physical and skill-based activities",
+            "Experiential learning for lifelong passion."
            ],
         },
         {
-          title: 'Academic',
-          description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
-          images: [campus1],
+          title: 'Class 6-10',
+          description: 'Preparation for board exams starts in class 6 at Insight Academy, instilling not just academic rigor but also discipline, confidence, and time management skills.',
+          images: [Secondary],
           highlights: [
-            "1:25 Student-to-Teacher ratio",
-            "Multi-sensory, experiential learning approach",
-            "Emphasis on communication skills",
-            "Extracurriculars activities like swimming, tennis, music & art"
+            "Focus is to prepare students for Grade 10",
+            "Assessments would be 2 Tests & 2 exams/year",
+            "NEP focused learning in Robotics & Commerce",
+            "After-school activities focused on sports like Basketball, Football, Cricket & Swimming"
            ],
         },
       ],
       facilities: [
         {
-          title: 'Smart-Classes',
-          description: 'Insight Academy emphasizes hands-on learning through our continually upgraded, modern labs. With ',
-          images: [campus1],
+          title: 'Robotics Class',
+          description: 'Insight Academy emphasizes hands-on learning through our continually upgraded, modern labs. With  ',
+          images: [RoboticClass],
           bgColor: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(245, 204, 79, 0.20) 100%);',
           
         },
         
         {
-          title: 'Smart-Classes',
-          description: "Insight Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse .",
-          images: [campus1],
+          title: 'Computer Science Class',
+          description: "Insight Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse ",
+          images: [ComputerClass],
           
         },
         
         {
-          title: 'Smart-Classes',
+          title: 'Activities Room for KG',
           description: "Insight Academy integrates technology into education, providing computer learning with a dedicated",
-          images: [campus1]
-        },
-        {
-          title: 'Smart-Classes',
-          description: "Insight Academy integrates technology into education, providing computer learning with a dedicated",
-          images: [campus1]
+          images: [KgClass]
         },
       ],
       contact: {
@@ -265,7 +271,8 @@ const data: Data = {
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
       description: 'Conveniently positioned in Marathahalli, we foster comprehensive education in a CBSE-affiliated framework.',
-      images: [campus1,campus2,campus3],
+      admissionLink: "https://admissions.neverskip.com/474e6133503443334b7142572f472b5a5474475363673d3d/utms-6271788&utmc-6f4d699",
+      images: [preview1,campus2,campus3],
       bgImage: campus1,
       ctaText: 'Explore Campus',
       leaderMessage: [
