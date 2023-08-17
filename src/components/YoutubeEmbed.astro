@@ -9,7 +9,8 @@ const { embedId, videoId } = Astro.props
 
 
 <script define:vars={{videoId, embedId}}>
-
+console.log(document.querySelector(`.data-video-${videoId} iframe`))
+if(!document.querySelector(`[data-video-open="${videoId}"]`)) return
   document.querySelector(`[data-video-open="${videoId}"]`).addEventListener('click', () => {
     document.querySelector(`.data-video-${videoId}`).classList.remove('opacity-0')
     document.querySelector(`.data-video-${videoId}`).classList.remove('pointer-events-none')
@@ -22,7 +23,7 @@ const { embedId, videoId } = Astro.props
     document.querySelector(`.data-video-${videoId}`).innerHTML = ``
   })
 
-  document.querySelector(`.data-video-${videoId} iframe`).addEventListener('click', (e) => {
-    e.stopPropagation()
-  })
+  // document.querySelector(`.data-video-${videoId} iframe`).addEventListener('click', (e) => {
+  //   e.stopPropagation()
+  // })
 </script>
