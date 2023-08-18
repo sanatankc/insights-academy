@@ -7,7 +7,7 @@ const {first, second, class, subtitle,subtitleClass} = Astro.props;
 
 {
     subtitle ? <div class="flex gap-4 flex-col items-center font-display">
-                    <Text type={'subtitle'} class={`text-black-100 font-semibold tracking-[1.8px] text-lg ${subtitleClass}`} style={{fontSize: "18px"}}>{subtitle}</Text>
+                    <Text type={'subtitle'} class={`text-black-100 font-semibold tracking-[1.8px] text-lg ${subtitleClass} balance`}>{subtitle}</Text>
                     <div class="flex flex-row gap-4 items-center justify-start shrink-0 relative max-sm:gap-1 ">
                     <span class="text-[#F5CC4F] w-[33px] h-[31px]">
                         <Star />
