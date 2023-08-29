@@ -1,4 +1,24 @@
 import campus1 from './src/images/campus/gas/gallery/1.jpeg';
+
+// putting campus bg images here
+import campusbg1 from './src/images/campus/knk/slides/1.jpeg';
+import campusbg2 from './src/images/campus/knk/slides/2.jpeg';
+import campusbg3 from './src/images/campus/knk/slides/3.jpeg';
+import campusbg4 from './src/images/campus/knk/slides/4.jpeg';
+// import campusbg5 from './src/images/campus/knk/slides/videobg.mp4';
+import principalknk from "./src/images/campus/knk/knk_principal.jpeg"
+import kindergartenknk from "./src/images/campus/knk/kindergartenknk.jpeg"
+import grade6knk from "./src/images/campus/knk/6-10knk.jpeg"
+import grade1knk from "./src/images/campus/knk/1-5knk.jpeg"
+import principalmrth from "./src/images/campus/knk/knk_principal.jpeg"
+
+import RoboticClass from "./src/images/campus/knk/facilities/robotics.jpeg";
+import ComputerClass from "./src/images/campus/knk/facilities/codingandcs.jpeg";
+import KgClass from "./src/images/campus/knk/facilities/acitivitiesroom.jpeg";
+import sports from "./src/images/campus/knk/facilities/sports.jpeg";
+import zumba from "./src/images/campus/knk/facilities/zumba.jpeg";
+import music from "./src/images/campus/knk/facilities/music.jpeg";
+
 import preview1 from './src/images/campus/gas/preview.png'
 import preview2 from './src/images/campus/gaw/preview.png';
 
@@ -8,7 +28,7 @@ import campus3 from './src/images/campus/gas/gallery/3.jpeg';
 import testimonial1 from './src/images/testimonial/1.png';
 import testimonial2 from './src/images/testimonial/2.png';
 import testimonial3 from './src/images/testimonial/3.png';
-import principalGAW from "./src/images/campus/gaw/principal.png"
+
 import leadership1 from "./src/images/leadership/1.png"
 import topper1 from "./src/images/campus/toppers/topper.png"
 import topper2 from "./src/images/campus/toppers/topper2.png"
@@ -17,9 +37,9 @@ import topper4 from "./src/images/campus/toppers/topper4.png"
 import Kindergarten from "./src/images/campus/gaw/updates/1.jpeg"
 import Primary from "./src/images/campus/gaw/updates/1.jpeg"
 import Secondary from "./src/images/campus/gaw/updates/1.jpeg"
-import RoboticClass from "./src/images/campus/events/robotic.png"
-import ComputerClass from "./src/images/campus/events/computerClass.png"
-import KgClass from "./src/images/campus/events/kgClass.png"
+
+
+
 
 
 type Campus = {
@@ -141,19 +161,19 @@ const data: Data = {
   },
   campus: [
     {
-      title: 'Kanakapura Road (ICSE)',
+      title: 'Kanakapura Campus (ICSE)',
       internalName: 'kanakapura',
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
       description: 'Located near the peaceful ISRO Layout amidst greenery, we offer focused learning within our ICSE-affiliated institution.',
       admissionLink: "https://admissions.neverskip.com/767a2f61336a6e5954447361627856657465723575773d3d/utms-705168We8&utmc-395849Sc9",
-      images: [preview2,campus2,campus3],
+      images: [campusbg1,campusbg2,campusbg3,campusbg4],
       bgImage: campus1,
       ctaText: 'Explore Campus',
       leaderMessage: [
         {
-          image: principalGAW,
-          name: 'Mrs. Singupilla Ratna Kumari',
+          image: principalknk,
+          name: "Mrs.May Ruth D'Souza",
           role: 'PRINCIPAL',
           body: "Insight Academy, founded in 2007, is a school dedicated to providing quality education for all children, regardless of their intelligence, physical condition, or challenges. With a focus on holistic development and a committed team of well-trained teachers, the school goes beyond the minimum requirements to offer additional facilities and enhance students' learning abilities. The strong partnership between students, parents, and the institution fosters a foundation for a better future."
         }
@@ -162,7 +182,7 @@ const data: Data = {
         {
           title: 'Kindergarten',
           description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
-          images: [Kindergarten],
+          images: [kindergartenknk],
           highlights: [
            "1:25 Student-to-Teacher ratio",
            "Multi-sensory, experiential learning approach",
@@ -173,7 +193,7 @@ const data: Data = {
         {
           title: 'Class 1-5',
           description: 'At Insight Academy, students from class 1-5 are nurtured in an environment that is sensitive to their social and emotional needs, fostering them into compassionate individuals.',
-          images: [Primary],
+          images: [grade1knk],
           highlights: [
             "Limited class sizes",
             "Innovative 'Creative Worksheet' monitoring",
@@ -184,7 +204,7 @@ const data: Data = {
         {
           title: 'Class 6-10',
           description: 'Preparation for board exams starts in class 6 at Insight Academy, instilling not just academic rigor but also discipline, confidence, and time management skills.',
-          images: [Secondary],
+          images: [grade6knk],
           highlights: [
             "Focus is to prepare students for Grade 10",
             "Assessments would be 2 Tests & 2 exams/year",
@@ -196,23 +216,41 @@ const data: Data = {
       facilities: [
         {
           title: 'Robotics Class',
-          description: 'Insight Academy emphasizes hands-on learning through our continually upgraded, modern labs. With  ',
+          description: "Unleash innovation at our school's robotics classes. With an exclusive robotics lab, students engage in immersive, practical learning, nurturing a passion for technology and problem-solving.",
           images: [RoboticClass],
           bgColor: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(245, 204, 79, 0.20) 100%);',
           
         },
         
         {
-          title: 'Computer Science Class',
-          description: "Insight Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse ",
+          title: 'Coding & CS Class',
+          description: "Insight Academy integrates technology into education, offering computer learning with dedicated labs for both primary and senior grades. Each student has access to their individual computer, following a syllabus curated by expert computer educators.",
           images: [ComputerClass],
           
         },
         
         {
-          title: 'Activities Room for KG',
-          description: "Insight Academy integrates technology into education, providing computer learning with a dedicated",
+          title: 'Curiosity Room for KG',
+          description: "Laughter and learning intertwine for our youngest explorers here. Bursting with playful adventures, this vibrant wonderland sparks joy, imagination, and endless learning.",
           images: [KgClass]
+        },
+
+        {
+          title: 'Sports Academy',
+          description: "Our comprehensive campus facilities encompass a diverse range of sports. With expert trainers, students can engage in activities like football, basketball, cricket, and more. Our dedicated sports room includes options like table tennis, throwball, volleyball, and even swimming!",
+          images: [sports]
+        },
+
+        {
+          title: 'Yoga & Zumba',
+          description: "Our experienced yoga instructors  guide students through each pose, and help understand the magic of breathing, stretching, and finding their inner calm. Students also get their groove on with our super fun Zumba sessions, where they can dance, sweat, and be fit while having an absolute blast!",
+          images: [zumba]
+        },
+
+        {
+          title: 'Music Classes',
+          description: "Students unleash their musical potential with our diverse range of classes. From piano and guitar to drums, veena, and singing, our expert instructors help cultivate their passion, bringing melodies to life in an enriching and supportive environment. ",
+          images: [music]
         },
         {
           title: 'Computer Science Class',
@@ -283,7 +321,7 @@ const data: Data = {
       ctaText: 'Explore Campus',
       leaderMessage: [
         {
-          image: principalGAW,
+          image: principalmrth,
           name: 'Mrs. Singupilla Ratna Kumari',
           role: 'PRINCIPAL',
           body: 'At Glentree, we embrace the belief that learning is a lifelong process. We foster curiosity and encourage our students to be self-motivated learners. Our holistic approach focuses on developing their intelligence, emotions, and spirituality. By providing an enlightened and innovative learning environment, we empower them to become global citizens, offering transformative experiences and opportunities for personal growth.'
