@@ -192,14 +192,14 @@ const rounded = [
         </defs>
       </svg>
     </div>
-    <div class="flex items-center gap-r overflow-auto max-sm:flex-col max-w-[1600px] scroll-mt-24" id="facilities">
+    <div class="grid grid-flow-col grid-rows-1  gap-r overflow-auto max-sm:flex-col max-w-[1600px] scroll-mt-24  max-sm:grid-flow-row max-sm:center max-sm:place-items-center" id="facilities" style="grid-auto-columns: minmax(400px, 1fr)">
       {
         facilities?.map(item => {
             return  <div class={`flex flex-col max-w-[380px] w-full border-t-0 flex-shrink-0`}
                          
                     >
-                        <Image src={item.images[0]} className='border-b-[5px] border-yellow h-[450px] object-cover max-sm:h-[250px]' />
-                        <div class="p-l flex flex-col gap-r  border-[1px] border-t-0 border-gray-900">
+                        <Image src={item.images[0]} className='border-b-[5px] border-yellow h-[380px] object-cover max-sm:h-[250px]' />
+                        <div class="p-l flex flex-col gap-r  border-[1px] border-t-0 border-gray-900" style="flex-grow: 1;">
                           <Text type="h4" class="text-neutral-dark-grey font-display font-bold">
                             {item.title}
                           </Text>
