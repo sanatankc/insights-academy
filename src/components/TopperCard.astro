@@ -4,7 +4,7 @@ const { topper = {} } = Astro.props;
 ---
 
 <div
-  class="max-w-[287px] h-[525px] w-full flex flex-col justify-end topper-card relative overflow-hidden flex-shrink-0"
+  class="max-w-[287px] h-[525px] w-full flex flex-col justify-end topper-card relative overflow-hidden  flex-shrink-0 max-sm:h-[425px]"
 >
   <div
     class="absolute inset-0 -z-[1] saturate-0 topper-img"
@@ -24,7 +24,7 @@ const { topper = {} } = Astro.props;
     />
     <Text type="h4" class="text-yellow font-display font-bold">97.8%</Text>
   </div>
-  <div class="absolute left-[48%] top-[20%] leaf leaf-right">
+  <div class="absolute left-[48%] top-[20%] leaf leaf-right max-sm:top-[-4%]">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="158"
@@ -51,7 +51,7 @@ const { topper = {} } = Astro.props;
       </defs>
     </svg>
   </div>
-  <div class="absolute right-[51%] top-[20%] leaf leaf-left">
+  <div class="absolute right-[51%] top-[20%] leaf leaf-left max-sm:top-[-4%]">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="158"
@@ -112,4 +112,10 @@ const { topper = {} } = Astro.props;
   .topper-card:hover {
     border-bottom: 7px solid var(--primary-yellow, #f5cc4f);
   }
+  @media not all and (min-width: 640px){
+    .topper-card:hover .leaf {
+        transform: translateY(-20px);
+    }
+  }
+
 </style>

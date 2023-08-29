@@ -71,12 +71,12 @@ const toppers = campusConfig?.toppers
       <Testimonial />
       
       <div id="achievements" class="px-xl pb-xl pt-xl  flex flex-col justify-center gap-l  scroll-m-14 max-sm:p-m">
-        <div class="px-m flex flex-col gap-l max-sm:gap-r">
+        <div class="flex flex-col gap-l max-sm:gap-r max-sm:px-3">
           <Heading first="Celebrating" second={"Achievements"} subtitle="INSPIRING FEATS">
           </Heading>
           <Text type="p" class="text-center">We take immense pride in celebrating academic triumphs that reflect the students’ dedication.</Text>
         </div>
-        <div class="flex items-center justify-center p-r">
+        <div class="flex items-center justify-center">
           <div class="flex gap-[2px] overflow-scroll w-full max-sm:flex-col  max-sm:items-center max-sm:gap-[16px] max-w-[1200px] margin-auto">
             {toppers?.map((item,index) => {
               return <TopperCard 

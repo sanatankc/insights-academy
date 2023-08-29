@@ -33,14 +33,14 @@ const heading = title || "Feature Updates"
     );
     "
 >
-    <div class="flex flex-row items-center justify-between px-xl max-md:flex-col max-md:gap-[16px] max-md:px-l">
+    <div class="flex flex-row items-center justify-between px-xl max-md:flex-col max-md:gap-[16px] max-sm:px-3 ">
         <Heading first={heading.split(' ')[0]} second={heading.split(' ')[1]} />
         {showSocial && 
           <a  href="https://www.facebook.com/InsightAcademy.KanakapuraRoad"
               target="_blank"
           >
             <div
-              class="flex flex-row gap-[13px] items-center justify-center relative font-sans font-bold text-[22px] max-md:text-base">
+              class="flex flex-row gap-[13px] items-center justify-center relative font-sans font-bold text-[22px] max-md:text-base max-sm:gap-1">
               <div
                 class="text-center"
                 style="
@@ -49,7 +49,7 @@ const heading = title || "Feature Updates"
               >
               Follow @InsightAcademy for daily updates!
             </div>
-              <div class="w-[32px] h-[32px] text-[#0B88EF]">
+              <div class="w-[30px] h-[30px] text-[#0B88EF] max-sm:w-[28px] max-sm:h-[28px]">
                 <Fragment set:html={fb} />
               </div>
             </div>
@@ -58,18 +58,7 @@ const heading = title || "Feature Updates"
         
     </div>
     <div class="w-full relative">
-      <div class="w-screen absolute h-full top-0 left-0 z-50 flex flex-row items-center p-10 justify-between pointer-events-none">
-        <div class="w-10 h-10 pointer-events-auto cursor-pointer" id="prev-button">
-          <div class="w-full h-full -scale-100 bg-neutral-dark-grey text-white flex items-center justify-center rounded-full">
-            <Fragment set:html={arrow} />
-          </div>
-        </div>
-        <div class="w-10 h-10 pointer-events-auto cursor-pointer" id="next-button">
-          <div class="w-full h-full scale-100 bg-neutral-dark-grey flex text-white items-center justify-center rounded-full">
-            <Fragment set:html={arrow}  />
-          </div>
-          </div>
-      </div>
+     
       <div id="scroll-container" class="overflow-x-auto no-scrollbar" style={{
               overflowX: 'scroll',
               overflowY: 'hidden',
@@ -86,6 +75,18 @@ const heading = title || "Feature Updates"
             ))
           }
         </div>
+      </div>
+      <div class="w-fit h-fit top-0 left-0 z-50 flex flex-row items-center  justify-between pointer-events-none gap-l mx-auto mt-l">
+        <div class="w-10 h-10 pointer-events-auto cursor-pointer" id="prev-button">
+          <div class="w-full h-full -scale-100 bg-neutral-dark-grey text-white flex items-center justify-center rounded-full">
+            <Fragment set:html={arrow} />
+          </div>
+        </div>
+        <div class="w-10 h-10 pointer-events-auto cursor-pointer" id="next-button">
+          <div class="w-full h-full scale-100 bg-neutral-dark-grey flex text-white items-center justify-center rounded-full">
+            <Fragment set:html={arrow}  />
+          </div>
+          </div>
       </div>
     </div>
     

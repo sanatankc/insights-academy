@@ -214,6 +214,12 @@ const data: Data = {
           description: "Insight Academy integrates technology into education, providing computer learning with a dedicated",
           images: [KgClass]
         },
+        {
+          title: 'Computer Science Class',
+          description: "Insight Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse ",
+          images: [ComputerClass],
+          
+        },
       ],
       contact: {
         details: {
@@ -320,29 +326,30 @@ const data: Data = {
       ],
       facilities: [
         {
-          title: 'Smart-Classes',
-          description: 'Insight Academy emphasizes hands-on learning through our continually upgraded, modern labs. With ',
-          images: [campus1],
+          title: 'Robotics Class',
+          description: 'Insight Academy emphasizes hands-on learning through our continually upgraded, modern labs. With  ',
+          images: [RoboticClass],
           bgColor: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(245, 204, 79, 0.20) 100%);',
           
         },
         
         {
-          title: 'Smart-Classes',
-          description: "Insight Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse .",
-          images: [campus1],
+          title: 'Computer Science Class',
+          description: "Insight Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse ",
+          images: [ComputerClass],
           
         },
         
         {
-          title: 'Smart-Classes',
+          title: 'Activities Room for KG',
           description: "Insight Academy integrates technology into education, providing computer learning with a dedicated",
-          images: [campus1]
+          images: [KgClass]
         },
         {
-          title: 'Smart-Classes',
-          description: "Insight Academy integrates technology into education, providing computer learning with a dedicated",
-          images: [campus1]
+          title: 'Computer Science Class',
+          description: "Insight Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse ",
+          images: [ComputerClass],
+          
         },
       ],
       contact: {
