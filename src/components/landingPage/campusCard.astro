@@ -11,7 +11,7 @@ const { image=[], class: className, name, desc, link,ctaText,path,index,slideCla
 {image.map((item: any,i: number) => {
   return <div
             style={{
-                  backgroundImage: `url(${item})`,
+                  backgroundImage: `url(${item.uri})`,
                   transition: '1s all ease-in-out',
                   zIndex: -1
                 }}

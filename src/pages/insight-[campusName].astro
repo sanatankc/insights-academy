@@ -39,6 +39,7 @@ const colors = [
 const rounded = [
   "rounded-tl-[250px]", "", "rounded-bl-[250px]"
 ]
+
 ---
 <Layout title='Welcome'>
   <TopNavigationBar />
@@ -53,7 +54,7 @@ const rounded = [
         }
       }
        slideImages={ campusConfig?.images.map(item => ({
-        "slide": item, position: 'center'
+        "slide": item.uri, position: item.position, type: item.type
       }))}
       showSlide={true}
       contentDirection="items-end"

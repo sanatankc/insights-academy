@@ -11,7 +11,7 @@ const {
   className,
   style,
   contentDirection="item-center",
-  bgImageBgColor="linear-gradient(103deg, rgb(0, 13, 24) 0%, rgba(0, 13, 24, 0) 100%)"
+  bgImageBgColor="linear-gradient(103deg, rgba(0, 13, 24, 0.7) 0%, rgba(0, 13, 24, 0) 100%)"
   } = Astro.props
 
 const bgImage = showSlide ? slideImages : config.bgImage
@@ -20,6 +20,9 @@ const title = config?.title
 const subHeading = config?.subHeading
 const topHeading = config?.topHeading
 const description = config?.description
+
+console.log('hello..')
+console.log(slideImages)
 ---
 <div 
   class=`font-roundo w-full h-full bg-cover bg-top relative bg-black flex flex-col ${className}`
@@ -34,19 +37,32 @@ const description = config?.description
     }}
   >
     {
-      showSlide ? slideImages.map(({slide, position} : {slide: string, position: string}, i : {i: number}) => (
-      <div class:list={['slideshow-item w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover', i == 0 ? 'opacity-1' : 'opacity-0',`slide-${i}`]} style={{
-        backgroundImage: `${bgImageBgColor}, url(${slide})`,
-        transition: '1s all ease-in-out',
-        backgroundPosition: position,
-      }}></div>
+      showSlide ? slideImages.map(({slide, position, type} : {slide: string, position: string, type: string}, i : number) => (
+        type === 'image' ? (
+          <div class:list={['slideshow-item w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover', i === 0 ? 'opacity-1' : 'opacity-0',`slide-${i}`]} style={{
+            backgroundImage: `${bgImageBgColor}, url(${slide})`,
+            transition: '1s all ease-in-out',
+            backgroundPosition: position,
+          }}></div>
+        ) : (
+          <div class="absolute top-0 left-0 w-full h-full">
+            <video class:list={["slideshow-item absolute top-0 left-0 lazy play-on-hover w-full h-full object-cover", i === 0 ? 'opacity-1' : 'opacity-0',`slide-${i}`]} loop autoplay>
+              <source data-src={'.' + slide} src={slide} type="video/mp4">
+            </video>
+            <div class="absolute w-full h-full" style={{
+              background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0, 1) 100%)',
+              opacity: 0.5
+            }}>
+            </div>
+          </div>
+        )
     )) : <div class="w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover" style={{
       backgroundImage: `linear-gradient(0deg, #1B2226 0%, #052B4C 63.40%, #1370A7 100%), url(${bgImage})`,
       transition: '1s all  ease-in-out',
       backgroundPosition: 'center',
+      // filter: 'invert'
     }}></div>
     }
-    <!-- ... slideshow code ... -->
   
     <div class="flex p-xl  items-center text-white justify-between w-full max-sm:p-l">
       <!-- content -- first section -->
@@ -89,6 +105,10 @@ const description = config?.description
       const items = Array.from(document.querySelectorAll<HTMLElement>('.slideshow-item'));
         items.forEach((item, i) => {
         if (i === slideshowIndex) {
+          if (item.tagName === 'video') {
+            item.currentTime = 0;
+            item.play()
+          }
           item.style.opacity = '1';
           return;
         } else {
@@ -97,14 +117,42 @@ const description = config?.description
       })
       slideshowIndex = (slideshowIndex + 1) % items.length;
   }
+
+  let texts = Array.from(document.querySelectorAll<HTMLElement>('.text'));
+let counter = 0;
+let interval: string | number | NodeJS.Timer | undefined;
+
+const textArray = [
+        "excellence",
+        "innovation",
+        "achievements",
+    ]
+function moveTextOneByOne(){
+    texts.forEach((text, index) => {
+        if(index === counter){
+            text.style.opacity = '1';
+            text.style.transform = 'translateY(0)';
+
+        }else{
+            text.style.opacity = '0'
+            text.style.transform = 'translateY(-42px)';
+
+        }
+    })
+    counter = (counter + 1) % texts.length;
+}
+
   const init = () => {
     slideshowIndex = 0
     clearInterval(interval)
     interval = setInterval(() => {
       moveSlides()
+      moveTextOneByOne()
     }, 3000)
     moveSlides()
+    moveTextOneByOne()
   }
+
   init()
   document.addEventListener('astro:beforeload', () => init());
 

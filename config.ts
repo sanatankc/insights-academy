@@ -5,7 +5,8 @@ import campusbg1 from './src/images/campus/knk/slides/1.jpeg';
 import campusbg2 from './src/images/campus/knk/slides/2.jpeg';
 import campusbg3 from './src/images/campus/knk/slides/3.jpeg';
 import campusbg4 from './src/images/campus/knk/slides/4.jpeg';
-// import campusbg5 from './src/images/campus/knk/slides/videobg.mp4';
+import campusbg5 from './src/images/campus/knk/slides/videobg.mp4';
+import campusbg6 from './src/images/campus/knk/slides/6.jpeg';
 import principalknk from "./src/images/campus/knk/knk_principal.jpeg"
 import kindergartenknk from "./src/images/campus/knk/kindergartenknk.jpeg"
 import grade6knk from "./src/images/campus/knk/6-10knk.jpeg"
@@ -167,7 +168,13 @@ const data: Data = {
       topHeading: "Welcome to",
       description: 'Located near the peaceful ISRO Layout amidst greenery, we offer focused learning within our ICSE-affiliated institution.',
       admissionLink: "https://admissions.neverskip.com/767a2f61336a6e5954447361627856657465723575773d3d/utms-705168We8&utmc-395849Sc9",
-      images: [campusbg1,campusbg2,campusbg3,campusbg4],
+      images: [
+        {type: 'image', uri: campusbg1, position: 'center 10%'},
+        {type: 'image', uri: campusbg2, position: 'center'},
+        {type: 'image', uri: campusbg3, position: 'center'},
+        {type: 'image', uri: campusbg4, position: 'center'},
+        {type: 'image', uri: campusbg6, position: 'center'},
+      ],
       bgImage: campus1,
       ctaText: 'Explore Campus',
       leaderMessage: [
@@ -316,7 +323,11 @@ const data: Data = {
       topHeading: "Welcome to",
       description: 'Conveniently positioned in Marathahalli, we foster comprehensive education in a CBSE-affiliated framework.',
       admissionLink: "https://admissions.neverskip.com/474e6133503443334b7142572f472b5a5474475363673d3d/utms-6271788&utmc-6f4d699",
-      images: [preview1,campus2,campus3],
+      images: [
+        {uri: preview1, type: 'image', position: 'center'},
+        {uri: campus2, type: 'image', position: 'center'},
+        {uri: campus3, type: 'image', position: 'center'},
+      ],
       bgImage: campus1,
       ctaText: 'Explore Campus',
       leaderMessage: [
