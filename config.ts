@@ -1,17 +1,23 @@
 import campus1 from './src/images/campus/gas/gallery/1.jpeg';
 
-// putting campus bg images here
+// putting knk campus bg images here
 import campusbg1 from './src/images/campus/knk/slides/1.jpeg';
 import campusbg2 from './src/images/campus/knk/slides/2.jpeg';
 import campusbg3 from './src/images/campus/knk/slides/3.jpeg';
 import campusbg4 from './src/images/campus/knk/slides/4.jpeg';
-import campusbg5 from './src/images/campus/knk/slides/videobg.mp4';
 import campusbg6 from './src/images/campus/knk/slides/6.jpeg';
 import principalknk from "./src/images/campus/knk/knk_principal.jpeg"
 import kindergartenknk from "./src/images/campus/knk/kindergartenknk.jpeg"
 import grade6knk from "./src/images/campus/knk/6-10knk.jpeg"
 import grade1knk from "./src/images/campus/knk/1-5knk.jpeg"
-import principalmrth from "./src/images/campus/knk/knk_principal.jpeg"
+import principalmrth from "./src/images/campus/marth/marth_principal.jpeg"
+
+// putting marth campus bg images here
+import marthcampusbg1 from './src/images/campus/marth/slides/1.jpeg';
+import marthcampusbg2 from './src/images/campus/marth/slides/2.jpeg';
+import marthcampusbg3 from './src/images/campus/marth/slides/3.jpeg';
+import marthcampusbg4 from './src/images/campus/marth/slides/4.jpeg';
+import marthcampusbg5 from './src/images/campus/marth/slides/6.jpeg';
 
 import RoboticClass from "./src/images/campus/knk/facilities/robotics.jpeg";
 import ComputerClass from "./src/images/campus/knk/facilities/codingandcs.jpeg";
@@ -324,23 +330,25 @@ const data: Data = {
       description: 'Conveniently positioned in Marathahalli, we foster comprehensive education in a CBSE-affiliated framework.',
       admissionLink: "https://admissions.neverskip.com/474e6133503443334b7142572f472b5a5474475363673d3d/utms-6271788&utmc-6f4d699",
       images: [
-        {uri: preview1, type: 'image', position: 'center'},
-        {uri: campus2, type: 'image', position: 'center'},
-        {uri: campus3, type: 'image', position: 'center'},
+        {uri: marthcampusbg1, type: 'image', position: 'center'},
+        {uri: marthcampusbg2, type: 'image', position: 'center'},
+        {uri: marthcampusbg3, type: 'image', position: 'center'},
+        {uri: marthcampusbg4, type: 'image', position: 'center'},
+        {uri: marthcampusbg5, type: 'image', position: 'center'},
       ],
       bgImage: campus1,
       ctaText: 'Explore Campus',
       leaderMessage: [
         {
           image: principalmrth,
-          name: 'Mrs. Singupilla Ratna Kumari',
+          name: 'Mrs. Ramola Melita Dsouza',
           role: 'PRINCIPAL',
-          body: 'At Glentree, we embrace the belief that learning is a lifelong process. We foster curiosity and encourage our students to be self-motivated learners. Our holistic approach focuses on developing their intelligence, emotions, and spirituality. By providing an enlightened and innovative learning environment, we empower them to become global citizens, offering transformative experiences and opportunities for personal growth.'
+          body: 'At Insight, we prioritize nurturing creativity and critical thinking in students. Our mission is to foster happiness, peace, and harmony while preparing them for a rapidly changing world. Our dedicated teachers guide students to understand and imagine beyond classroom boundaries. We offer a well-rounded curriculum and encourage participation in co-curricular activities, promoting qualities like honesty, empathy, and respect, shaping them into future global citizens.'
         }
       ],
       academic: [
         {
-          title: 'Academic',
+          title: 'Kindergarten',
           description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
           images: [campus1],
           highlights: [
@@ -351,7 +359,7 @@ const data: Data = {
           ],
         },
         {
-          title: 'Academic',
+          title: 'Elementary (1-5)',
           description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
           images: [campus1],
           highlights: [
@@ -362,7 +370,18 @@ const data: Data = {
            ],
         },
         {
-          title: 'Academic',
+          title: 'Higher Primary (6-8)',
+          description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
+          images: [campus1],
+          highlights: [
+            "1:25 Student-to-Teacher ratio",
+            "Multi-sensory, experiential learning approach",
+            "Emphasis on communication skills",
+            "Extracurriculars activities like swimming, tennis, music & art"
+           ],
+        },
+        {
+          title: 'High School (9-10)',
           description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
           images: [campus1],
           highlights: [
