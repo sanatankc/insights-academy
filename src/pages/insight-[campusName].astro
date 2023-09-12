@@ -19,11 +19,21 @@ import Footer from '../components/landingPage/Footer.astro'
 import TopNavigationBar from '../components/TopNavigationBar.astro'
 import Star from '../components/icons/Star.astro'
 import TopperCard from '../components/TopperCard.astro'
-const leaderMessages = campusConfig?.leaderMessage 
+import Carousel from '../components/system/Carousel.astro'
+import CarouselCard from '../components/system/CarouselCard.astro'
+import DeckCard from '../components/DeckCard.astro'
+import deckCardTemp from '../images/deckCardTemp.jpeg'
+import Gallery from '../components/Gallery.astro'
+import GalleryFullImageTemp from '../images/GalleryFullImageTemp.png'
+import galleryImageTemp2 from '../images/slides/5.jpeg'
+
+const leaderMessages = campusConfig?.leaderMessage
 const academic = campusConfig?.academic
 const facilities = campusConfig?.facilities
 const contact = campusConfig?.contact
 const toppers = campusConfig?.toppers
+
+
 const navigationData = [
   {label: 'Academics', for: "academics"},
   {label: 'Life At Insight', for: "life-at-insight"},
@@ -89,12 +99,109 @@ const rounded = [
       <Text type="regular" class="max-w-[73ch] text-neutral-dark-grey">
         {leaderMessages?.[0].body}
       </Text>
-      <Text type="span" class='text-black-100 uppercase font-display tracking-[1.8px] font-semibold'>
+      <Text type="span" class='text-black-100 uppercase font-display tracking-[1.8px] font-semibold max-md:text-sm'>
         {leaderMessages?.[0].name}
       </Text>
     </div>
   </div>
 </div>
+<!-- 
+<div class="w-full flex justify-center">
+  <div class="w-[30%] h-[1px] bg-primary/20" />
+</div> -->
+
+
+
+<!-- <div class="flex justify-center opacity-40 items-center">
+  <div class="h-[1px] bg-[#ddd3c5] flex-1" />
+  <div class="h-8 flex-1">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 12" width="100%" height="100%">
+      <path d="M 18.824 12 L 19.496 12 C 19.608 11.328 19.912 10.594 20.424 9.797 C 21.448 8.219 23.512 6.672 25.288 6.313 L 25.288 5.656 C 24.408 5.469 23.544 5.078 22.712 4.5 C 21.016 3.328 19.768 1.578 19.496 0 L 18.824 0 C 18.664 0.828 18.296 1.625 17.72 2.438 C 16.584 4.047 14.808 5.234 13 5.656 L 13 6.313 C 13.912 6.5 14.84 6.938 15.752 7.609 C 17.608 8.969 18.584 10.656 18.824 12 Z" fill="rgb(221, 211, 197)"></path><path d="M 1.896 7.813 L 2.115 7.813 C 2.151 7.594 2.25 7.355 2.417 7.095 C 2.75 6.582 3.422 6.078 4 5.961 L 4 5.747 C 3.714 5.686 3.432 5.559 3.161 5.371 C 2.609 4.99 2.203 4.42 2.115 3.906 L 1.896 3.906 C 1.844 4.176 1.724 4.435 1.536 4.7 C 1.167 5.224 0.589 5.61 0 5.747 L 0 5.961 C 0.297 6.022 0.599 6.165 0.896 6.383 C 1.5 6.826 1.818 7.375 1.896 7.813 Z" fill="rgb(221, 211, 197)"></path><path d="M 33.896 7.813 L 34.115 7.813 C 34.151 7.594 34.25 7.355 34.417 7.095 C 34.75 6.582 35.422 6.078 36 5.961 L 36 5.747 C 35.714 5.686 35.432 5.559 35.161 5.371 C 34.609 4.99 34.203 4.42 34.115 3.906 L 33.896 3.906 C 33.844 4.176 33.724 4.435 33.536 4.7 C 33.167 5.224 32.589 5.61 32 5.747 L 32 5.961 C 32.297 6.022 32.599 6.165 32.896 6.383 C 33.5 6.826 33.818 7.375 33.896 7.813 Z" fill="rgb(221, 211, 197)"></path>
+    </svg>
+  </div>
+  <div class="h-[1px] bg-[#ddd3c5] flex-1" />
+</div> -->
+
+<div id="academics" style="scroll-margin: 60px;" class="p-xl px-xl flex flex-col justify-center gap-l scroll-m-14 max-sm:p-r max-sm:gap-r max-md:mt-4">
+  <Heading first="Discover our" second={"Campus"} subtitle="EXPlORE INSIGHT" />
+  <div class="flex flex-row w-full justify-between max-md:flex-col">
+    <Text type="regular" class="text-neutral-dark-grey max-md:mb-5 max-w-4xl">
+      Explore our academic buildings and the tree-filled open spaces that connect them.
+      Choose your own path around campus by taking a virtual tour of Insight.
+    </Text>
+    <Button>Launch Virtual Campus Tour</Button>
+
+  </div>
+  <Carousel class="gap-16 p-5 mt-4 max-md:gap-14 max-md:pt-8 no-scrollbar" id="campus-showcase" stackOnMobile>
+    <CarouselCard>
+      <DeckCard
+        images={[
+          { src: deckCardTemp, alt: '' },
+          { src: deckCardTemp, alt: '' }
+        ]}
+        target="modal"
+      >
+        <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+          Sports Facilities
+        </Text>
+      </DeckCard>
+    </CarouselCard>
+    <CarouselCard>
+      <DeckCard
+        images={[
+          { src: deckCardTemp, alt: '' },
+          { src: deckCardTemp, alt: '' }
+        ]}
+        target=""
+      >
+        <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+          Sports Facilities
+        </Text>
+      </DeckCard>
+    </CarouselCard>
+    <CarouselCard>
+      <DeckCard
+        images={[
+          { src: deckCardTemp, alt: '' },
+          { src: deckCardTemp, alt: '' }
+        ]}
+      >
+        <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+          Sports Facilities
+        </Text>
+      </DeckCard>
+    </CarouselCard>
+    <CarouselCard>
+      <DeckCard
+        images={[
+          { src: deckCardTemp, alt: '' },
+          { src: deckCardTemp, alt: '' }
+        ]}
+      >
+        <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+          Sports Facilities
+        </Text>
+      </DeckCard>
+    </CarouselCard>
+    <CarouselCard>
+      <DeckCard
+        images={[
+          { src: deckCardTemp, alt: '' },
+          { src: deckCardTemp, alt: '' }
+        ]}
+      >
+        <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+          Sports Facilities
+        </Text>
+      </DeckCard>
+    </CarouselCard>
+  </Carousel>
+</div>
+
+<!-- DiscoverCampus -->
+
+
+
 <!-- section  -->
 <div id="academics" style="scroll-margin: 60px;" class="p-xl px-0  flex flex-col justify-center gap-l scroll-m-14 max-sm:p-r max-sm:gap-r">
   <Heading first="Academic" second={"Landscape"} subtitle="Empowering Every Learner ">
@@ -235,6 +342,13 @@ const rounded = [
   </div>
     
 </div>
+<Gallery
+  id="modal"
+  gallery={[
+    { src: GalleryFullImageTemp, caption: "Swimming Pool" },
+    { src: galleryImageTemp2, caption: "Swimming Pool #2" }
+  ]}
+/>
 <!-- section  -->
 
 <!-- section  -->

@@ -62,9 +62,8 @@ const heading = title || "Feature Updates"
       <div id="scroll-container" class="overflow-x-auto no-scrollbar" style={{
               overflowX: 'scroll',
               overflowY: 'hidden',
-              scrollSnapType: 'x mandatory',
         }}>
-        <div class="p-l pl-xl pb-0 flex gap-20 max-md:px-l max-md:gap-4 snap-x snap-mandatory">
+        <div class="p-l pl-xl pb-0 pr-4 flex gap-20 max-md:px-l max-md:gap-4">
           {
             config.map((item, index) => (
               <CarouselCard
@@ -74,6 +73,7 @@ const heading = title || "Feature Updates"
                 />
             ))
           }
+          <div class="p-2"></div>
         </div>
       </div>
       <div class="w-fit h-fit top-0 left-0 z-50 flex flex-row items-center  justify-between pointer-events-none gap-l mx-auto mt-l">
