@@ -8,8 +8,9 @@ const { id, class: className='', containerClass } = Astro.props
     className
   ]}
   data-modal-id={id}
+  data-modal-visible={false}
 >
-  <div class="w-screen h-screen absolute top-0 left-0 backdrop-click" data-modal-id={id}>
+  <div class="w-screen h-screen absolute top-0 left-0 backdrop-click" data-modal-close-id={id}>
 
   </div>
   <div class:list={[
@@ -41,7 +42,7 @@ const { id, class: className='', containerClass } = Astro.props
       const modal = document.querySelector(`[data-modal-id="${target.dataset.modalTarget}"]`)
       console.log('hello... modal', modal)
       modal?.classList.remove('modal-hidden')
-      // modal.dataset.modalVisible = true
+      modal.dataset.modalVisible = true
       // body.classList.add('overflow-hidden')
     })
   })
@@ -50,14 +51,16 @@ const { id, class: className='', containerClass } = Astro.props
     target.addEventListener('click', () => {
       const modal = document.querySelector(`[data-modal-id="${target.dataset.modalClose}"]`)
       modal?.classList.add('modal-hidden')
+      modal.dataset.modalVisible = false
     })
   })
 
   document.querySelectorAll('.backdrop-click')
     .forEach((el) => {
       el.addEventListener('click', () => {
-        const modal = document.querySelector(`[data-modal-id="${el.dataset.modalId}"]`)
+        const modal = document.querySelector(`[data-modal-id="${el.dataset.modalCloseId}"]`)
         modal?.classList.add('modal-hidden')
+        modal.dataset.modalVisible = false
       })
     })
 

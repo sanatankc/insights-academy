@@ -163,131 +163,137 @@ const rounded = [
     <Text type="regular" class="text-neutral-dark-grey max-md:mb-5 max-w-4xl">
       Explore our academic buildings, lush open spaces, and a plethora of facilities that enrich the educational experience for our students.
     </Text>
-    <a href="https://www.youtube.com/watch?v=CURXBarvXFk" target="_blank">
+    <a href={campusName === 'marathahalli' 
+      ? ""
+      : "https://drive.google.com/file/d/1VcI-cGbtwI0FaUyCanqv2AxzfNaTc6La/view?usp=sharing"
+    } target="_blank">
       <Button>Watch Campus Tour Video</Button>
     </a>
 
   </div>
-  <Carousel class="gap-16 p-5 pt-8 mt-2 max-md:gap-14 max-md:pt-8 no-scrollbar" id="campus-showcase" stackOnMobile>
-    <CarouselCard>
-      <DeckCard
-        images={[
-          { src: aroundthecampus1, alt: '' },
-          { src: aroundthecampus2, alt: '' }
-        ]}
-        target="around-the-campus"
-      >
-        <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
-          Around the campus
-        </Text>
-      </DeckCard>
-    </CarouselCard>
-    <CarouselCard>
-      <DeckCard
-        images={[
-          { src: classroom1, alt: '' },
-          { src: classroom2, alt: '' }
-        ]}
-        target="classrooms"
-      >
-        <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
-          Classrooms
-        </Text>
-      </DeckCard>
-    </CarouselCard>
-    <CarouselCard>
-      <DeckCard
-        images={[
-          { src: academiclabs1, alt: '' },
-          { src: academiclabs2, alt: '' }
-        ]}
-        target="academic-labs"
-      >
-        <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
-          Academic Labs
-        </Text>
-      </DeckCard>
-    </CarouselCard>
-    <CarouselCard>
-      <DeckCard
-        images={[
-          { src: extrafacility1, alt: '' },
-          { src: extrafacility2, alt: '' }
-        ]}
-        target="extrafacility"
-      >
-        <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
-          Co-Scholastic Facilities
-        </Text>
-      </DeckCard>
-    </CarouselCard>
-    <CarouselCard>
-      <DeckCard
-        images={[
-          { src: sportsfacility1, alt: '' },
-          { src: sportsfacility2, alt: '' }
-        ]}
-        target="sportsfacility"
-      >
-        <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
-          Sports Facilities
-        </Text>
-      </DeckCard>
-    </CarouselCard>
-  </Carousel>
+  {campusName === 'marathahalli' && (
+    <Carousel class="gap-16 p-5 pt-8 mt-2 max-md:gap-14 max-md:pt-8 no-scrollbar" id="campus-showcase" stackOnMobile>
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: aroundthecampus1, alt: '' },
+            { src: aroundthecampus2, alt: '' }
+          ]}
+          target="around-the-campus"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Around the campus
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: classroom1, alt: '' },
+            { src: classroom2, alt: '' }
+          ]}
+          target="classrooms"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Classrooms
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: academiclabs1, alt: '' },
+            { src: academiclabs2, alt: '' }
+          ]}
+          target="academic-labs"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Academic Labs
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: extrafacility1, alt: '' },
+            { src: extrafacility2, alt: '' }
+          ]}
+          target="extrafacility"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Co-Scholastic Facilities
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: sportsfacility1, alt: '' },
+            { src: sportsfacility2, alt: '' }
+          ]}
+          target="sportsfacility"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Sports Facilities
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+    </Carousel>
+  )}
 </div>
 
-  <!-- pictures for slideshow go here -->
+{campusName === 'marathahalli' && (
+    <Gallery
+    id="around-the-campus"
+    gallery={[
+      { src: aroundthecampus1, caption: "Transport Buses" },
+      { src: aroundthecampus2, caption: "Campus Exterior" },
+      { src: aroundthecampus3, caption: "Campus Exterior" },
+      { src: aroundthecampus4, caption: "Campus Exterior" }
+    ]}
+  />
   <Gallery
-  id="around-the-campus"
-  gallery={[
-    { src: aroundthecampus1, caption: "Transport Buses" },
-    { src: aroundthecampus2, caption: "Campus Exterior" },
-    { src: aroundthecampus3, caption: "Campus Exterior" },
-    { src: aroundthecampus4, caption: "Campus Exterior" }
-  ]}
-/>
-<Gallery
-  id="classrooms"
-  gallery={[
-    { src: classroom1, caption: "Activity Room" },
-    { src: classroom2, caption: "Clasroom Interiors" },
-    { src: classroom3, caption: "Clasroom Interiors" },
-    { src: classroom4, caption: "Well-Stocked Library" },
-    { src: classroom5, caption: "Clasroom Interiors" }
-  ]}
-/>
-<Gallery
-  id="academic-labs"
-  gallery={[
-    { src: academiclabs1, caption: "Biology Lab" },
-    { src: academiclabs2, caption: "Chemistry Lab" },
-    { src: academiclabs3, caption: "Computer Science Lab" },
-    { src: academiclabs4, caption: "Physics Lab" }
-  ]}
-/>
-<Gallery
-  id="extrafacility"
-  gallery={[
-    { src: extrafacility1, caption: "Yoga Ground" },
-    { src: extrafacility2, caption: "Music Room - Orchestra" },
-    { src: extrafacility3, caption: "Robotics Lab" },
-    { src: extrafacility4, caption: "Music Room - Piano " },
-    { src: extrafacility5, caption: "Well-equipped Infirmary" },
-    { src: extrafacility6, caption: "Music Room - Guitar" },
-    { src: extrafacility7, caption: "Music Room - Drums" }
-  ]}
-/>
-<Gallery
-  id="sportsfacility"
-  gallery={[
-    { src: sportsfacility1, caption: "Basketball Ground" },
-    { src: sportsfacility2, caption: "Skating Ring" },
-    { src: sportsfacility3, caption: "Cricket Ground" },
-    { src: sportsfacility4, caption: "Swimming Pool" },
-    { src: sportsfacility5, caption: "Football Ground" }
-  ]}
-/>
+    id="classrooms"
+    gallery={[
+      { src: classroom1, caption: "Activity Room" },
+      { src: classroom2, caption: "Clasroom Interiors" },
+      { src: classroom3, caption: "Clasroom Interiors" },
+      { src: classroom4, caption: "Well-Stocked Library" },
+      { src: classroom5, caption: "Clasroom Interiors" }
+    ]}
+  />
+  <Gallery
+    id="academic-labs"
+    gallery={[
+      { src: academiclabs1, caption: "Biology Lab" },
+      { src: academiclabs2, caption: "Chemistry Lab" },
+      { src: academiclabs3, caption: "Computer Science Lab" },
+      { src: academiclabs4, caption: "Physics Lab" }
+    ]}
+  />
+  <Gallery
+    id="extrafacility"
+    gallery={[
+      { src: extrafacility1, caption: "Yoga Ground" },
+      { src: extrafacility2, caption: "Music Room - Orchestra" },
+      { src: extrafacility3, caption: "Robotics Lab" },
+      { src: extrafacility4, caption: "Music Room - Piano " },
+      { src: extrafacility5, caption: "Well-equipped Infirmary" },
+      { src: extrafacility6, caption: "Music Room - Guitar" },
+      { src: extrafacility7, caption: "Music Room - Drums" }
+    ]}
+  />
+  <Gallery
+    id="sportsfacility"
+    gallery={[
+      { src: sportsfacility1, caption: "Basketball Ground" },
+      { src: sportsfacility2, caption: "Skating Ring" },
+      { src: sportsfacility3, caption: "Cricket Ground" },
+      { src: sportsfacility4, caption: "Swimming Pool" },
+      { src: sportsfacility5, caption: "Football Ground" }
+    ]}
+  />
+)}
 <!-- DiscoverCampus -->
 
 

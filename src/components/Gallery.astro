@@ -31,17 +31,17 @@ const slideId = 'slide' + id
           <div 
             data-slide-pb 
             data-target-slideId={slideId}
-            class="w-10 h-10 max-md:w-10 max-md:h-10 pointer-events-auto cursor-pointer" 
+            class="w-10 h-10 max-md:w-10 max-md:h-10 cursor-pointer" 
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4C35.0457 4 44 12.9543 44 24C44 35.0457 35.0457 44 24 44ZM28.0607 16.9393C27.4749 16.3536 26.5251 16.3536 25.9393 16.9393L19.9393 22.9393C19.3536 23.5251 19.3536 24.4749 19.9393 25.0607L25.9393 31.0607C26.5251 31.6464 27.4749 31.6464 28.0607 31.0607C28.6464 30.4749 28.6464 29.5251 28.0607 28.9393L23.1213 24L28.0607 19.0607C28.6464 18.4749 28.6464 17.5251 28.0607 16.9393Z" fill="white"/>
             </svg>
           </div>
-            <Text type="subtitle" class="text-white" data-slides-captions={[gallery.map(slide => slide.caption)]}>{gallery[0].caption}</Text>
+            <Text type="subtitle" class="text-white" data-caption-id={slideId} data-slides-captions={[gallery.map(slide => slide.caption)]}>{gallery[0].caption}</Text>
           <div
             data-slide-nb
-            data-target-slideId={slideId}
-            class="-scale-100 w-10 h-10 max-md:w-10 max-md:h-10 pointer-events-auto cursor-pointer"
+          data-target-slideId={slideId}
+            class="-scale-100 w-10 h-10 max-md:w-10 max-md:h-10 cursor-pointer"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4C35.0457 4 44 12.9543 44 24C44 35.0457 35.0457 44 24 44ZM28.0607 16.9393C27.4749 16.3536 26.5251 16.3536 25.9393 16.9393L19.9393 22.9393C19.3536 23.5251 19.3536 24.4749 19.9393 25.0607L25.9393 31.0607C26.5251 31.6464 27.4749 31.6464 28.0607 31.0607C28.6464 30.4749 28.6464 29.5251 28.0607 28.9393L23.1213 24L28.0607 19.0607C28.6464 18.4749 28.6464 17.5251 28.0607 16.9393Z" fill="white"/>
@@ -69,20 +69,17 @@ const slideId = 'slide' + id
 
 
 <script>
-  // const allSlideTargets = document.querySelectorAll<HTMLElement>('[data-slide-target]')
-  // allSlideTargets.forEach(slideTarget => {
-  //   const allSlideGroups = document.querySelectorAll<HTMLElement>(`[data-target-slide-group="${slideTarget.dataset.slideTarget}"]`)
-    
-  // })
 
   const prevButtonsSlides = document.querySelectorAll<HTMLElement>('[data-slide-pb]')
   const nextButtonsSlides = document.querySelectorAll<HTMLElement>('[data-slide-nb]')
 
-  const captionText = document.querySelector<HTMLElement>('[data-slides-captions]')
-  
-  const allCaptions = captionText.dataset.slidesCaptions.split(',')
 
   const goToPrevSlide = slideId => {
+    const captionText = document.querySelector<HTMLElement>(`[data-caption-id="${slideId}"][data-slides-captions]`)
+  
+    const allCaptions = captionText.dataset.slidesCaptions.split(',')
+    console.log(captionText, allCaptions)
+
     const allSlides = document.querySelectorAll<HTMLElement>(`[data-target-slide="${slideId}"]`)
     const allSlidesLength = allSlides.length
     const activeSlide = [...allSlides].find(slide => slide.dataset.isActive === 'true')
@@ -98,20 +95,29 @@ const slideId = 'slide' + id
     prevSlide.dataset.isActive = 'true'
   }
 
-  const goToNextSlide =  slideId => {
+  const goToNextSlide = slideId => {
+
+    const captionText = document.querySelector<HTMLElement>(`[data-caption-id="${slideId}"][data-slides-captions]`)
+  
+    const allCaptions = captionText.dataset.slidesCaptions.split(',')
+    console.log(captionText, allCaptions)
+
     const allSlides = document.querySelectorAll<HTMLElement>(`[data-target-slide="${slideId}"]`)
     const allSlidesLength = allSlides.length
     const activeSlide = [...allSlides].find(slide => slide.dataset.isActive === 'true')
     const activeSlideIndex = parseInt(activeSlide.dataset.targetSlideI)
+
     const nextSlideIndex = activeSlideIndex === allSlidesLength - 1 ? 0 : activeSlideIndex + 1
     const nextSlide = document.querySelector<HTMLElement>(`[data-target-slide="${slideId}"][data-target-slide-i="${nextSlideIndex}"]`)
-    
+      
     const newCaption = allCaptions[nextSlideIndex]
+    console.log('activeSlideIndex --> ', activeSlideIndex)
     captionText.innerText = newCaption
 
     activeSlide.dataset.isActive = 'false'
     nextSlide.dataset.isActive = 'true'
   }
+
   prevButtonsSlides.forEach(prevButton => {
     prevButton.addEventListener('click', () => {
       goToPrevSlide(prevButton.dataset.targetSlideid)
@@ -120,15 +126,18 @@ const slideId = 'slide' + id
 
   nextButtonsSlides.forEach(nextButton => {
     nextButton.addEventListener('click', () => {
+      console.log('nextButton.dataset.targetSlideid', nextButton.dataset.targetSlideid)
       goToNextSlide(nextButton.dataset.targetSlideid)
     })
   })
 
   document.addEventListener('keydown', e => {
-    const modal = document.querySelector<HTMLElement>('[data-modal-id]:not(.modal-hidden)')
+    const allModals = document.querySelectorAll<HTMLElement>('[data-modal-id]')
+    console.log('allModalss....')
+    const modal = [...allModals].find(modal => !modal.classList.contains('modal-hidden'))
     if (modal) {
-      const slide = modal.querySelector('[data-target-slide]')
-      const slideId = slide.dataset.targetSlide
+      const slideId = 'slide' + modal.dataset.modalId
+      console.log('slideId --> ', modal, slideId)
       if (e.key === 'ArrowLeft') {
         goToPrevSlide(slideId)
       }
@@ -138,8 +147,4 @@ const slideId = 'slide' + id
     }
   })
 
-  // const modal = document.querySelector<HTMLElement>('[data-modal-id]:not(.modal-hidden)')
-  // modal.querySelector('[data-target-slide]').classList.add('slide-active')
-  // modal.querySelector('[data-target-slide]').classList.remove('slide-hidden')
-  
 </script>
