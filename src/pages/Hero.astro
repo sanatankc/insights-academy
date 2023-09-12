@@ -66,7 +66,7 @@ console.log(slideImages)
   
     <div class="flex p-xl  items-center text-white justify-between w-full max-sm:p-l">
       <!-- content -- first section -->
-      <div class=`flex gap-l flex-col relative z-10 max-sm:mt-auto`>
+      <div class={`flex gap-l flex-col relative z-10 max-sm:mt-auto`}>
         <div class="flex gap-r flex-col">
           <slot name="topHeading font-display">
             {topHeading ? <Text type="h4" class="uppercase">{topHeading}</Text> : null}
@@ -92,6 +92,7 @@ console.log(slideImages)
       </slot>
      
     </div>
+    
     
   </div>
 </div>
