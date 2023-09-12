@@ -32,18 +32,20 @@ const leaderShipData = leaderShip?.data;
                     <Text type="p" slot="ctaButton" class="max-w-[37ch]">{"Managed by Insight Educational Trust, Insight Academy was founded in 2007 to deliver quality education to all. Management consists of trust members guiding strategic decisions, and a governing council overseeing daily operations. "}</Text>
                     <div
                         slot="previewImage"
-                        class=`w-[50%] h-full object-cover object-center  absolute right-0 preview-image
+                        class=`w-[40%] h-full object-cover object-center  absolute right-0 preview-image
                                max-sm:inset-0 max-sm:w-full
                                 `
                        
-                        /> 
-                        
+                        >
+                        <Image 
+                          slot="previewImage"
+                          src={LeaderShipImage} 
+                          className="w-full h-full object-cover object-center  absolute right-0 max-sm:inset-0 max-sm:w-full" /> 
+                       <div class="absolute inset-0 h-full w-full hidden max-sm:flex" style=`background: linear-gradient(185deg, #0c497478 4.9%, #142634d4 65.98%),url(${LeaderShipImage})`></div>
+                    </div>
 
                     </div>
-                    <!-- <Image 
-                        slot="previewImage"
-                        src={LeaderShipImage} 
-                        className="w-[50%] h-full object-cover object-center  absolute right-0 max-sm:inset-0 max-sm:w-full" />  -->
+              
 
                 </Hero>
             
@@ -78,15 +80,14 @@ const leaderShipData = leaderShip?.data;
         <Footer />
     </div>
     <style>
-        .preview-image{
-            background-image:linear-gradient(185deg, #0c497478 4.9%, #142634d4 65.98%),url("src/images/campus/gas/1.jpeg")
-
-        }
-        @media not all and (max-width: 640px){
+       .preview-image{
+        --background-gradient: "linear-gradient(185deg, #0c497478 4.9%, #142634d4 65.98%)",
+       }
+        /* @media not all and (max-width: 640px){
             .preview-image{
                 background-image:url("src/images/campus/gas/1.jpeg")
             }
-        }
+        } */
     </style>
 </Layout>
 
