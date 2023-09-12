@@ -250,7 +250,7 @@ const data: Data = {
 
         {
           title: 'Sports Academy',
-          description: "Our comprehensive campus facilities encompass a diverse range of sports. With expert trainers, students can engage in activities like football, basketball, cricket, and more. Our dedicated sports room includes options like table tennis, throwball, volleyball, and even swimming!",
+          description: "Our comprehensive campus facilities encompass a diverse range of sports. With expert trainers, students can engage in activities like football, basketball, cricket, and more. Our dedicated sports academy includes options like table tennis, throwball, volleyball, skating and swimming! ",
           images: [sports]
         },
 
@@ -264,13 +264,7 @@ const data: Data = {
           title: 'Music Classes',
           description: "Students unleash their musical potential with our diverse range of classes. From piano and guitar to drums, veena, and singing, our expert instructors help cultivate their passion, bringing melodies to life in an enriching and supportive environment. ",
           images: [music]
-        },
-        {
-          title: 'Computer Science Class',
-          description: "Insight Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse ",
-          images: [ComputerClass],
-          
-        },
+        }
       ],
       contact: {
         details: {
@@ -290,7 +284,7 @@ const data: Data = {
             type: 'address'
           }
         },
-        mapEmbedLink: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyAIyVF44QhoXfwwKHLd1h3N49cQTHS0Yvw&q=Whitefield Glentree Academy, Whitefield, Bengaluru',
+        mapEmbedLink: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.2290894404828!2d77.55730367661839!3d12.892985516593843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3fe19b3ba497%3A0x88e55fe492a8db63!2sInsight%20Academy!5e0!3m2!1sen!2sin!4v1694550190874!5m2!1sen!2sin',
         mindlerLink: 'https://www.mindler.com/schools/GLENTREE2023'
       },
       toppers: [
@@ -424,21 +418,21 @@ const data: Data = {
         details: {
           phoneNo: {
             label: 'Phone No',
-            value: '+91 7899738130',
+            value: '+91 89717 77444, +91 89717 77333',
             type: 'contact'
           },
           workingHours: {
-            label: 'Working Hours',
-            value: 'Monday to Saturday - 8:00 AM to 4:00 PM',
+            label: 'Mail us at',
+            value: 'info@insightacademy.in',
             type: 'mail'
           },
           address: {
-            label: 'Address',
-            value: 'Nallurhalli Rd, Palm Meadows, Nallurhalli, Whitefield, Bengaluru, Karnataka 560066',
+            label: 'We are here',
+            value: 'Opp. Prestige Tech Park, Off. Marathahalli – Sarjapura Outer Ring Road, Kadubeesanahalli, Marathahalli, Bangalore – 560 103',
             type: 'address'
           }
         },
-        mapEmbedLink: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyAIyVF44QhoXfwwKHLd1h3N49cQTHS0Yvw&q=Whitefield Glentree Academy, Whitefield, Bengaluru',
+        mapEmbedLink: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124455.25147306037!2d77.4774783226767!3d12.893145184611434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae124cb9470d67%3A0x3e746feb4a1d3908!2sInsight%20Academy%20School%20Bangalore!5e0!3m2!1sen!2sin!4v1694550265537!5m2!1sen!2sin',
         mindlerLink: 'https://www.mindler.com/schools/GLENTREE2023'
       },
       toppers: [
