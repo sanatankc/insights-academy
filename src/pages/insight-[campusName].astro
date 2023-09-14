@@ -58,6 +58,31 @@ import sportsfacility4 from '../images/campus/marth/campus-facilities/swim.jpeg'
 import sportsfacility5 from '../images/campus/marth/campus-facilities/football-2.jpeg'
 
 
+import sportfacility1k from '../images/campus/knk/campus-facilities/sports/1.webp'
+import sportfacility2k from '../images/campus/knk/campus-facilities/sports/2.webp'
+// import sportfacility3k from '../images/campus/knk/campus-facilities/sports/3.webp'
+import sportfacility4k from '../images/campus/knk/campus-facilities/sports/4.webp'
+import sportfacility5k from '../images/campus/knk/campus-facilities/sports/5.webp'
+import sportfacility6k from '../images/campus/knk/campus-facilities/sports/6.webp'
+import sportfacility7k from '../images/campus/knk/campus-facilities/sports/7.webp'
+
+import labs1k from '../images/campus/knk/campus-facilities/labs/1.webp'
+import labs2k from '../images/campus/knk/campus-facilities/labs/2.webp'
+import labs3k from '../images/campus/knk/campus-facilities/labs/3.webp'
+import labs4k from '../images/campus/knk/campus-facilities/labs/4.webp'
+import labs5k from '../images/campus/knk/campus-facilities/labs/5.webp'
+import labs6k from '../images/campus/knk/campus-facilities/labs/6.webp'
+import labs7k from '../images/campus/knk/campus-facilities/labs/7.webp'
+
+import coScholastic1k from '../images/campus/knk/campus-facilities/co-scholastics/1.webp'
+import coScholastic2k from '../images/campus/knk/campus-facilities/co-scholastics/2.webp'
+import coScholastic3k from '../images/campus/knk/campus-facilities/co-scholastics/3.webp'
+
+import classrooms1k from  '../images/campus/knk/campus-facilities/classrooms/1.webp'
+import classrooms2k from  '../images/campus/knk/campus-facilities/classrooms/2.webp'
+import classrooms3k from  '../images/campus/knk/campus-facilities/classrooms/3.webp'
+
+
 import GalleryFullImageTemp from '../images/GalleryFullImageTemp.png'
 import galleryImageTemp2 from '../images/slides/5.jpeg'
 
@@ -240,6 +265,77 @@ const rounded = [
       </CarouselCard>
     </Carousel>
   )}
+  {campusName === 'kanakapura' && (
+    <Carousel class="gap-16 p-5 pt-8 mt-2 max-md:gap-14 max-md:pt-8 no-scrollbar" id="campus-showcase" stackOnMobile>
+      <!--
+        <CarouselCard>
+          <DeckCard
+            images={[
+              { src: aroundthecampus1, alt: '' },
+              { src: aroundthecampus2, alt: '' }
+            ]}
+            target="around-the-campus"
+          >
+            <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+              Around the campus
+            </Text>
+          </DeckCard>
+        </CarouselCard>
+        -->
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: classrooms1k, alt: '' },
+            { src: classrooms2k, alt: '' }
+          ]}
+          target="classrooms-knk"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Classrooms
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: labs1k, alt: '' },
+            { src: labs2k, alt: '' }
+          ]}
+          target="academic-labs-knk"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Academic Labs
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: coScholastic1k, alt: '' },
+            { src: coScholastic2k, alt: '' }
+          ]}
+          target="extrafacility-knk"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Co-Scholastic Facilities
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: sportfacility1k, alt: '' },
+            { src: sportfacility2k, alt: '' }
+          ]}
+          target="sportsfacility-knk"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Sports Facilities
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+    </Carousel>
+  )}
 </div>
 
 {campusName === 'marathahalli' && (
@@ -291,6 +387,59 @@ const rounded = [
       { src: sportsfacility3, caption: "Cricket Ground" },
       { src: sportsfacility4, caption: "Swimming Pool" },
       { src: sportsfacility5, caption: "Football Ground" }
+    ]}
+  />
+)}
+
+
+{campusName === 'kanakapura' && (
+  <Gallery
+    id="around-the-campusk"
+    gallery={[
+      { src: aroundthecampus1, caption: "Transport Buses" },
+      { src: aroundthecampus2, caption: "Campus Exterior" },
+      { src: aroundthecampus3, caption: "Campus Exterior" },
+      { src: aroundthecampus4, caption: "Campus Exterior" }
+    ]}
+  />
+
+  <Gallery
+    id="classrooms-knk"
+    gallery={[
+      { src: classrooms1k, caption: "Activity Room" },
+      { src: classrooms2k, caption: "Clasroom Interiors" },
+      { src: classrooms3k, caption: "Clasroom Interiors" }
+    ]}
+  />
+  <Gallery
+    id="academic-labs-knk"
+    gallery={[
+      { src: labs1k, caption: "Montessori Lab" },
+      { src: labs2k, caption: "Computer Science Lab" },
+      { src: labs4k, caption: "Computer Science Lab" },
+      { src: labs3k, caption: "Library" },
+      { src: labs5k, caption: "Biology Lab" },
+      { src: labs6k, caption: "Chemistry Lab" },
+      { src: labs7k, caption: "Physics Lab" }
+    ]}
+  />
+  <Gallery
+    id="extrafacility-knk"
+    gallery={[
+      { src: coScholastic1k, caption: "Music" },
+      { src: coScholastic3k, caption: "Music Room - Orchestra" },
+      { src: coScholastic2k, caption: "Robotics Lab" }
+    ]}
+  />
+  <Gallery
+    id="sportsfacility-knk"
+    gallery={[
+      { src: sportfacility1k, caption: "Swimming Pool" },
+      { src: sportfacility2k, caption: "Skating Ring" },
+      { src: sportfacility4k, caption: "Basketball Ground" },
+      { src: sportfacility5k, caption: "Basketball Ground" },
+      { src: sportfacility6k, caption: "Play Nursery" },
+      { src: sportfacility7k, caption: "Football" }
     ]}
   />
 )}
