@@ -32,9 +32,12 @@ import linkedinIcon from '../icons/linkedin.svg'
 import Constrain from '../components/system/Constrain.astro';
 import GoToCta from '../components/GoToCta.astro';
 import Hero from './Hero.astro';
-import PreviewImage from "../images/campus/gas/1.jpeg";
+import PreviewImage from "./src/images/campus/knk/facilities/acitivitiesroom.jpeg";
 import Image from '../components/system/Image.astro';
-import Rank1 from "../images/award.svg"
+import Rank1 from "../images/aboutUs/awards/1.png"
+import Rank2 from "../images/aboutUs/awards/2.png"
+import Rank3 from "../images/aboutUs/awards/3.png"
+
 import Heading from '../components/system/Heading.astro';
 import LeaderShipCTA from "../components/LeaderShipCTA.astro"
 import CommunityImage from "../images/campus/knk/slides/1.jpeg" 
@@ -65,7 +68,7 @@ const missions = [
     <!-- section -->
     
     <div class="flex flex-col relative">
-      <div class="max-h-[400px] flex">
+      <div class="h-[400px] max-h-[800px] flex">
       <div
         class="absolute inset-0 bg-black-100 w-full h-full z-[9] hidden  max-sm:flex"
         style={{
@@ -82,7 +85,7 @@ const missions = [
               showCta={false}
           >
               <Text type="h2" slot="title" class="font-displat font-bold  text-yellow">About Us</Text>
-              <Text type="p" slot="ctaButton" class="max-w-[37ch]">{"Managed by Insight Educational Trust, Insight Academy was founded in 2007 to deliver quality education to all. Management consists of trust members guiding strategic decisions, and a governing council overseeing daily operations. "}</Text>
+              <Text type="p" slot="ctaButton" class="max-w-[70ch]">{"Founded by visionary educationists, Insight Academy strives to make a profound impact on society. 'Quality Education for All' is not just a motto but the essence of our institution since August 15, 2007.  Guided by the Insight Educational Trust, our devoted members ensure this vision guides every endeavour."}</Text>
               <Image slot="previewImage" src={PreviewImage} className="w-[50%] h-full object-cover object-center z-[90] absolute right-0 max-sm:hidden" /> 
              
           </Hero>
@@ -91,29 +94,14 @@ const missions = [
 
       <div
         slot="footer"
-        class=" w-full p-r flex flex-wrap items-center justify-center z-10  max-sm:bg-none bg-[linear-gradient(270deg,_#0C4974_4.9%,_#142634_65.98%)]">
+        class=" w-full p-r flex flex-wrap items-center justify-center z-10 bg-black">
         <Constrain class="flex justify-between items-center" width="1000px">
           <div class="flex gap-[4px] flex-col w-fit items-center" >
-            <img class="w-[100px]" src={Rank1} alt="Rank 1" />
+            <img class="w-[150px]" src={Rank1} alt="Rank 1" />
           </div>
-          <div class="flex gap-[4px] flex-col w-fit p-r items-center">
-            <p class="text-[18px] text-yellow font-display font-semibold text-center max-sm:text-[14px]">
-                EDUCATION <br />
-                TODAY
-            </p>
-            <p class="text-[18px] text-white max-sm:text-[14px]">
-              Rank 1, 2019
-            </p>
-          </div>
-          <div class="flex gap-[4px] flex-col w-fit p-r items-center">
-            <p class="text-[18px] text-yellow font-display font-semibold text-center max-sm:text-[14px]">
-                INDIA SCHOOL <br />
-                MERIT AWARDS 
-            </p>
-            <p class="text-[18px] text-white max-sm:text-[14px]">
-              Rank 1, 2020
-            </p>
-          </div>
+          <img class="w-[150px]" src={Rank2} alt="Rank 1" />
+          <img class="w-[150px]" src={Rank3} alt="Rank 1" />
+         
         </Constrain>
       </div>
   </div>

@@ -1,7 +1,9 @@
 ---
-import YogaDay from "../images/campus/events/YogaaDay.png" 
-import RedDay from "../images/campus/events/RedDay.png" 
-import DoctorDay from "../images/campus/events/doctorDay.png" 
+import hindiDivas from "../images/campus/events/hindidiwas.jpg" 
+import janmashtami from "../images/campus/events/janmashtami.jpg" 
+import rakshabandhan from "../images/campus/events/rakshabandhan.jpg" 
+import chess from "../images/campus/events/chess.jpg" 
+import principal from "../images/campus/events/insight-principal.jpg" 
 import CarouselCard from "../components/carousel/CarouselCard.astro";
 import Star from "../components/icons/Star.astro";
 import Heading from "../components/system/Heading.astro";
@@ -14,12 +16,15 @@ interface Item {
   img: string;
 }
 const config: Item[] = [
-  { title: "Celebrating Yoga Day ‘23", img: YogaDay},
-  { title: "Happy Red Day!", img: RedDay},
-  { title: "Doctor’s Day 2023", img: DoctorDay}
+  { title: "Celebrating Hindi Divas '23", img: hindiDivas},
+  { title: "Janmashtami Celebrations", img: janmashtami},
+  { title: "Rakshabandhan Celebrations", img: rakshabandhan},
+  { title: "Inter School Chess Champion", img: chess},
+  { title: "Excellence in Creative Teaching ", img: principal}
+
 ]
 const {title,showSocial=true} = Astro.props
-const heading = title || "Feature Updates"
+const heading = title || "Featured Updates"
 ---
 
 <div

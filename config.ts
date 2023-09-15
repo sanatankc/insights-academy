@@ -163,7 +163,7 @@ const data: Data = {
   
   ctaLink: 'https://www.insightacademy.in/',
   school: {
-    discription: 'Insight Academy, launched in 2007, ranks among the best schools in Bangalore. Upholding the principle of "Quality Education for All", we create an inclusive, secular educational landscape where all students can flourish, instilling strong academics and comprehensive growth beyond traditional classroom confines.',
+    discription: "Established in 2007, Insight Academy ranks among the best Bangalore schools, driven by 'Quality Education for All'. Our inclusive, secular approach goes beyond traditional classrooms, focusing on robust academics and holistic personal growth. As a leading institution, we prepare students for academic success and life beyond the classroom.",
     
   },
   campus: [
@@ -172,7 +172,7 @@ const data: Data = {
       internalName: 'kanakapura',
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
-      description: 'Located near the peaceful ISRO Layout amidst greenery, we offer focused learning within our ICSE-affiliated institution.',
+      description: 'Located near the ISRO Layout amidst greenery, we offer focused learning within our ICSE-affiliated institution.',
       admissionLink: "https://admissions.neverskip.com/767a2f61336a6e5954447361627856657465723575773d3d/utms-705168We8&utmc-395849Sc9",
       images: [
         {type: 'image', uri: campusbg1, position: 'center 10%'},
@@ -321,7 +321,7 @@ const data: Data = {
       internalName: 'marathahalli',
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
-      description: 'Conveniently positioned in Marathahalli, we foster comprehensive education in a CBSE-affiliated framework.',
+      description: 'Centrally situated in Marathahalli, we offer a comprehensive CBSE-affiliated education framework.',
       admissionLink: "https://admissions.neverskip.com/474e6133503443334b7142572f472b5a5474475363673d3d/utms-6271788&utmc-6f4d699",
       images: [
         {uri: marthcampusbg1, type: 'image', position: 'center'},
