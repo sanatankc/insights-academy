@@ -25,13 +25,18 @@ const {image,quote,author,ctaText,ctaLink,imageFade=false,className} = Astro.pro
         class="object-contain max-h-[200px] rounded-[22px]"
       />
     </slot>
-    <div class='flex flex-col justify-center px-14 max-md:px-0 max-md:items-center'>
+    <div class='flex flex-col justify-center px-14 gap-8 max-md:px-0 max-md:items-center'>
         <Text
             type={'regular'}
             class={'max-md:mt-4 max-md:w-[80%] max-sm:text-center'}
         >
             {quote}
         </Text>
+        <Text
+        type={'subtitle'} class='text-yellow' style={{ textAlign: 'left' }}
+        >
+    {author}
+</Text>
      {ctaText &&
       <div data-video-open="0">
         <Button class='mt-4'>

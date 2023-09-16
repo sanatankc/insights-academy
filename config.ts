@@ -26,6 +26,13 @@ import sports from "./src/images/campus/knk/facilities/sports.jpeg";
 import zumba from "./src/images/campus/knk/facilities/zumba.jpeg";
 import music from "./src/images/campus/knk/facilities/music.jpeg";
 
+import RoboticClassmarth from "./src/images/campus/marth/facilities/robotics.webp";
+import ComputerClassmarth from "./src/images/campus/marth/facilities/codingandcs.webp";
+import KgClassmarth from "./src/images/campus/marth/facilities/acitivitiesroom.webp";
+import sportsmarth from "./src/images/campus/marth/facilities/sports.webp";
+import zumbamarth from "./src/images/campus/marth/facilities/zumba.webp";
+import musicmarth from "./src/images/campus/marth/facilities/music.webp";
+
 import preview1 from './src/images/campus/gas/preview.png'
 import preview2 from './src/images/campus/gaw/preview.png';
 
@@ -389,30 +396,42 @@ const data: Data = {
       facilities: [
         {
           title: 'Robotics Class',
-          description: 'Insight Academy emphasizes hands-on learning through our continually upgraded, modern labs. With  ',
-          images: [RoboticClass],
+          description: "Unleash innovation at our school's robotics classes. With an exclusive robotics lab, students engage in immersive, practical learning, nurturing a passion for technology and problem-solving.",
+          images: [RoboticClassmarth],
           bgColor: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(245, 204, 79, 0.20) 100%);',
           
         },
         
         {
-          title: 'Computer Science Class',
-          description: "Insight Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse ",
-          images: [ComputerClass],
+          title: 'Coding & CS Class',
+          description: "Insight Academy integrates technology into education, offering computer learning with dedicated labs for both primary and senior grades. Each student has access to their individual computer, following a syllabus curated by expert computer educators.",
+          images: [ComputerClassmarth],
           
         },
         
         {
-          title: 'Activities Room for KG',
-          description: "Insight Academy integrates technology into education, providing computer learning with a dedicated",
-          images: [KgClass]
+          title: 'Curiosity Room for KG',
+          description: "Laughter and learning intertwine for our youngest explorers here. Bursting with playful adventures, this vibrant wonderland sparks joy, imagination, and endless learning.",
+          images: [KgClassmarth]
         },
+
         {
-          title: 'Computer Science Class',
-          description: "Insight Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse ",
-          images: [ComputerClass],
-          
+          title: 'Sports Academy',
+          description: "Our comprehensive campus facilities encompass a diverse range of sports. With expert trainers, students can engage in activities like football, basketball, cricket, and more. Our dedicated sports academy includes options like table tennis, throwball, volleyball, skating and swimming! ",
+          images: [sportsmarth]
         },
+
+        {
+          title: 'Yoga & Zumba',
+          description: "Our experienced yoga instructors  guide students through each pose, and help understand the magic of breathing, stretching, and finding their inner calm. Students also get their groove on with our super fun Zumba sessions, where they can dance, sweat, and be fit while having an absolute blast!",
+          images: [zumbamarth]
+        },
+
+        {
+          title: 'Music Classes',
+          description: "Students unleash their musical potential with our diverse range of classes. From piano and guitar to drums, veena, and singing, our expert instructors help cultivate their passion, bringing melodies to life in an enriching and supportive environment. ",
+          images: [musicmarth]
+        }
       ],
       contact: {
         details: {
@@ -477,13 +496,13 @@ const data: Data = {
       },
       {
         image: testimonial2,
-        quote: 'Insight Academy has enriched my life! The supportive teachers and engaging activities have truly made my school years memorable.',
-        author: '- SANATAN (grade 10)',
+        quote: 'This school has helped me develop a wide range of skills at a very highly detailed level, which aids me in all aspects of life, from studying to sports.',
+        author: '- KAMAT (Grade 10)',
       },
       {
         image: testimonial1,
-        quote: 'At Insight Academy, every day is an adventure! The fascinating blend of academics and co-curriculars instills in us the love for learning.',
-        author: '- SANATAN (grade 10)',
+        quote: "The teachers and the whole environment here encourage you to push beyond your limits and that's why I feel like this is the perfect school for me! ",
+        author: '- ABHINAV (grade 10)',
 
       },
     ],
