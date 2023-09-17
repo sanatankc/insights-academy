@@ -86,13 +86,13 @@ import Testimonial from '../components/landingPage/Testimonial.astro';
 
       <div
         slot="footer"
-        class=" w-full p-r flex flex-wrap h-[125px] items-center justify-center z-10 bg-black">
-        <Constrain class="flex justify-between items-center" width="1200px">
+        class=" w-full p-r flex flex-wrap h-[125px] items-center justify-center z-10 bg-black max-md:h-full">
+        <Constrain class="flex justify-between items-center max-md:flex-wrap max-md:gap-8 max-md:justify-center" width="1200px">
           
-          <img class="w-[180px]" src={Rank1} alt="Rank 1" />
-          <img class="w-[180px]" src={Rank2} alt="Rank 1" />
-          <img class="w-[180px]" src={Rank3} alt="Rank 1" />
-          <img class="w-[180px]" src={Rank4} alt="Rank 1" />
+          <img class="w-[180px] max-md:w-[40%] max-md:max-w-[150px]" src={Rank1} alt="Rank 1" />
+          <img class="w-[180px] max-md:w-[40%] max-md:max-w-[150px]" src={Rank2} alt="Rank 1" />
+          <img class="w-[180px] max-md:w-[40%] max-md:max-w-[150px]" src={Rank3} alt="Rank 1" />
+          <img class="w-[180px] max-md:w-[40%] max-md:max-w-[150px]" src={Rank4} alt="Rank 1" />
          
          
         </Constrain>
