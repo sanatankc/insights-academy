@@ -67,7 +67,7 @@ const images = [
           images.map((item,index) => {
             let radiusStyle = 'rounded-tl-[200px]'
             if(index === 1){
-                radiusStyle = 'rounder-[0px]'
+                radiusStyle = 'rounder-[200px]'
             }
             if(index === 2){
                 radiusStyle = 'rounded-br-[200px]'
@@ -165,9 +165,9 @@ const images = [
     ];
     const allText = 
         [
-            `Instil a strong academic base in <br /> a secular, cross-cultural and a <br /> diversified environment.`,
-            `Updates a strong academic base in <br /> a secular, cross-cultural and a <br /> diversified environment.`,
-            `Not Updates a strong academic base in <br /> a secular, cross-cultural and a <br /> diversified environment.`
+            `Deliver quality education for holistic student development, preparing for life.`,
+            `Cultivate robust academics in a diverse, cross-cultural setting.`,
+            `Foster a positive, stimulating environment to unlock each student's potential.`
         ]
     
     let activeIndex = 0
@@ -178,7 +178,7 @@ const images = [
         if(slideText){
             slideText.classList.add('moveText')
         }
-    },2800)
+    },3000)
     
     if(slideText){
         slideText.onanimationend = () => {

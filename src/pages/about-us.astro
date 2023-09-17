@@ -37,6 +37,7 @@ import Image from '../components/system/Image.astro';
 import Rank1 from "../images/aboutUs/awards/1.png"
 import Rank2 from "../images/aboutUs/awards/2.png"
 import Rank3 from "../images/aboutUs/awards/3.png"
+import Rank4 from "../images/aboutUs/awards/4.png"
 
 import Heading from '../components/system/Heading.astro';
 import LeaderShipCTA from "../components/LeaderShipCTA.astro"
@@ -45,21 +46,7 @@ import SlideShow from '../components/SlideShow.astro';
 import Testimonial from '../components/landingPage/Testimonial.astro';
 
 
-const founderDesk = [
-  { name: 'Vittal Bhandary', title: 'CEO', linkedin: "https://www.linkedin.com/in/vittal-bhandary-51902519/", image: vittal, message: "Glentree Academy envisions a transformative approach to education, addressing the shortcomings of traditional learning. As a child, I found little joy in the stress of memorisation, yet I thrived in the immersive world of sports. Inspired by my own experiences and Preeti's vision of a happy learning environment, Glentree aims to create a place where children can freely explore their talents and passions without the burden of grades." },
-  { name: 'Preeti Bhandary', title: 'DIRECTOR', linkedin: 'https://www.linkedin.com/in/preeti-bhandary-0164231a', image: preeti, message: "Research shows that involved parents contribute to happier, healthier, and more successful children. However, in today's fast-paced world, lack of quality parenting time leads to increased pressure on children. We often neglect the present moment, consumed by daily crises. Engaging children in multiple activities is no substitute for parental presence, despite common misconceptions." },
-  { name: 'Sowmia Raguraman', title: 'MENTOR PRINCIPAL', linkedin: 'https://www.linkedin.com/in/sowmia-raguraman-9b51b364', image: sowmia, message: "As an educator, my goal is to nurture a growth mindset in children, teaching them to embrace failures as opportunities for progress. I strive to help them measure their advancement effectively, academically and personally. By encouraging a positive attitude towards change and letting go of past negative experiences, we can develop their mature thinking from an early age. This mindset enables them to persevere through setbacks, accept constructive criticism, refine their skills, and view mistakes as stepping stones to success." },
-  { name: 'Rachana Heda', title: 'COO', linkedin: 'https://www.linkedin.com/in/rachana-heda-b218881a6', image: rachna, message: "As the proud leader of this educational institution, I am thrilled to share our commitment to learning for life. Our vision is to cultivate lifelong learners who are curious, creative, and compassionate individuals. Through innovative teaching methods, personalized guidance, and a diverse range of opportunities, we strive to equip our students with the skills, knowledge, and values needed to thrive in an ever-changing world. Together with our dedicated educators, supportive parents, and enthusiastic students, we embark on a journey of academic excellence, character development, and holistic growth. Join us as we shape the leaders and innovators of tomorrow." },
-]
 
-const missions = [
-  { image: mission1, title: ['Empowering', 'Personal Growth'], icon: cupIcon, description: "Nurturing and empowering individuals to unleash their full potential in a supportive learning environment." },
-  { image: mission2, title: ['Education with a', 'Global Perspective'], icon: globeIcon, description: "Broadening horizons and cultivating future leaders through innovative teaching and learning approaches." },
-  { image: mission3, title: ['Igniting', 'Lifelong Learning'], icon: fireSquareIcon, description: "Sparking a passion for continuous exploration and discovery, making learning an engaging and enduring journey." },
-  { image: mission4, title: ['Building', 'Resilient Individuals'], icon: sledgeHammerIcon, description: "Equipping students with essential values, life skills, and character development for personal and professional success." },
-  { image: mission5, title: ['Strong Parents-School', 'Parternships'], icon: LinkSquareIcon, description: "Establishing collaborative communities that foster effective communication and engagement for optimal student development." },
-  { image: mission6, title: ['Innovation & Improvement', 'in Education'], icon: graphUpIcon, description: "Embracing change, innovation, and research to create a dynamic and progressive educational environment." },
-]
 ---
 
 <Layout title="Welcome to Astro.">
@@ -84,8 +71,13 @@ const missions = [
               }
               showCta={false}
           >
-              <Text type="h2" slot="title" class="font-displat font-bold  text-yellow">About Us</Text>
-              <Text type="p" slot="ctaButton" class="max-w-[70ch]">{"Founded by visionary educationists, Insight Academy strives to make a profound impact on society. 'Quality Education for All' is not just a motto but the essence of our institution since August 15, 2007.  Guided by the Insight Educational Trust, our devoted members ensure this vision guides every endeavour."}</Text>
+
+            
+              <Text type="h2" slot="title" class="font-displat font-bold  text-white">Empowering Learners, </Text>
+              <Text type="h2" slot="title" class="font-displat font-bold  text-yellow">Impacting Society </Text>
+
+
+              <Text type="p" slot="ctaButton" class="max-w-[60ch]">{"Founded by visionary educationists, Insight Academy strives to make a profound impact on society. 'Quality Education for All' is not just a motto but the essence of our institution since August 15, 2007.  Guided by the Insight Educational Trust, our devoted members ensure this vision guides every endeavour."}</Text>
               <Image slot="previewImage" src={PreviewImage} className="w-[50%] h-full object-cover object-center z-[90] absolute right-0 max-sm:hidden" /> 
              
           </Hero>
@@ -94,13 +86,14 @@ const missions = [
 
       <div
         slot="footer"
-        class=" w-full p-r flex flex-wrap h-[150px] items-center justify-center z-10 bg-black">
+        class=" w-full p-r flex flex-wrap h-[125px] items-center justify-center z-10 bg-black">
         <Constrain class="flex justify-between items-center" width="1200px">
           
+          <img class="w-[180px]" src={Rank1} alt="Rank 1" />
           <img class="w-[180px]" src={Rank2} alt="Rank 1" />
           <img class="w-[180px]" src={Rank3} alt="Rank 1" />
-          <img class="w-[180px]" src={Rank2} alt="Rank 1" />
-          <img class="w-[180px]" src={Rank3} alt="Rank 1" />
+          <img class="w-[180px]" src={Rank4} alt="Rank 1" />
+         
          
         </Constrain>
       </div>
@@ -109,12 +102,12 @@ const missions = [
       <Constrain>
      <div class="flex items-center flex-col gap-l">
         <Heading
-          first="Our"
-          second="Objectives"
+          first="Quality Education"
+          second="For All"
           subtitle="MISSION & VISION"
         ></Heading>
-        <p class="text-2xl text-neutral-dark-grey max-w-[70ch] text-center">
-          Insight Academy aims to direct the development of education to realize the immense nation building aptitudes and attitudes by utilizing the potential of aptly trained teachers. We believe education is not just a classroom affair, but it spreads over in myriad directions to provide learning in a child-friendly environment with no stress on confined syllabi or the examination.
+        <p class="text-xl text-neutral-dark-grey max-w-[100ch] text-center">
+          At Insight Academy, we aim to transform education for nation-building by harnessing the expertise of dedicated educators.. Education, to us, is not confined to classrooms; it extends into life itself. Our innovative approach prioritises holistic development over rigid syllabi or exams. We foster curious minds, instilling a love for learning that transcends our school's boundaries.
         </p>
       </div>
   
@@ -143,12 +136,12 @@ const missions = [
           />
           </div>
           
-          <div class="flex  gap-[28px] flex-col w-full py-xl px-r basis-[70%] rounded-tr-[27px] card max-sm:gap-r">
-            <Text type="h2" class="text-yellow font-bold max-sm:text-lg">
+          <div class="flex  gap-[12px] flex-col w-full py-xl px-r basis-[70%] rounded-tr-[27px] card max-sm:gap-r">
+            <Text type="h3" class="text-yellow  font-bold max-sm:text-lg">
               Work with us
             </Text>
-            <Text type="h1" class="text-white font-bold leading-[60px] max-md:leading-[40px]">
-                Join the <br />
+            <Text type="h2" class="text-white font-bold leading-[60px] max-md:leading-[40px]">
+                Join the
                 Insight community
             </Text>
             <Text type='p' class="text-white">
