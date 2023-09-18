@@ -35,6 +35,12 @@ import slide3 from "../images/slides/3.jpeg"
 import slide4 from "../images/slides/4.jpeg"
 import slide5 from "../images/slides/5.jpeg"
 
+import slideMb1 from "../images/slides/mb/1.jpeg"
+import slideMb2 from "../images/slides/mb/2.jpeg"
+import slideMb3 from "../images/slides/mb/3.png"
+import slideMb4 from "../images/slides/mb/4.webp"
+import slideMb5 from "../images/slides/mb/5.jpeg"
+
 const toppers = campusConfig?.toppers
 
 const admissionLink = campusConfig?.admissionLink || config.campus[0].admissionLink
@@ -52,17 +58,30 @@ const admissionLink = campusConfig?.admissionLink || config.campus[0].admissionL
           <Hero
             config={{title:'Welcome to Insight Academy',bgImage: campus1}}
             showSlide={true}
-            slideImages={
-              [
-              {slide: slide5, position: 'center 64%', type: 'image'},
-              {slide: slide1, position: 'center', type: 'image'},
-              {slide: slide2, position: 'right 90%', type: 'image'},
-              {slide: slide3, position: 'center ', type: 'image'},
-              {slide: slide4, position: 'center', type: 'image'},
-              
-            ]
-            }
+            slideImages={[
+              {slide: [
+                { src: slide5, media: "(min-width: 768px)", position: 'center 64%', },
+                { src: slideMb5, media: "(max-width: 768px)" },
+              ], type: 'image', picture: true},
+              {slide: [
+                { src: slide1, media: "(min-width: 768px)", position: 'center 64%', },
+                { src: slideMb1, media: "(max-width: 768px)" },                
+              ], picture: true, type: 'image'},
+              {slide: [
+                { src: slide2, media: "(min-width: 768px)", position: 'center 64%', },
+                { src: slideMb2, media: "(max-width: 768px)" },                
+              ], picture: true, type: 'image'},
+              {slide: [
+                { src: slide3, media: "(min-width: 768px)", position: 'center 64%', },
+                { src: slideMb3, media: "(max-width: 768px)" },                
+              ], picture: true, type: 'image'},
+              {slide: [
+                { src: slide4, media: "(min-width: 768px)", position: 'center 64%', },
+                { src: slideMb4, media: "(max-width: 768px)" },                
+              ], picture: true, type: 'image'},
+            ]}
             contentDirection="items-end"
+            heroOpacity={0.9}
             className="rounded-[20px] overflow-hidden font-roundo"
 
             >

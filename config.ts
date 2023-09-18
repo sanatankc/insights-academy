@@ -3,9 +3,16 @@ import campus1 from './src/images/campus/gas/gallery/1.jpeg';
 // putting knk campus bg images here
 import campusbg1 from './src/images/campus/knk/slides/1.jpeg';
 import campusbg2 from './src/images/campus/knk/slides/2.jpeg';
-import campusbg3 from './src/images/campus/knk/slides/3.jpeg';
 import campusbg4 from './src/images/campus/knk/slides/4.jpeg';
+import campusbg5 from './src/images/campus/knk/slides/5.jpeg';
 import campusbg6 from './src/images/campus/knk/slides/6.jpeg';
+
+import campusbg1Mb from './src/images/campus/knk/slides/mb/1.jpeg';
+import campusbg2Mb from './src/images/campus/knk/slides/mb/2.jpeg';
+import campusbg4Mb from './src/images/campus/knk/slides/mb/4.jpeg';
+import campusbg5Mb from './src/images/campus/knk/slides/mb/5.jpeg';
+import campusbg6Mb from './src/images/campus/knk/slides/mb/6.jpeg';
+
 import principalknk from "./src/images/campus/knk/knk_principal.jpeg"
 import kindergartenknk from "./src/images/campus/knk/kindergartenknk.jpeg"
 import grade6knk from "./src/images/campus/knk/6-10knk.jpeg"
@@ -61,7 +68,7 @@ type Campus = {
   description: string;
   hightlights?: string[];
   internalName: string;
-  images: string[];
+  images: any;
   topHeading?: string;
   subHeading?: string;
   bgImage?: string;
@@ -182,11 +189,26 @@ const data: Data = {
       description: 'Located near the ISRO Layout amidst greenery, we offer focused learning within our ICSE-affiliated institution.',
       admissionLink: "https://admissions.neverskip.com/767a2f61336a6e5954447361627856657465723575773d3d/utms-705168We8&utmc-395849Sc9",
       images: [
-        {type: 'image', uri: campusbg1, position: 'center 10%'},
-        {type: 'image', uri: campusbg2, position: 'center'},
-        {type: 'image', uri: campusbg3, position: 'center'},
-        {type: 'image', uri: campusbg4, position: 'center'},
-        {type: 'image', uri: campusbg6, position: 'center'},
+        {type: 'picture', slide: [
+          { src: campusbg1, media: "(min-width: 768px)", position: 'center 64%' },
+          { src: campusbg1Mb, media: "(max-width: 768px)" },
+        ], position: 'center 10%'},
+        {type: 'picture', slide: [
+          { src: campusbg2, media: "(min-width: 768px)", position: 'center 64%' },
+          { src: campusbg2Mb, media: "(max-width: 768px)" },
+        ], position: 'center 10%'},
+        {type: 'picture', slide: [
+          { src: campusbg4, media: "(min-width: 768px)", position: 'center 64%' },
+          { src: campusbg4Mb, media: "(max-width: 768px)" },
+        ], position: 'center 10%'},
+        {type: 'picture', slide: [
+          { src: campusbg5, media: "(min-width: 768px)", position: 'center 64%' },
+          { src: campusbg5Mb, media: "(max-width: 768px)" },
+        ], position: 'center 10%'},
+        {type: 'picture', slide: [
+          { src: campusbg6, media: "(min-width: 768px)", position: 'center 64%' },
+          { src: campusbg6Mb, media: "(max-width: 768px)" },
+        ], position: 'center 10%'},
       ],
       bgImage: campus1,
       ctaText: 'Explore Campus',
@@ -195,7 +217,7 @@ const data: Data = {
           image: principalknk,
           name: "Mrs.May Ruth D'Souza",
           role: 'PRINCIPAL',
-          body: "Insight Academy, founded in 2007, is a school dedicated to providing quality education for all children, regardless of their intelligence, physical condition, or challenges. With a focus on holistic development and a committed team of well-trained teachers, the school goes beyond the minimum requirements to offer additional facilities and enhance students' learning abilities. The strong partnership between students, parents, and the institution fosters a foundation for a better future."
+          body: "At Insight Academy, we're dedicated to offering quality education for every child, regardless of their abilities or challenges. We prioritize holistic development and our team of well-trained teachers goes the extra mile to provide additional support. The strong partnership between students, parents, and the school lays the foundation for a brighter future."
         }
       ],
       academic: [
@@ -344,7 +366,7 @@ const data: Data = {
           image: principalmrth,
           name: 'Mrs. Ramola Melita Dsouza',
           role: 'PRINCIPAL',
-          body: 'At Insight, we prioritize nurturing creativity and critical thinking in students. Our mission is to foster happiness, peace, and harmony while preparing them for a rapidly changing world. Our dedicated teachers guide students to understand and imagine beyond classroom boundaries. We offer a well-rounded curriculum and encourage participation in co-curricular activities, promoting qualities like honesty, empathy, and respect, shaping them into future global citizens.'
+          body: 'At Insight, we cherish creativity and critical thinking. Our mission is to cultivate happiness, peace, and harmony, preparing students for a dynamic world. Our dedicated teachers inspire students to explore beyond the classroom. With a holistic curriculum and co-curricular engagement, we foster values like honesty, empathy, and respect, shaping them into future global citizens.'
         }
       ],
       academic: [

@@ -32,7 +32,7 @@ import aroundthecampus3 from '../images/campus/marth/campus-facilities/campus.jp
 import aroundthecampus4 from '../images/campus/marth/campus-facilities/corridor.jpeg'
 
 
-import classroom1 from '../images/campus/marth/campus-facilities/activity-room.jpeg'
+import classroom1 from '../images/campus/marth/campus-facilities/activity-room.webp'
 import classroom2 from '../images/campus/marth/campus-facilities/classroom-3.jpeg'
 import classroom3 from '../images/campus/marth/campus-facilities/classroom-1.jpeg'
 import classroom4 from '../images/campus/marth/campus-facilities/library.jpeg'
@@ -125,9 +125,12 @@ const rounded = [
          
         }
       }
-       slideImages={ campusConfig?.images.map(item => ({
+       slideImages={ campusConfig?.images.map(item => (item.type === 'picture' ? {
+        "slide": item.slide, type: 'image', picture: true, position: 'center top'
+      } : {
         "slide": item.uri, position: item.position, type: item.type
       }))}
+      heroOpacity={campusName === 'marathahalli' ? 0.2 : 0.8}
       showSlide={true}
       contentDirection="items-end"
       bgImageBgColor="linear-gradient(359deg, #1B2226 0%, rgba(19, 112, 167, 0.00) 100%)"
@@ -187,14 +190,14 @@ const rounded = [
 <div id="campus-facilities" style="scroll-margin: 60px;" class="p-xl px-xl flex flex-col justify-center gap-l scroll-m-14 max-sm:p-r max-sm:gap-r max-md:mt-4">
   <Heading first="Discover our" second={"Campus"} subtitle="Explore Insight" />
   <div class="flex flex-row w-full justify-between max-md:flex-col">
-    <Text type="regular" class="text-neutral-dark-grey max-md:mb-5 max-w-4xl">
+    <Text type="regular" class="text-neutral-dark-grey max-md:mb-5 max-w-6xl flex-1 mr-4">
       Discover a nurturing environment with well-designed classrooms, sprawling grounds, and a host of facilities, all dedicated to providing students with a holistic and enriching educational experience.
     </Text>
     <a href={campusName === 'marathahalli' 
       ? ""
       : "https://drive.google.com/file/d/1VcI-cGbtwI0FaUyCanqv2AxzfNaTc6La/view?usp=sharing"
-    } target="_blank">
-      <Button>Watch Campus Tour Video</Button>
+    } target="_blank" class="">
+      <Button>Watch Campus Tour</Button>
     </a>
 
   </div>
@@ -365,7 +368,7 @@ const rounded = [
     gallery={[
       { src: academiclabs1, caption: "Biology Lab" },
       { src: academiclabs2, caption: "Chemistry Lab" },
-      { src: academiclabs3, caption: "Computer Science Lab" },
+      { src: academiclabs3, caption: "Computer Lab" },
       { src: academiclabs4, caption: "Physics Lab" }
     ]}
   />
