@@ -162,7 +162,7 @@ const rounded = [
 <div class="flex p-xl justify-center gap-l flex-col scroll-mt-24 max-sm:p-l" id="principal-note">
   <Heading first="Principal’s" second={"Note"} subtitle="A GUIDING MESSAGE FROM OUR LEADER" />
   <div class="flex items-center justify-center gap-l max-sm:flex-col">
-    <img class="w-[450px]" src={
+    <img class="w-[450px] h-[350px] object-cover" src={
       leaderMessages?.[0].image
     } alt="">
     <div class="flex flex-col gap-r">
@@ -526,15 +526,19 @@ const rounded = [
   <div class="flex flex-col gap-l px-xl max-sm:px-0">
     <Heading first="Life at" second={"Insight"} subtitle="Experiencing the Full Spectrum of Learning">
     </Heading>
-    <div class="flex items-center gap-l max-md:flex-col">
-      <div class="flex gap-l flex-col">
-      <p class="text-lg max-sm:text-base">
-          At Insight Academy, we are dedicated to fostering well-rounded individuals by integrating academic education with essential life skills.
-        </p>
-        <!-- <p class="text-2xl max-sm:text-base">
-          Embracing a holistic approach, our students spend <span class="text-primary font-bold">4 hours on academics</span> and <span class="text-primary font-bold">and 1 hour engaging in outdoor activities</span>, ensuring a balanced and fulfilling educational journey.    </p> -->
-      </div>
-      <img src={campusConfig?.images[0].uri || campusConfig?.images[0].slide[0].src} class="w-[326px] h-[198px]" />
+    <div class="flex items-center gap-20 max-md:flex-col">
+        <div class="flex gap-l flex-col">
+          <p class="text-lg max-sm:text-base">
+            At Insight Academy, we are dedicated to fostering well-rounded individuals by integrating academic education with essential life skills.
+          </p>
+        </div>
+        <Image
+          className={`
+            h-[170px] min-w-[460px] max-md:min-w-[520px] flex-1 w-full max-w-md object-cover rounded-full max-sm:hidden border p-2 border-yellow
+            ${campusName === 'marathahalli' ? 'object-center' : 'object-top'}
+          `}
+          src={campusConfig?.images[0].uri || campusConfig?.images[0].slide[0].src}
+        />
     </div>
     
   </div>
@@ -564,25 +568,29 @@ const rounded = [
         </defs>
       </svg>
     </div>
-    <div class="grid grid-flow-col grid-rows-1  gap-r overflow-auto no-scrollbar max-sm:flex-col max-w-[1600px] scroll-mt-24  max-sm:grid-flow-row max-sm:center max-sm:place-items-center max-sm:flex" style="grid-auto-columns: minmax(400px, 1fr)">
+    <Carousel class="gap-16 p-5 pt-8 mt-2 max-md:gap-14 max-md:pt-8 no-scrollbar items-stretch" id="activities-offered" stackOnMobile>
       {
         facilities?.map(item => {
-            return  <div class={`flex flex-col max-w-[380px] w-full border-t-0 flex-shrink-0`}
-                         
-                    >
-                        <Image src={item.images[0]} className='border-b-[5px] border-yellow h-[380px] object-cover max-sm:h-[250px]' />
-                        <div class="p-l flex flex-col gap-r  border-[1px] border-t-0 border-gray-900" style="flex-grow: 1;">
-                          <Text type="h4" class="text-neutral-dark-grey font-display font-bold">
-                            {item.title}
-                          </Text>
-                          <Text type="p" class='text-neutral-dark-grey'>
-                            {item.description}
-                          </Text>
-                        </div>
-                    </div>
-        })
+            return  (
+              <CarouselCard>
+                <div class={`flex flex-col max-w-[380px] h-full w-full border-t-0 flex-shrink-0`}>
+                  <Image src={item.images[0]} className='border-b-[5px] border-yellow h-[380px] object-cover max-sm:h-[250px]' />
+                  <div class="p-l flex flex-col gap-r  border-[1px] border-t-0 border-gray-900" style="flex-grow: 1;">
+                    <Text type="h4" class="text-neutral-dark-grey font-display font-bold">
+                      {item.title}
+                    </Text>
+                    <Text type="p" class='text-neutral-dark-grey'>
+                      {item.description}
+                    </Text>
+                  </div>
+              </div>
+              </CarouselCard>
+        )})
       }
-    </div>
+    </Carousel>
+    <!-- <div class="grid grid-flow-col grid-rows-1  gap-r overflow-auto no-scrollbar max-sm:flex-col max-w-[1600px] scroll-mt-24  max-sm:grid-flow-row max-sm:center max-sm:place-items-center max-sm:flex" style="grid-auto-columns: minmax(400px, 1fr)">
+      
+    </div> -->
   </div>
   
  
