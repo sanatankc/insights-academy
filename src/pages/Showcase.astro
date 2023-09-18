@@ -10,20 +10,33 @@ import Heading from "../components/system/Heading.astro";
 import arrow from "../icons/arrow.svg?raw"
 import fb from "../icons/facebook.svg?raw"
 
+import updates1 from "../images/campus/events/marthahalli/Hindi Diwas Medium.jpeg"
+import updates2 from "../images/campus/events/marthahalli/Swachh Bharat Medium.jpeg"
+import updates3 from "../images/campus/events/marthahalli/Science Lab Wonders Medium.jpeg"
+import updates4 from "../images/campus/events/marthahalli/SwachhBharat.jpeg"
+import updates5 from "../images/campus/events/marthahalli/VidhanaSabha Medium.jpeg"
 
 interface Item {
   title: string;
   img: string;
 }
-const config: Item[] = [
+const {title,showSocial=true, campusName} = Astro.props
+
+
+const config: Item[] = campusName === 'kanakapura' ? [
   { title: "Celebrating Hindi Divas '23", img: hindiDivas},
   { title: "Janmashtami Celebrations", img: janmashtami},
   { title: "Rakshabandhan Celebrations", img: rakshabandhan},
   { title: "Inter School Chess Champion", img: chess},
   { title: "Excellence in Creative Teaching ", img: principal}
 
+] : [
+  { title: "Hindi Diwas", img: updates1},
+  { title: "Swachh Bharat", img: updates2},
+  { title: "Swachh Bharat", img: updates4},
+  { title: "Science Lab Wonders", img: updates3},
+  { title: "Field Trip to Vidhan Saudha", img: updates5}
 ]
-const {title,showSocial=true, campusName} = Astro.props
 const heading = title || "Featured Updates"
 ---
 
