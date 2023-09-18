@@ -98,7 +98,7 @@ const menu: Array<Menu> = [
 // get route from path
 const {campusName} = Astro.params
 const campusConfig = config.campus.find(c => c.internalName === campusName)
-const admissionLink = campusConfig?.admissionLink
+const admissionLink = campusConfig?.admissionLink || config.campus[0].admissionLink
 const ctaButtons: Array<{
   title: string
   link: string | undefined,
@@ -467,23 +467,26 @@ const activePath = Astro.url.pathname
       }
     })
   })
-  document.addEventListener('astro:beforeload', () => {
-    const path = window.location.pathname
-    const campuseName = path.split('-')[1]
-    const campusConfig = config.campus.find(c => c.internalName === campuseName)
-    let admissionLink = campusConfig?.admissionLink
-    if (!admissionLink) {
-      admissionLink = config.campus[0].admissionLink
-    }
-    const button = document.querySelector('.apply-now-button') as HTMLDivElement
-    if(admissionLink){
-      button.setAttribute('href', admissionLink)
-    }
+  console.log('helllo...')
+  // document.addEventListener('astro:beforeload', () => {
+  //   console.log('helllo... 11')
+  //   const path = window.location.pathname
+  //   const campuseName = path.split('-')[1]
+  //   const campusConfig = config.campus.find(c => c.internalName === campuseName)
+  //   let admissionLink = campusConfig?.admissionLink
+  //   console.log('admissionLink...')
+  //   if (!admissionLink) {
+  //     admissionLink = config.campus[0].admissionLink
+  //   }
+  //   const button = document.querySelector('.apply-now-button') as HTMLDivElement
+  //   if(admissionLink){
+  //     button.setAttribute('href', admissionLink)
+  //   }
 
 
-    mobileMenu.classList.remove('visible')
-    menuCheckBox.checked = false
-  })
+  //   mobileMenu.classList.remove('visible')
+  //   menuCheckBox.checked = false
+  // })
  
   
 </script>
