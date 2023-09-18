@@ -130,7 +130,7 @@ const rounded = [
       } : {
         "slide": item.uri, position: item.position, type: item.type
       }))}
-      heroOpacity={campusName === 'marathahalli' ? 0.2 : 0.8}
+      heroOpacity={campusName === 'marathahalli' ? 0.9 : 0.8}
       showSlide={true}
       contentDirection="items-end"
       bgImageBgColor="linear-gradient(359deg, #1B2226 0%, rgba(19, 112, 167, 0.00) 100%)"
@@ -203,19 +203,21 @@ const rounded = [
   </div>
   {campusName === 'marathahalli' && (
     <Carousel class="gap-16 p-5 pt-8 mt-2 max-md:gap-14 max-md:pt-8 no-scrollbar" id="campus-showcase" stackOnMobile>
-      <CarouselCard>
-        <DeckCard
-          images={[
-            { src: aroundthecampus1, alt: '' },
-            { src: aroundthecampus2, alt: '' }
-          ]}
-          target="around-the-campus"
-        >
-          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
-            Around the campus
-          </Text>
-        </DeckCard>
-      </CarouselCard>
+      <!--
+        <CarouselCard>
+          <DeckCard
+            images={[
+              { src: aroundthecampus1, alt: '' },
+              { src: aroundthecampus2, alt: '' }
+            ]}
+            target="around-the-campus"
+          >
+            <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+              Around the campus
+            </Text>
+          </DeckCard>
+        </CarouselCard>
+      -->
       <CarouselCard>
         <DeckCard
           images={[
@@ -357,10 +359,10 @@ const rounded = [
     id="classrooms"
     gallery={[
       { src: classroom1, caption: "Activity Room" },
-      { src: classroom2, caption: "Clasroom Primary" },
-      { src: classroom3, caption: "Clasroom" },
+      { src: classroom2, caption: "Classroom Primary" },
+      { src: classroom3, caption: "Classroom" },
       { src: classroom4, caption: "Well-Stocked Library" },
-      { src: classroom5, caption: "Clasroom" }
+      { src: classroom5, caption: "Classroom" }
     ]}
   />
   <Gallery
@@ -412,8 +414,8 @@ const rounded = [
     id="classrooms-knk"
     gallery={[
       { src: classrooms1k, caption: "Activity Room" },
-      { src: classrooms2k, caption: "Primary Clasroom" },
-      { src: classrooms3k, caption: "Secondary Clasroom" }
+      { src: classrooms2k, caption: "Primary Classroom" },
+      { src: classrooms3k, caption: "Secondary Classroom" }
     ]}
   />
   <Gallery

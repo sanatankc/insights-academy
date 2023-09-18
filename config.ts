@@ -22,9 +22,15 @@ import principalmrth from "./src/images/campus/marth/marth_principal.jpeg"
 // putting marth campus bg images here
 import marthcampusbg1 from './src/images/campus/marth/slides/1.jpeg';
 import marthcampusbg2 from './src/images/campus/marth/slides/2.jpeg';
-import marthcampusbg3 from './src/images/campus/marth/slides/3.jpeg';
+// import marthcampusbg3 from './src/images/campus/marth/slides/3.jpeg';
 import marthcampusbg4 from './src/images/campus/marth/slides/4.jpeg';
 import marthcampusbg5 from './src/images/campus/marth/slides/6.jpeg';
+
+import marthcampusbgMb1 from './src/images/campus/marth/slides/mb/1.jpeg';
+import marthcampusbgMb2 from './src/images/campus/marth/slides/mb/2.jpeg';
+// import marthcampusbgMb3 from './src/images/campus/marth/slides/mb/3.jpeg';
+import marthcampusbgMb4 from './src/images/campus/marth/slides/mb/4.jpeg';
+import marthcampusbgMb5 from './src/images/campus/marth/slides/mb/6.jpeg';
 
 import RoboticClass from "./src/images/campus/knk/facilities/robotics.jpeg";
 import ComputerClass from "./src/images/campus/knk/facilities/codingandcs.jpeg";
@@ -353,11 +359,22 @@ const data: Data = {
       description: 'Centrally situated in Marathahalli, we offer a comprehensive CBSE-affiliated education framework.',
       admissionLink: "https://admissions.neverskip.com/474e6133503443334b7142572f472b5a5474475363673d3d/utms-6271788&utmc-6f4d699",
       images: [
-        {uri: marthcampusbg1, type: 'image', position: 'center'},
-        {uri: marthcampusbg2, type: 'image', position: 'center'},
-        {uri: marthcampusbg3, type: 'image', position: 'center'},
-        {uri: marthcampusbg4, type: 'image', position: 'center'},
-        {uri: marthcampusbg5, type: 'image', position: 'center'},
+        {type: 'picture', slide: [
+          { src: marthcampusbg1, media: "(min-width: 768px)", position: 'center 64%' },
+          { src: marthcampusbgMb1, media: "(max-width: 768px)" },
+        ], position: 'center 10%'},
+        {type: 'picture', slide: [
+          { src: marthcampusbg2, media: "(min-width: 768px)", position: 'center 64%' },
+          { src: marthcampusbgMb2, media: "(max-width: 768px)" },
+        ], position: 'center 10%'},
+        {type: 'picture', slide: [
+          { src: marthcampusbg4, media: "(min-width: 768px)", position: 'center 64%' },
+          { src: marthcampusbgMb4, media: "(max-width: 768px)" },
+        ], position: 'center 10%'},
+        {type: 'picture', slide: [
+          { src: marthcampusbg5, media: "(min-width: 768px)", position: 'center 64%' },
+          { src: marthcampusbgMb5, media: "(max-width: 768px)" },
+        ], position: 'center 10%'},
       ],
       bgImage: campus1,
       ctaText: 'Explore Campus',
