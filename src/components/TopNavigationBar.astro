@@ -420,12 +420,18 @@ const activePath = Astro.url.pathname
   import config from '../../config'; 
   const menuParent = document.querySelectorAll('.menu-parent') as NodeListOf<HTMLDivElement>
   const menuCheckBox = document.querySelector('.menu-checkbox') as HTMLInputElement
+  const menuChild = document.querySelectorAll('.menu') as NodeListOf<HTMLDivElement>
   menuParent.forEach((el) => {
     let removeTimeout: any = null
     const menu = el.querySelector('.menu') as HTMLDivElement
     el.addEventListener('mouseover', () => {
       clearTimeout(removeTimeout)
-      menu.classList.add('visible')
+      menuChild.forEach((el) => {
+        el.classList.remove('visible')
+      })
+      setTimeout(() => {
+        menu.classList.add('visible')
+      }, 0)
     })
     el.addEventListener('mouseout', () => {
       removeTimeout = setTimeout(() => {
@@ -465,7 +471,10 @@ const activePath = Astro.url.pathname
     const path = window.location.pathname
     const campuseName = path.split('-')[1]
     const campusConfig = config.campus.find(c => c.internalName === campuseName)
-    const admissionLink = campusConfig?.admissionLink
+    let admissionLink = campusConfig?.admissionLink
+    if (!admissionLink) {
+      admissionLink = config.campus[0].admissionLink
+    }
     const button = document.querySelector('.apply-now-button') as HTMLDivElement
     if(admissionLink){
       button.setAttribute('href', admissionLink)

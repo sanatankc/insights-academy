@@ -490,7 +490,7 @@ const data: Data = {
     data: [
       {
         image: testimonial3,
-        quote: '“This school offers more than just education. Teachers give individual attention, and activities add to the wholesome learning experience...',
+        quote: '“This school offers more than just education. Teachers give individual attention, and activities add to the wholesome learning experience...”',
         ctaText: 'Watch Video',
         ctaLink: '',
       },
