@@ -77,7 +77,7 @@ import Testimonial from '../components/landingPage/Testimonial.astro';
               <Text type="h2" slot="title" class="font-displat font-bold  text-yellow">Impacting Society </Text>
 
 
-              <Text type="p" slot="ctaButton" class="max-w-[60ch]">{"Founded by visionary educationists, Insight Academy strives to make a profound impact on society. 'Quality Education for All' is not just a motto but the essence of our institution since August 15, 2007.  Guided by the Insight Educational Trust, our devoted members ensure this vision guides every endeavour."}</Text>
+              <Text type="p" slot="ctaButton" class="max-w-[60ch] max-md:text-left">{"Founded by visionary educationists, Insight Academy strives to make a profound impact on society. 'Quality Education for All' is not just a motto but the essence of our institution since August 15, 2007.  Guided by the Insight Educational Trust, our devoted members ensure this vision guides every endeavour."}</Text>
               <Image slot="previewImage" src={PreviewImage} className="w-[50%] h-full object-cover object-center z-[90] absolute right-0 max-sm:hidden" /> 
              
           </Hero>
@@ -106,8 +106,8 @@ import Testimonial from '../components/landingPage/Testimonial.astro';
           second="For All"
           subtitle="MISSION & VISION"
         ></Heading>
-        <p class="text-xl text-neutral-dark-grey max-w-[100ch] text-center">
-          At Insight Academy, we aim to transform education for nation-building by harnessing the expertise of dedicated educators.. Education, to us, is not confined to classrooms; it extends into life itself. Our innovative approach prioritises holistic development over rigid syllabi or exams. We foster curious minds, instilling a love for learning that transcends our school's boundaries.
+        <p class="text-xl text-neutral-dark-grey max-w-[100ch] text-center max-md:text-left">
+          Insight Academy revolutionizes education for nation-building. We leverage dedicated educators' expertise, viewing education beyond classrooms. Our innovative approach prioritizes holistic development over rigid syllabi/exams, fostering curiosity and a love for learning that goes beyond school boundaries.
         </p>
       </div>
   
@@ -131,12 +131,12 @@ import Testimonial from '../components/landingPage/Testimonial.astro';
             <img 
               src={CommunityImage}
               alt="Image of community"
-              class="basis-[25%] object-cover h-full" 
+              class="basis-[25%] object-cover h-full max-md:hidden" 
     
           />
           </div>
           
-          <div class="flex  gap-[12px] flex-col w-full py-xl px-r basis-[70%] rounded-tr-[27px] card max-sm:gap-r">
+          <div class="flex  gap-[12px] flex-col w-full py-xl px-r basis-[70%] rounded-tr-[27px] card max-sm:gap-r max-md:py-10">
             <Text type="h3" class="text-yellow  font-bold max-sm:text-lg">
               Work with us
             </Text>
