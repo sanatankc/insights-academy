@@ -466,6 +466,11 @@ const rounded = [
   </Heading>
   {
     academic?.map((item,index) => {
+      const rounded = index === 0
+        ? "rounded-tl-[250px]"
+        : index === academic.length - 1
+          ? "rounded-bl-[250px]"
+          : ""
       return <div class={`flex flex-col px-xl  justify-center gap-l max-sm:p-0`}> 
                 <div style={`background: ${colors[index][0]}`}>
                   <div class="flex p-xl pr-0 justify-center gap-xl item-center max-md:flex-col max-md:p-r">
@@ -503,7 +508,7 @@ const rounded = [
                     </div>
                     <div class="">
                       <Image 
-                        className={`${rounded[index]} max-md:rounded-none h-[95%] object-cover`}
+                        className={`${rounded} max-md:rounded-none h-[95%] object-cover`}
                         src={
                           item.images[0]
                         }
@@ -529,7 +534,7 @@ const rounded = [
         <!-- <p class="text-2xl max-sm:text-base">
           Embracing a holistic approach, our students spend <span class="text-primary font-bold">4 hours on academics</span> and <span class="text-primary font-bold">and 1 hour engaging in outdoor activities</span>, ensuring a balanced and fulfilling educational journey.    </p> -->
       </div>
-      <img src={campusConfig?.images[0].uri} class="w-[326px] h-[198px]" />
+      <img src={campusConfig?.images[0].uri || campusConfig?.images[0].slide[0].src} class="w-[326px] h-[198px]" />
     </div>
     
   </div>

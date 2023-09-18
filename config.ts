@@ -46,11 +46,6 @@ import sportsmarth from "./src/images/campus/marth/facilities/sports.webp";
 import zumbamarth from "./src/images/campus/marth/facilities/zumba.webp";
 import musicmarth from "./src/images/campus/marth/facilities/music.webp";
 
-import preview1 from './src/images/campus/gas/preview.png'
-import preview2 from './src/images/campus/gaw/preview.png';
-
-import campus2 from './src/images/campus/gas/gallery/2.jpeg';
-import campus3 from './src/images/campus/gas/gallery/3.jpeg';
 
 import testimonial1 from './src/images/testimonial/1.png';
 import testimonial2 from './src/images/testimonial/2.png';
@@ -61,10 +56,12 @@ import topper1 from "./src/images/campus/toppers/topper.png"
 import topper2 from "./src/images/campus/toppers/topper2.png"
 import topper3 from "./src/images/campus/toppers/topper3.png"
 import topper4 from "./src/images/campus/toppers/topper4.png"
-import Kindergarten from "./src/images/campus/gaw/updates/1.jpeg"
-import Primary from "./src/images/campus/gaw/updates/1.jpeg"
-import Secondary from "./src/images/campus/gaw/updates/1.jpeg"
 
+
+import kindergarten from "./src/images/campus/marth/academics/kindergarten.jpeg"
+import primary from "./src/images/campus/marth/academics/1-5.jpeg"
+import secondary from "./src/images/campus/marth/academics/6-8.jpg"
+import highSchool from "./src/images/campus/marth/academics/9-10.jpeg"
 
 
 
@@ -390,7 +387,7 @@ const data: Data = {
         {
           title: 'Kindergarten',
           description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
-          images: [campus1],
+          images: [kindergarten],
           highlights: [
            "1:25 Student-to-Teacher ratio",
            "Multi-sensory, experiential learning approach",
@@ -401,7 +398,7 @@ const data: Data = {
         {
           title: 'Elementary (1-5)',
           description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
-          images: [campus1],
+          images: [primary],
           highlights: [
             "1:25 Student-to-Teacher ratio",
             "Multi-sensory, experiential learning approach",
@@ -412,7 +409,7 @@ const data: Data = {
         {
           title: 'Higher Primary (6-8)',
           description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
-          images: [campus1],
+          images: [secondary],
           highlights: [
             "1:25 Student-to-Teacher ratio",
             "Multi-sensory, experiential learning approach",
@@ -423,7 +420,7 @@ const data: Data = {
         {
           title: 'High School (9-10)',
           description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
-          images: [campus1],
+          images: [highSchool],
           highlights: [
             "1:25 Student-to-Teacher ratio",
             "Multi-sensory, experiential learning approach",
