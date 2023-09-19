@@ -22,7 +22,7 @@ const { topper = {} } = Astro.props;
       class="text-center text-white font-display font-bold"
       set:html={topper.name}
     />
-    <Text type="h4" class="text-yellow font-display font-bold">97.8%</Text>
+    <Text type="h4" class="text-yellow font-display font-bold">{topper.marks}</Text>
   </div>
   <div class="absolute left-[48%] top-[20%] leaf leaf-right max-sm:top-[-4%]">
     <svg

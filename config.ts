@@ -218,7 +218,7 @@ const data: Data = {
       leaderMessage: [
         {
           image: principalknk,
-          name: "Mrs.May Ruth D'Souza",
+          name: "Mrs. May Ruth D'Souza",
           role: 'PRINCIPAL',
           body: "At Insight Academy, we're dedicated to offering quality education for every child, regardless of their abilities or challenges. We prioritize holistic development and our team of well-trained teachers goes the extra mile to provide additional support. The strong partnership between students, parents, and the school lays the foundation for a brighter future."
         }
@@ -323,25 +323,25 @@ const data: Data = {
         {
           name: 'Aniksha <br> Raghuveera Kamat',
           ranks: 'Rank 1',
-          marks: '98.8%',
+          marks: '97.8%',
           image: topper1,
         },
         {
           name: 'Anshul A Gadgoli',
           ranks: 'Rank 2',
-          marks: '98.8%',
+          marks: '97.2%',
           image: topper2,
         },
         {
           name: 'Harsh Shalgar',
           ranks: 'Rank 3',
-          marks: '98.8%',
+          marks: '96.4%',
           image: topper3,
         },
         {
           name: 'Hasini Gupta PS',
-          ranks: 'Rank 4',
-          marks: '98.8%',
+          ranks: 'Rank 3',
+          marks: '96.4%',
           image: topper4,
         },
       ]
