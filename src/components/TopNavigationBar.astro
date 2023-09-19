@@ -114,14 +114,14 @@ const ctaButtons: Array<{
     className: "apply-now-button",
     type: 'primary',
   },
-  {
-    title: 'Login',
-    link: config.ctaLink,
-    type: 'default',
-    menu: true,
+  // {
+  //   title: 'Login',
+  //   link: config.ctaLink,
+  //   type: 'default',
+  //   menu: true,
 
-    icon: ExternalIcon,
-  }
+  //   icon: ExternalIcon,
+  // }
 ]
 
 const activePath = Astro.url.pathname
@@ -156,22 +156,24 @@ const activePath = Astro.url.pathname
                 </svg>					
               </div>
             </div>
-            <div class='absolute w-[250px] bg-[#121212] top-[40px] menu' style={{
+            <div class='absolute w-[250px] pt-[10px] menu' style={{
                 boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.5)',
             }}>
-            {item.submenu.map((subitem, j) => (
-              <div class='py-[14px] px-3' style={{
-                borderBottom: j >= item?.submenu?.length - 1 ? 'none' : '1px solid rgba(255, 255, 255, 0.2)'
-              }}>
-                <a
-                  href={subitem.link}
-                  class:list={[
-                    "text-white font-semibold hover:underline font-display",
-                    // item.link === activePath && 'text-yellow'
-                  ]}
-                >{subitem.title}</a>
+            <div class="w-full h-full bg-[#121212]">
+              {item.submenu.map((subitem, j) => (
+                <div class='py-[14px] px-3' style={{
+                  borderBottom: j >= item?.submenu?.length - 1 ? 'none' : '1px solid rgba(255, 255, 255, 0.2)'
+                }}>
+                  <a
+                    href={subitem.link}
+                    class:list={[
+                      "text-white font-semibold hover:underline font-display",
+                      // item.link === activePath && 'text-yellow'
+                    ]}
+                  >{subitem.title}</a>
+                </div>
+              ))}
               </div>
-            ))}
             </div>
           </div>
         )
@@ -426,8 +428,12 @@ const activePath = Astro.url.pathname
     const menu = el.querySelector('.menu') as HTMLDivElement
     el.addEventListener('mouseover', () => {
       clearTimeout(removeTimeout)
-      menuChild.forEach((el) => {
-        el.classList.remove('visible')
+      menuChild.forEach((elC) => {
+        if (elC !== menu) {
+          console.log('elC...', elC)
+          console.log('el...', el)
+          elC.classList.remove('visible')
+        }
       })
       setTimeout(() => {
         menu.classList.add('visible')
@@ -436,13 +442,13 @@ const activePath = Astro.url.pathname
     el.addEventListener('mouseout', () => {
       removeTimeout = setTimeout(() => {
         menu.classList.remove('visible')
-      }, 400)
+      }, 50)
     })
     menu.addEventListener('mouseover', () => {
       clearTimeout(removeTimeout)
     })
     menu.addEventListener('mouseout', () => {
-      menu.classList.remove('visible')
+      // menu.classList.remove('visible')
     })
   })
 
@@ -467,7 +473,6 @@ const activePath = Astro.url.pathname
       }
     })
   })
-  console.log('helllo...')
   // document.addEventListener('astro:beforeload', () => {
   //   console.log('helllo... 11')
   //   const path = window.location.pathname

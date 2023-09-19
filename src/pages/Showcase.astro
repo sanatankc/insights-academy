@@ -22,21 +22,40 @@ interface Item {
 }
 const {title,showSocial=true, campusName} = Astro.props
 
-
-const config: Item[] = campusName === 'kanakapura' ? [
+const kankapuraEvents = [
   { title: "Celebrating Hindi Divas '23", img: hindiDivas},
   { title: "Janmashtami Celebrations", img: janmashtami},
   { title: "Rakshabandhan Celebrations", img: rakshabandhan},
   { title: "Inter School Chess Champion", img: chess},
   { title: "Excellence in Creative Teaching ", img: principal}
 
-] : [
+]
+
+const marthahalliEvents = [
   { title: "Hindi Diwas", img: updates1},
-  { title: "Swachh Bharat", img: updates2},
+  { title: "Independence Day", img: updates2},
   { title: "Swachh Bharat", img: updates4},
   { title: "Science Lab Wonders", img: updates3},
   { title: "Field Trip to Vidhan Saudha", img: updates5}
 ]
+
+// home page alternative events
+const maxEventsLength = Math.max(kankapuraEvents.length, marthahalliEvents.length)
+// let's do odd even
+const homePageEvents = new Array(maxEventsLength).fill(null).map((_, index) => {
+  if (index % 2 === 0) {
+    return kankapuraEvents[index]
+  } else {
+    return marthahalliEvents[index]
+  }
+})
+
+const config: Item[] = campusName === 'kanakapura' 
+  ? kankapuraEvents 
+  : campusName === 'marthahalli' 
+    ? marthahalliEvents
+    : homePageEvents
+
 const heading = title || "Featured Updates"
 ---
 

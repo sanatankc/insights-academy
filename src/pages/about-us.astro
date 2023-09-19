@@ -82,7 +82,7 @@ import Testimonial from '../components/landingPage/Testimonial.astro';
               <Text type="h2" slot="title" class="font-displat font-bold  text-yellow">Impacting Society </Text>
 
 
-              <Text type="p" slot="ctaButton" class="max-w-[60ch] max-md:text-left">{"Founded by visionary educationists, Insight Academy strives to make a profound impact on society. 'Quality Education for All' is not just a motto but the essence of our institution since August 15, 2007.  Guided by the Insight Educational Trust, our devoted members ensure this vision guides every endeavour."}</Text>
+              <Text type="p" slot="ctaButton" class="max-w-[60ch] max-md:text-left">{"Founded by visionary educationists, Insight Academy strives to make a profound impact on society. 'Quality Education for All' is not just a motto but the essence of our institution since its inception on August 15, 2007.  Guided by the Insight Educational Trust, our devoted members ensure this vision guides every endeavour."}</Text>
               <Image slot="previewImage" src={PreviewImage} className="w-[50%] h-full object-cover object-center z-[90] absolute right-0 max-sm:hidden" /> 
              
           </Hero>
@@ -103,7 +103,7 @@ import Testimonial from '../components/landingPage/Testimonial.astro';
         </Constrain>
       </div>
   </div>
-  <div class="flex p-xl flex-col gap-l justify-center z-10 max-sm:p-5">
+  <div class="flex p-xl pb-8 flex-col gap-l justify-center z-10 max-sm:p-5">
       <Constrain>
      <div class="flex items-center flex-col gap-l">
         <Heading
@@ -119,6 +119,7 @@ import Testimonial from '../components/landingPage/Testimonial.astro';
     </Constrain>
   </div>
     <!-- <SlideShow /> -->
+    <Text type={'subtitle'} class={`text-black-100 font-semibold font-display tracking-[1.8px] text-lg balance mb-8`}>Our Guiding Stars</Text>
 
   <Constrain>
     <div class='w-full flex flex-row flex-wrap justify-between items-stretch mt-0 px-5 max-md:gap-3'>
@@ -180,12 +181,12 @@ import Testimonial from '../components/landingPage/Testimonial.astro';
                 Insight community
             </Text>
             <Text type='p' class="text-white">
-              To view open career positions, <a href="" class="underline">click here</a>
+              To view open career positions, <a href="" class="underline" id="about-us-join-career-cta">click here</a>
             </Text>
           </div>
          
           <!-- <div class="absolute w-[100px] h-[100px] bg-primary z-10 right-0 border-[5px] border-[#fff]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="128" height="127" viewBox="0 0 128 127" fill="none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="128" height="127" viewBox=" 0 128 127" fill="none">
               <rect x="0.62207" y="0.146484" width="126.832" height="126.832" rx="17" fill="#006BB3"/>
               <path d="M37.1755 84.138C35.6134 85.7001 35.6134 88.2327 37.1755 89.7948C38.7376 91.3569 41.2702 91.3569 42.8323 89.7948L37.1755 84.138ZM98.7122 32.2578C98.7122 30.0487 96.9213 28.2578 94.7122 28.2578L58.7122 28.2579C56.5031 28.2579 54.7122 30.0488 54.7122 32.2579C54.7122 34.467 56.5031 36.2579 58.7122 36.2579L90.7122 36.2578L90.7123 68.2578C90.7123 70.467 92.5032 72.2578 94.7123 72.2578C96.9215 72.2578 98.7123 70.4669 98.7123 68.2578L98.7122 32.2578ZM42.8323 89.7948L97.5407 35.0862L91.8838 29.4294L37.1755 84.138L42.8323 89.7948Z" fill="#F5CC4F"/>
               </svg>
@@ -194,7 +195,7 @@ import Testimonial from '../components/landingPage/Testimonial.astro';
         <div class="flex flex-col relative w-[130px] radius">
           <div class="basis-[25%] relative rounded-[20px] rounded-br-[0px] bg-white forward-btn top-[20px] bt-[19px] w-[90%]"
           >
-              <div class="absolute bg-primary h-[110%] w-full rounded-[18px] left-[16px] top-[-24px] text-yellow p-r button">
+              <div class="absolute bg-primary h-[110%] w-full rounded-[18px] left-[16px] top-[-24px] text-yellow p-r button" id="arrow-button-about-us-career">
                 <svg fill="none" viewBox="0 0 24 24" stroke-width="2"  stroke="currentColor" class="w-full h-full">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
                 </svg>
@@ -225,7 +226,7 @@ import Testimonial from '../components/landingPage/Testimonial.astro';
   .button{
     transition: transform 0.2s ease;
   }
-  .container:hover .button{
+  .button.hovered{
     transform: translatex(10px) translatey(-10px);
   }
   .card{
@@ -309,3 +310,14 @@ import Testimonial from '../components/landingPage/Testimonial.astro';
     background-image: linear-gradient(45deg, rgba(10, 94, 47, 0.8), rgba(10, 94, 47, 0.8), )
   }
 </style>
+
+<script>
+  const joinCareerCta = document.getElementById('about-us-join-career-cta')
+  const arrowButton = document.getElementById('arrow-button-about-us-career')
+  joinCareerCta?.addEventListener('mouseenter', () => {
+    arrowButton.classList.add('hovered')
+  })
+  joinCareerCta?.addEventListener('mouseleave', () => {
+    arrowButton.classList.remove('hovered')
+  })
+</script>
