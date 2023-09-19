@@ -524,11 +524,16 @@ const data: Data = {
     title: 'Insight Voices',
     subtitle: 'Stories of Transformation and Growth',
     data: [
+      // {
+      //   image: testimonial3,
+      //   quote: "For 12 years, Insight Academy has shaped our daughter into a well-rounded achiever. She's excelled in sports, academics, debates, culture, and inter-school competitions.",
+      //   ctaText: 'Watch Video',
+      //   ctaLink: '',
+      // },
       {
         image: testimonial3,
-        quote: '“This school offers more than just education. Teachers give individual attention, and activities add to the wholesome learning experience...”',
-        ctaText: 'Watch Video',
-        ctaLink: '',
+        quote: "For 12 years, Insight Academy has shaped our daughter into a well-rounded achiever. She's excelled in sports, academics, debates, culture, and inter-school competitions.",
+        author: '- BHANU MURTHY, PARENT OF VIBHA MURTHY (Grade 10)',
       },
       {
         image: testimonial2,
@@ -538,7 +543,7 @@ const data: Data = {
       {
         image: testimonial1,
         quote: "The teachers and the whole environment here encourage you to push beyond your limits and that's why I feel like this is the perfect school for me! ",
-        author: '- ABHINAV (grade 10)',
+        author: '- ABHINAV (Grade 10)',
 
       },
     ],
