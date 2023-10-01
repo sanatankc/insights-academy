@@ -3,6 +3,7 @@ import Button from "./system/Button.astro";
 import Heading from "./system/Heading.astro";
 import config from "../../config"
 import Constrain from "./system/Constrain.astro";
+import logobg from "../../src/images/logoBg.png"
 
 const leadership = config.leadership.data.government
 
@@ -32,12 +33,7 @@ const LeaderShip = [
       </Heading>
       <div class="flex gap-r">
         {
-         leadership?.map(item => {
-               return <div class="max-h-[300px] max-w-[200px] rounded-[27px] overflow-clip border-[2px] bg-white" style={{
-               }}>
-                           <img  src={item.image} alt={`A Image of ${item.name}`} class="h-full object-cover"/>
-                     </div>
-         })
+         <img  src={logobg} class="w-[250px] h-[200px] object-cover"/>
         }
    
       </div>
