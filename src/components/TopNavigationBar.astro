@@ -80,10 +80,10 @@ const menu: Array<Menu> = [
         title: 'Co-Scholastics',
         link: '/insight-marathahalli#life-at-insight'
       },
-      {
-        title: 'Our Achievements',
-        link: '/insight-marathahalli#achievements'
-      },
+      // {
+      //   title: 'Our Achievements',
+      //   link: '/insight-marathahalli#achievements'
+      // },
       {
         title: 'Contact Us',
         link: '/insight-marathahalli#contact-us'
@@ -106,6 +106,7 @@ const ctaButtons: Array<{
   icon?: any,
   className?: string,
   menu?: boolean
+  mobile?: boolean
 }> = [
   {
     title: 'Apply Now',
@@ -113,17 +114,22 @@ const ctaButtons: Array<{
     menu: true,
     className: "apply-now-button",
     type: 'primary',
+    mobile: false,
   },
-  // {
-  //   title: 'Login',
-  //   link: config.ctaLink,
-  //   type: 'default',
-  //   menu: true,
-
-  //   icon: ExternalIcon,
-  // }
+  {
+    title: 'Login',
+    link: config.ctaLink,
+    type: 'default',
+    menu: true,
+    mobile: true,
+    icon: ExternalIcon,
+  }
 ]
 
+const mobileMenu = [
+  ...menu,
+  ...ctaButtons.filter(button =>!! button.mobile)
+]
 const activePath = Astro.url.pathname
 ---
 <header transition:persist  class="font-roundo w-screen bg-black py-1 px-14 max-md:px-5 box-border flex flex-row justify-between items-center backdrop-blur-md fixed z-[999] h-[100px]">
@@ -195,7 +201,7 @@ const activePath = Astro.url.pathname
       ctaButtons.map(item => {
         return (
             <a href={item.link} target='_blank' class={`${item.menu && 'max-md:hidden'} ${item?.className}`}>
-              <Button class="font-display" type={item.type} icon={item?.icon}>{item.title}</Button>
+            <Button class="font-display" type={item.type} icon={item?.icon}>{item.title}</Button>
             </a>
         )
       })
@@ -215,7 +221,7 @@ const activePath = Astro.url.pathname
   </div>
 
   <div class="mobileMenu absolute top-0 left-0 w-screen h-screen bg-black flex flex-col pt-20 overflow-scroll" class="max-md:visible hidden">
-    {menu.map(item => {
+    {mobileMenu.map(item => {
       if (item.submenu && item.submenu.length > 0) {
         return (
           <div class='mobileMenuParent'>
@@ -250,13 +256,18 @@ const activePath = Astro.url.pathname
       } else {
         return (
           <div class='mobileMenuParent'>
-            <div class='relative py-[14px] px-5 mr-8 max-md:mr-0 w-full' style={{ 
+            <div class='flex flex-row gap-2 items-center first-letter:relative py-[14px] px-5 mr-8 max-md:mr-0 w-full' style={{ 
               borderBottom: '1px solid rgba(255, 255, 255, 0.2)'
             }}>
                 <a 
                   href={item.link}
                   class="text-white font-semibold hover:underline"
                 >{item.title}</a>
+                {item.icon && (
+                  <div class='w-4 h-4 ml-1 -rotate-90 menu-arrow -scale-y-100'>
+                    <item.icon />
+                  </div>
+                )}
             </div>
           </div>
         )

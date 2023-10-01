@@ -178,7 +178,7 @@ interface Data {
 
 const data: Data = {
   
-  ctaLink: 'https://www.insightacademy.in/',
+  ctaLink: 'https://parents.neverskip.com/',
   school: {
     discription: "Established in 2007, Insight Academy ranks among the best Bangalore schools, driven by 'Quality Education for All'. Our inclusive, secular approach goes beyond traditional classrooms, focusing on robust academics and holistic personal growth. As a leading institution, we prepare students for academic success and life beyond the classroom.",
     
@@ -386,46 +386,50 @@ const data: Data = {
       academic: [
         {
           title: 'Kindergarten',
-          description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
+          description: "Our kindergarten program, designed for children aged 3 to 5 years, plays a pivotal role in a child's development, often referred to as the 'foundation year'. At Insight Marathalli, we recognize its significance and provide a nurturing environment to foster cognitive, social, and emotional growth.",
           images: [kindergarten],
           highlights: [
-           "1:25 Student-to-Teacher ratio",
-           "Multi-sensory, experiential learning approach",
-           "Emphasis on communication skills",
-           "Extracurriculars activities like swimming, tennis, music & art"
+            "Introduction to early literacy, numeracy, and critical thinking",
+            "Multi-sensory, experiential learning approach",
+            "Emphasis on communication skills",
+            "Encouragement of independence and responsibility",
+            "Engaging extracurricular activities including swimming, music, and art",
+           
+
+
           ],
         },
         {
           title: 'Elementary (1-5)',
-          description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
+          description: "Elementary education at Insight lays the cornerstone of a child's learning journey, fostering vital skills for personal development and future success. The Formative Years, spanning grades 1 to 5, introduce fundamental subjects—mathematics, science, language arts, and social studies—forming a robust academic foundation for advanced learning.",
           images: [primary],
           highlights: [
-            "1:25 Student-to-Teacher ratio",
-            "Multi-sensory, experiential learning approach",
-            "Emphasis on communication skills",
-            "Extracurriculars activities like swimming, tennis, music & art"
+            "Emphasis on literacy, critical thinking, and problem-solving",
+            "Innovative Creative Worksheet monitoring",
+            "Engaging physical and skill-based activities",
+            "Fostering character and core values: honesty, respect, and empathy",
            ],
         },
         {
           title: 'Higher Primary (6-8)',
-          description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
+          description: "Insight's higher primary phase builds upon elementary foundations, preparing students for secondary education. Rigorous academics blend with character development and essential life skills. Through a nurturing environment, Insight empowers lifelong learners and responsible, contributing citizens, shaping the leaders of tomorrow.",
           images: [secondary],
           highlights: [
-            "1:25 Student-to-Teacher ratio",
-            "Multi-sensory, experiential learning approach",
-            "Emphasis on communication skills",
-            "Extracurriculars activities like swimming, tennis, music & art"
+            "Rigorous academic preparation for secondary education",
+            "NEP focused learning in Robotics",
+            "Personal growth, character development, and life skills",
+            "After-school activities focused on sports like Basketball, Football, Cricket & Swimming",
            ],
         },
         {
           title: 'High School (9-10)',
-          description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
+          description: "Insight's high school phase is a transformative period, guiding students from childhood to adulthood. Our rigorous academic program readies them for higher education and professional challenges. This nurturing environment fosters personal and academic growth, promising a bright future.",
           images: [highSchool],
           highlights: [
-            "1:25 Student-to-Teacher ratio",
-            "Multi-sensory, experiential learning approach",
-            "Emphasis on communication skills",
-            "Extracurriculars activities like swimming, tennis, music & art"
+            "Rigorous academic curriculum for higher education readiness",
+            "Emphasis on character, leadership, and core values",
+            "Career exploration and critical life skills",
+            "After-school activities including robotics, basketball, football, cricket, and swimming",
            ],
         },
       ],
@@ -551,48 +555,47 @@ const data: Data = {
   leadership: {
     data: {
       trustee: [
+        {
+          name:"Mr. S. A. Wajid",
+          role:"Trustee",
+          image:leadership1
+       },      
+  {        name:"Mr. Malcolm Rohan D’souza",
+          role:"Trustee",
+          image:leadership1
+       },      
         { 
-          name: 'Mr. S. K. Gupdta',
-          role: 'Trustee',
-          image: leadership1
-        },
-        {
-          name: ' S. K. Gupdta',
-          role: 'Trustee',
-          image: leadership1
-        },
-        {
-          name: ' S. K. Gupdta',
-          role: 'Trustee',
-          image: leadership1
-        },
-        {
-          name: ' S. K. Gupdta',
-          role: 'Trustee',
-          image: leadership1
-        }
+          name:"Mrs Esha Hussain",
+          role:"Trustee",
+          image:leadership1
+       },     
+         {
+          name:"Dr. Crystal D’souza",
+          role:"Trustee",
+          image:leadership1
+       }
       ],
       government: [
-        { 
-          name: 'Mr. S. K. Gupdta',
-          role: 'Governing Council',
-          image: leadership1
-        },
         {
-          name: ' S. K. Gupdta',
-          role: 'Governing Council',
-          image: leadership1
-        },
-        {
-          name: ' S. K. Gupdta',
-          role: 'Governing Council',
-          image: leadership1
-        },
-        {
-          name: ' S. K. Gupdta',
-          role: 'Governing Council',
-          image: leadership1
-        }
+          name:"Mrs. May Ruth D’souza",
+          role:"Governing Council",
+          image:leadership1
+       },
+       {
+          name:"Mrs. Rehana Shameem",
+          role:"Governing Council",
+          image:leadership1
+       },
+       {
+          name:"Mr. S. A. Hussain",
+          role:"Governing Council",
+          image:leadership1
+       },
+       {
+          name:"Mrs. Ramola Melita D'souza",
+          role:"Governing Council",
+          image:leadership1
+       }
     ]
   }
 }

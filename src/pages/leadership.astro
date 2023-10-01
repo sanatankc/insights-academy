@@ -53,7 +53,7 @@ const leaderShipData = leaderShip?.data;
             </div>
                
             </div>
-            <Text type="h2" class="text-center text-3xl font-bold py-12">Trustee Members</Text>
+            <Text type="h3" class="text-center text-3xl font-bold py-12">Trustee & Governing Council Members</Text>
 
             {Object.keys(leaderShipData).map(item => {
             
@@ -61,11 +61,11 @@ const leaderShipData = leaderShip?.data;
                                  <div class="flex flex-wrap items-center justify-center gap-4">
                                         {
                                             leaderShipData[item].map((item,index) => {
-                                                return  <div class="flex flex-col max-w-[300px] h-[600px] group">
-                                                            <Image src={item.image} className={`w-full min-h-[400px] object-cover group-hover:border-yellow border-b-[5px]`} />
+                                                return  <div class="flex flex-col w-[300px] h-[150px] group">
                                                             <div class="
                                                                 flex flex-col gap-[14px] border-[1px]
-                                                                border-gray-900 p-r flex-1 pb-[60px] #fff
+                                                                justify-between
+                                                                border-gray-900 p-r flex-1 pb-[20px] #fff
                                                                 bg-gradient-to-b group-hover:from-[rgba(255,255,255,0)] group-hover:to-[rgba(245,204,79,0.20)]"
                                                             >
                                                                 <Text type="h4" class="font-bold">{item.name}</Text>
