@@ -3,7 +3,6 @@ import Button from "../system/Button.astro";
 import Text from "../system/Text.astro";
 const { image=[], class: className, name, desc, link,ctaText,path,index,slideClass} = Astro.props as any
 
-console.log('image/..', JSON.stringify(image, null, 2))
 ---
 
 <div data-link={link}  class:list={['p-14 isolate max-md:w-full h-[504px] max-md:h-[380px]  max-md:mb-8 flex flex-col  max-md:p-m bg-cover bg-center overflow-hidden justify-center relative max-sm:justify-end max-sm:py-0' ,  className ]}
