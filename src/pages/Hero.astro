@@ -2,9 +2,9 @@
 import Button from "../components/system/Button.astro"
 import Text from "../components/system/Text.astro"
 import Image from "../components/system/Image.astro"
+import config from '../../config'
 
 const {
-  config, 
   showSlide, 
   slideImages,
   showCta = true,
@@ -21,6 +21,14 @@ const title = config?.title
 const subHeading = config?.subHeading
 const topHeading = config?.topHeading
 const description = config?.description
+
+const { campusName = '' } = Astro.params
+const campus = config.campus
+const campusConfig = campus.find(c => c.internalName === campusName)
+
+const hasCampusSelected = !!campusConfig
+// const { campusName = '' } = Astro.params
+
 
 ---
 <div 
@@ -109,9 +117,17 @@ const description = config?.description
           </slot>
         </div>
         <slot name="ctaButton">
-          {showCta ? <div data-modal-target='login-prompt'>
-            <Button>Apply Now</Button>
-            </div>
+          {showCta ? (
+            hasCampusSelected ? (
+              <a href={campusConfig.admissionLink} target="_blank">
+                <Button>Apply Now</Button>
+              </a>
+            ) : (
+              <div data-modal-target='login-prompt'>
+                <Button>Apply Now</Button>
+              </div>
+            )
+          )
         : null}
         </slot>
       </div>

@@ -11,10 +11,10 @@ import config from '../../config'
   <div class="py-4 max-md:w-[87%] rounded-md bg-white flex flex-col gap-3 relative">
     <Text type="subtitle" class="font-bold">Choose a branch <br/></Text>
     <!-- <div class="pt-1" /> -->
-    <div class="flex flex-row max-md:flex-col px-3 w-full rounded-md overflow-hidden">
+    <div class="flex flex-row max-md:flex-col px-5 w-full rounded-md overflow-hidden">
       <div data-campus-container class="w-[340px] h-[458px] max-md:w-full max-md:h-[260px] overflow-hidden relative active ">
-        <img src={bgSmallKnk} class="w-full h-full object-cover transition-all duration-300 rounded-l-md" alt="Kanakpura Campus" />
-        <div class="w-full h-full rounded-l-md bg-overlay transition-all duration-300 top-0 left-0 bg-black/50 absolute z-10 flex flex-col justify-between items-center py-[14px]">
+        <img src={bgSmallKnk} class="w-full h-full object-cover transition-all duration-300 rounded-l-md max-md:rounded-l-none max-md:rounded-t-md" alt="Kanakpura Campus" />
+        <div class="w-full h-full rounded-l-md max-md:rounded-l-none max-md:rounded-t-md bg-overlay transition-all duration-300 top-0 left-0 bg-black/50 absolute z-10 flex flex-col justify-between items-center py-[24px]">
           <div />
           <Text type="h4" class="font-display text-[28px] max-md:text-[24px] font-bold text-white text-center">Kanakapura Branch <br/> (ICSE)</Text>
           <a href={config.campus[1].admissionLink} data-btn>
@@ -23,8 +23,8 @@ import config from '../../config'
         </div>
       </div>
       <div data-campus-container class="w-[340px] h-[458px] max-md:w-full max-md:h-[260px] overflow-hidden relative">
-        <img src={bgSmallMarth} class="w-full h-full object-cover transition-all duration-300 rounded-r-md" alt="Marthahalli Campus" />
-        <div class="w-full h-full rounded-r-md bg-overlay transition-all duration-300 top-0 left-0 bg-black/50 absolute z-10 flex flex-col justify-between items-center py-[14px]">
+        <img src={bgSmallMarth} class="w-full h-full object-cover transition-all duration-300 rounded-r-md max-md:rounded-r-none max-md:rounded-b-md" alt="Marthahalli Campus" />
+        <div class="w-full h-full rounded-r-md max-md:rounded-r-none max-md:rounded-b-md bg-overlay transition-all duration-300 top-0 left-0 bg-black/50 absolute z-10 flex flex-col justify-between items-center py-[24px]">
           <div />
           <Text type="h4" class="font-display text-[28px] max-md:text-[24px] font-bold text-white text-center">Marthahalli Branch <br/> (CBSE)</Text>
           <a href={config.campus[1].admissionLink} data-btn>
