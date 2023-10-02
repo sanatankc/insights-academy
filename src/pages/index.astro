@@ -40,6 +40,7 @@ import slideMb2 from "../images/slides/mb/2.jpeg"
 import slideMb3 from "../images/slides/mb/3.png"
 import slideMb4 from "../images/slides/mb/4.webp"
 import slideMb5 from "../images/slides/mb/5.jpeg"
+import CampusModal from '../components/CampusModal.astro';
 
 const toppers = campusConfig?.toppers
 
@@ -47,6 +48,7 @@ const admissionLink = campusConfig?.admissionLink || config.campus[0].admissionL
 ---
 
 <Layout title="Welcome to Astro.">
+    <CampusModal />
     <div class='flex flex-col'>
       <TopNavigationBar />
       <div 

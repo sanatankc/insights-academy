@@ -90,7 +90,11 @@ const menu: Array<Menu> = [
       },
       
     ]
-  }
+  },
+  {
+    title: 'Admissions',
+    link: '/admissions',
+  },
 ]
 
 
@@ -115,6 +119,7 @@ const ctaButtons: Array<{
     className: "apply-now-button",
     type: 'primary',
     mobile: false,
+    'data-modal-target': 'login-prompt',
   },
   {
     title: 'Login',
@@ -200,9 +205,13 @@ const activePath = Astro.url.pathname
     {
       ctaButtons.map(item => {
         return (
-            <a href={item.link} target='_blank' class={`${item.menu && 'max-md:hidden'} ${item?.className}`}>
-            <Button class="font-display" type={item.type} icon={item?.icon}>{item.title}</Button>
-            </a>
+          <div class={`${item.menu && 'max-md:hidden'} ${item?.className}`} {...item}>
+            <Button
+              class="font-display"
+              type={item.type}
+              icon={item?.icon}
+            >{item.title}</Button>
+          </div>
         )
       })
     }

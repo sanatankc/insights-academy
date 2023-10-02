@@ -14,7 +14,7 @@ const admissionLink = campusConfig?.admissionLink || config.campus[0].admissionL
   class="p-xl flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden
         max-md:p-m  max-sm:items-start card
   "
- 
+  data-modal-target='login-prompt'
 >
 <div class="absolute inset-0 img "
 style=`
@@ -30,7 +30,7 @@ background-position: center top;
 >
 
 </div>
-<a class="flex justify-between w-full max-w-[1500px] m-auto items-center" href={admissionLink}>
+<div class="flex justify-between w-full max-w-[1500px] m-auto items-center">
   <div class="flex flex-col gap-10 items-start justify-start shrink-0 relative">
     <div
       class="flex flex-col gap-[30px]"
@@ -69,7 +69,7 @@ background-position: center top;
       />
   </div>
 </div>
-</a>
+</div>
 
 <style>
   .card{
