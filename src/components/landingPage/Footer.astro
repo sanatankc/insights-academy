@@ -12,6 +12,11 @@ import phoneIcon from '../../icons/Phone.svg'
 import locationIcon from '../../icons/Location.svg'
 import Text from '../system/Text.astro'
 import Constrain from '../system/Constrain.astro'
+import config from '../../../config'
+
+const contactDetailsKnk = config.campus[0]
+const contactDetailsMarth = config.campus[1]
+
 
 ---
 <div
@@ -71,8 +76,8 @@ import Constrain from '../system/Constrain.astro'
             <div class='w-5 flex-shrink-0'>
               <img src={emailIcon} alt="Email Icon" class="w-full h-full">
             </div>
-            <a target='_blank' href="mailto:info@insightacademy.in" class="hover:underline">
-              <Text type={'regular'} class='ml-2'>info@insightacademy.in</Text>
+            <a target='_blank' href={`mailto:${contactDetailsKnk.contact?.details.workingHours.value}`} class="hover:underline">
+              <Text type={'regular'} class='ml-2'>{contactDetailsKnk.contact?.details.workingHours.value}</Text>
             </a>
           </div>
   
@@ -80,7 +85,7 @@ import Constrain from '../system/Constrain.astro'
             <div class='w-5'>
               <img src={phoneIcon} alt="Phone Icon" class="w-full h-full">
             </div>
-            <a target='_blank' href='tel:+917899738130' class="hover:underline"><Text type={'regular'} class='ml-2'>+91 7899738130</Text></a>
+            <a target='_blank' href={`tel:${contactDetailsKnk.contact.details.phoneNo.value.split(',')[0].replaceAll(' ', '')}`} class="hover:underline"><Text type={'regular'} class='ml-2'>{contactDetailsKnk.contact.details.phoneNo.value.split(',')[0]}</Text></a>
   
           </div>
   
@@ -88,8 +93,8 @@ import Constrain from '../system/Constrain.astro'
             <div class='w-[2.25rem]'>
               <img src={locationIcon} alt="Location Icon" class="w-full h-full">
             </div>
-            <a target='_blank' href="https://goo.gl/maps/1RTX2F4ZwJipSuEy9">
-              <Text type={'regular'} class='ml-2'>#20, Vasanthpura Road, off Kanakapura Road,Bangalore - 560 062</Text>
+            <a target='_blank' href={contactDetailsKnk.contact?.mapLink}>
+              <Text type={'regular'} class='ml-2'>{contactDetailsKnk.contact?.details.address.value}</Text>
             </a>
           </div>
         </div>
@@ -97,11 +102,11 @@ import Constrain from '../system/Constrain.astro'
           <Text type={'base'} class='text-yellow mb-7 max-md:mb-3 font-semibold'>Marathahalli</Text>
   
           <div class='flex flex-row items-center mb-3'>
-            <div class='w-5'>
+            <div class='w-5 flex-shrink-0'>
               <img src={emailIcon} alt="Email Icon" class="w-full h-full">
             </div>
-            <a target='_blank' href="mailto:info@insightacademy.in" class="hover:underline w-[90%]">
-              <Text type={'regular'} class='ml-2'>info@insightacademy.in</Text>
+            <a target='_blank' href={`mailto:${contactDetailsMarth.contact?.details.workingHours.value}`} class="hover:underline">
+              <Text type={'regular'} class='ml-2'>{contactDetailsMarth.contact?.details.workingHours.value}</Text>
             </a>
           </div>
   
@@ -109,15 +114,16 @@ import Constrain from '../system/Constrain.astro'
             <div class='w-5'>
               <img src={phoneIcon} alt="Phone Icon" class="w-full h-full">
             </div>
-            <a target='_blank' href='tel:+919632104368' class="hover:underline"><Text type={'regular'} class='ml-2'>+91 9632104368</Text></a>
+            <a target='_blank' href={`tel:${contactDetailsMarth.contact.details.phoneNo.value.split(',')[0].replaceAll(' ', '')}`} class="hover:underline"><Text type={'regular'} class='ml-2'>{contactDetailsMarth.contact.details.phoneNo.value.split(',')[0]}</Text></a>
+  
           </div>
   
           <div class='flex flex-row items-start mb-3 '>
-            <div class='w-[2.25rem] mr-1'>
+            <div class='w-[2.25rem]'>
               <img src={locationIcon} alt="Location Icon" class="w-full h-full">
             </div>
-            <a target='_blank' href="https://goo.gl/maps/2WjJv85fKSJg6yfm6">
-              <Text type={'regular'} class='ml-2'>Opp. Prestige Tech Park, Behind Croma, Sarjapura Outer Ring Road, Kadubeesanahalli, Marathahalli, Bangalore - 560 103</Text>
+            <a target='_blank' href={contactDetailsMarth.contact?.mapLink}>
+              <Text type={'regular'} class='ml-2'>{contactDetailsMarth.contact?.details.address.value}</Text>
             </a>
           </div>
         </div>

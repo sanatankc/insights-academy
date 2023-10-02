@@ -316,6 +316,7 @@ const data: Data = {
             type: 'address'
           }
         },
+        mapLink: "https://maps.app.goo.gl/M1Hy8WB2h5nbsfto8",
         mapEmbedLink: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.2290894404828!2d77.55730367661839!3d12.892985516593843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3fe19b3ba497%3A0x88e55fe492a8db63!2sInsight%20Academy!5e0!3m2!1sen!2sin!4v1694550190874!5m2!1sen!2sin',
         mindlerLink: 'https://www.mindler.com/schools/GLENTREE2023'
       },
@@ -491,6 +492,7 @@ const data: Data = {
             type: 'address'
           }
         },
+        mapLink: "https://maps.app.goo.gl/ms3LtdJbJEHT9ByF8",
         mapEmbedLink: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124455.25147306037!2d77.4774783226767!3d12.893145184611434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae124cb9470d67%3A0x3e746feb4a1d3908!2sInsight%20Academy%20School%20Bangalore!5e0!3m2!1sen!2sin!4v1694550265537!5m2!1sen!2sin',
         mindlerLink: 'https://www.mindler.com/schools/GLENTREE2023'
       },
