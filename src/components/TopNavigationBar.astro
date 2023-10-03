@@ -204,15 +204,27 @@ const activePath = Astro.url.pathname
   <div class="flex gap-3">
     {
       ctaButtons.map(item => {
+        if (item['data-modal-target']) {
+          return (
+            <div class={`${item.menu && 'max-md:hidden'} ${item?.className}`} {...item}>
+              <Button
+                class="font-display"
+                type={item.type}
+                icon={item?.icon}
+              >{item.title}</Button>
+            </div>
+          )
+        }
         return (
-          <div class={`${item.menu && 'max-md:hidden'} ${item?.className}`} {...item}>
+          <a href={item.link} class={`${item.menu && 'max-md:hidden'} ${item?.className}`} target="_blank">
             <Button
               class="font-display"
               type={item.type}
               icon={item?.icon}
             >{item.title}</Button>
-          </div>
+          </a>
         )
+
       })
     }
   </div>
