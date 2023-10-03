@@ -189,8 +189,8 @@ const data: Data = {
       internalName: 'kanakapura',
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
-      description: 'Located near the ISRO Layout amidst greenery, we offer focused learning within our ICSE-affiliated institution.',
-      admissionLink: "http://admissions.neverskip.com/6a572b6c322f61674d62684c7a334b7a6d364d755a673d3d/utms-723458We8&utmc-305639Sc9",
+      description: 'Located near ISRO Layout amidst the lush greenery of South Banglore, we offer focussed learning in our ICSE affiliated institution.',
+      admissionLink: "https://admissions.neverskip.com/767a2f61336a6e5954447361627856657465723575773d3d/utms-705168We8&utmc-395849Sc9",
       images: [
         {type: 'picture', slide: [
           { src: campusbg1, media: "(min-width: 768px)", position: 'center 64%' },
@@ -220,7 +220,7 @@ const data: Data = {
           image: principalknk,
           name: "Mrs. May Ruth D'Souza",
           role: 'PRINCIPAL',
-          body: "At Insight Academy, we're dedicated to offering quality education for every child, regardless of their abilities or challenges. We prioritize holistic development and our team of well-trained teachers goes the extra mile to provide additional support. The strong partnership between students, parents, and the school lays the foundation for a brighter future."
+          body: "At Insight Academy, we're dedicated to offering quality education for every child, regardless of their abilities or challenges. We prioritize holistic development and our team of well-trained teachers go the extra mile to provide additional support. The strong partnership between students, parents, and the school lays the foundation for a brighter future."
         }
       ],
       academic: [
@@ -229,15 +229,15 @@ const data: Data = {
           description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development.',
           images: [kindergartenknk],
           highlights: [
-           "1:25 Student-to-Teacher ratio",
+           "25:1 Student-to-Teacher ratio",
            "Multi-sensory, experiential learning approach",
            "Emphasis on communication skills",
            "Extracurriculars activities like swimming, tennis, music & art"
           ],
         },
         {
-          title: 'Class 1-5',
-          description: 'At Insight Academy, students from class 1-5 are nurtured in an environment that is sensitive to their social and emotional needs, fostering them into compassionate individuals.',
+          title: 'Grade 1-5',
+          description: 'At Insight Academy, students from grade 1-5 are nurtured in an environment that is sensitive to their social and emotional needs, fostering them into compassionate individuals.',
           images: [grade1knk],
           highlights: [
             "Limited class sizes",
@@ -247,8 +247,8 @@ const data: Data = {
            ],
         },
         {
-          title: 'Class 6-10',
-          description: 'Preparation for board exams starts in class 6 at Insight Academy, instilling not just academic rigor but also discipline, confidence, and time management skills.',
+          title: 'Grade 6-10',
+          description: 'Preparation for board exams starts in grade 6 at Insight Academy, instilling not just academic rigor but also discipline, confidence, and time management skills.',
           images: [grade6knk],
           highlights: [
             "Focus is to prepare students for Grade 10",
@@ -328,7 +328,7 @@ const data: Data = {
           image: topper1,
         },
         {
-          name: 'Hasini Gupta PS', 
+          name: 'Hasini Gupta PS',
           ranks: 'Rank 2',
           marks: '97.2%',
           image: topper2,
@@ -354,8 +354,8 @@ const data: Data = {
       internalName: 'marathahalli',
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
-      description: 'Centrally situated in Marathahalli, we offer a comprehensive CBSE-affiliated education framework.',
-      admissionLink: "http://admissions.neverskip.com/6d652f7056524f56505837546f7352713344577770673d3d/utms-723458We8&utmc-305639Sc9",
+      description: 'Situated in the heart of Marathahalli, we offer a comprehensive CBSE-affiliated education framework.',
+      admissionLink: "https://admissions.neverskip.com/474e6133503443334b7142572f472b5a5474475363673d3d/utms-6271788&utmc-6f4d699",
       images: [
         {type: 'picture', slide: [
           { src: marthcampusbg1, media: "(min-width: 768px)", position: 'center 64%' },
@@ -538,12 +538,12 @@ const data: Data = {
       // },
       {
         image: testimonial3,
-        quote: "For 12 years, Insight Academy has shaped our daughter into a well-rounded achiever. She's excelled in sports, academics, debates, culture, and inter-school competitions.",
+        quote: "Since the last 12 years, Insight Academy has shaped our daughter into a multifaceted achiever. She has excelled in sports, academics and also in culturally activities. She has also brought accolades to the school in several inter-school competitions. A large part of the credit of her success goes to the encouragement given by the Principal and staff at Insight Academy.",
         author: '- BHANU MURTHY, PARENT OF VIBHA MURTHY (Grade 10)',
       },
       {
         image: testimonial2,
-        quote: 'This school has helped me develop a wide range of skills at a very highly detailed level, which aids me in all aspects of life, from studying to sports.',
+        quote: 'This school has helped me develop a wide range of skills and is also continuously motivating me to reach perfection in each field, which aids me in all aspects of life, from studying to sports.',
         author: '- Pramath K. Panyam (Grade 10)',
       },
       {
