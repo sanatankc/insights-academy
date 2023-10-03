@@ -190,7 +190,7 @@ const data: Data = {
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
       description: 'Located near the ISRO Layout amidst greenery, we offer focused learning within our ICSE-affiliated institution.',
-      admissionLink: "https://admissions.neverskip.com/767a2f61336a6e5954447361627856657465723575773d3d/utms-705168We8&utmc-395849Sc9",
+      admissionLink: "http://admissions.neverskip.com/6a572b6c322f61674d62684c7a334b7a6d364d755a673d3d/utms-723458We8&utmc-305639Sc9",
       images: [
         {type: 'picture', slide: [
           { src: campusbg1, media: "(min-width: 768px)", position: 'center 64%' },
@@ -328,7 +328,7 @@ const data: Data = {
           image: topper1,
         },
         {
-          name: 'Anshul A Gadgoli',
+          name: 'Hasini Gupta PS', 
           ranks: 'Rank 2',
           marks: '97.2%',
           image: topper2,
@@ -340,7 +340,7 @@ const data: Data = {
           image: topper3,
         },
         {
-          name: 'Hasini Gupta PS',
+          name: 'Anshul A Gadgoli',
           ranks: 'Rank 3',
           marks: '96.4%',
           image: topper4,
@@ -355,7 +355,7 @@ const data: Data = {
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
       description: 'Centrally situated in Marathahalli, we offer a comprehensive CBSE-affiliated education framework.',
-      admissionLink: "https://admissions.neverskip.com/474e6133503443334b7142572f472b5a5474475363673d3d/utms-6271788&utmc-6f4d699",
+      admissionLink: "http://admissions.neverskip.com/6d652f7056524f56505837546f7352713344577770673d3d/utms-723458We8&utmc-305639Sc9",
       images: [
         {type: 'picture', slide: [
           { src: marthcampusbg1, media: "(min-width: 768px)", position: 'center 64%' },
@@ -544,12 +544,12 @@ const data: Data = {
       {
         image: testimonial2,
         quote: 'This school has helped me develop a wide range of skills at a very highly detailed level, which aids me in all aspects of life, from studying to sports.',
-        author: '- KAMAT (Grade 10)',
+        author: '- Pramath K. Panyam (Grade 10)',
       },
       {
         image: testimonial1,
         quote: "The teachers and the whole environment here encourage you to push beyond your limits and that's why I feel like this is the perfect school for me! ",
-        author: '- ABHINAV (Grade 10)',
+        author: '- Abhirav S Kashyap (Grade 10)',
 
       },
     ],
