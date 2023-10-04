@@ -117,8 +117,10 @@ const rounded = [
   "rounded-tl-[250px]", "", "rounded-bl-[250px]"
 ]
 
+const capitalisedCampusName = campusName.charAt(0).toUpperCase() + campusName.slice(1)
+
 ---
-<Layout title='Welcome'>
+<Layout title={`Best School in ${capitalisedCampusName} | Insight Academy`}>
   <TopNavigationBar />
 <div
   class="h-[91vh]"

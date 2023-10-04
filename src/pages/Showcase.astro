@@ -57,6 +57,9 @@ const config: Item[] = campusName === 'kanakapura'
     ? marthahalliEvents
     : homePageEvents
 
+const fbLink = campusName === 'kanakapura' 
+  ? 'https://www.facebook.com/InsightAcademy.KanakapuraRoad'
+  : 'https://www.facebook.com/InsightAcademy.Marathahalli/'
 const heading = title || "Featured Updates"
 ---
 
@@ -74,7 +77,7 @@ const heading = title || "Featured Updates"
     <div class="flex flex-row items-center justify-between px-xl max-md:flex-col max-md:gap-[16px] max-sm:px-3 ">
         <Heading first={heading.split(' ')[0]} second={heading.split(' ')[1]} />
         {showSocial && 
-          <a  href="https://www.facebook.com/InsightAcademy.KanakapuraRoad"
+          <a  href={fbLink}
               target="_blank"
           >
             <div
