@@ -33,7 +33,7 @@ import marthcampusbgMb4 from './src/images/campus/marth/slides/mb/4.jpeg';
 import marthcampusbgMb5 from './src/images/campus/marth/slides/mb/6.jpeg';
 
 import RoboticClass from "./src/images/campus/knk/facilities/robotics.jpeg";
-import ComputerClass from "./src/images/campus/knk/facilities/codingandcs.jpeg";
+import ComputerClass from "./src/images/campus/knk/facilities/preComputerClass.jpeg";
 import KgClass from "./src/images/campus/knk/facilities/acitivitiesroom.jpeg";
 import sports from "./src/images/campus/knk/facilities/sports.jpeg";
 import zumba from "./src/images/campus/knk/facilities/zumba.jpeg";
