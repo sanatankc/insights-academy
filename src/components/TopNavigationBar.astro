@@ -20,6 +20,16 @@ const menu: Array<Menu> = [
   {
     title: 'About Us',
     link: '/about-us',
+    submenu: [
+      {
+        title: 'Mission & Vision',
+        link: '/about-us'
+      },
+      {
+        title: 'Our Visionaries',
+        link: '/leadership'
+      },
+    ]
   },
   {
     title: 'Kanakapura Campus',
@@ -152,7 +162,7 @@ const activePath = Astro.url.pathname
                   href={item.link}
                   class:list={[
                     "text-white font-semibold hover:underline font-display",
-                    item.link === activePath && 'text-yellow'
+                    (item.link === activePath || item.submenu.map(({ link }) => link).includes(activePath)) && 'text-yellow'
                   ]}
                 >{item.title}</a> 
               ) : (
@@ -162,7 +172,7 @@ const activePath = Astro.url.pathname
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M5.94524 9.20954C6.16089 8.95794 6.53967 8.9288 6.79127 9.14446L12.0008 13.6098L17.2103 9.14446C17.4619 8.9288 17.8407 8.95794 18.0563 9.20954C18.272 9.46113 18.2429 9.83991 17.9913 10.0556L12.3913 14.8556C12.1666 15.0482 11.835 15.0482 11.6103 14.8556L6.01032 10.0556C5.75872 9.83991 5.72958 9.46113 5.94524 9.20954Z" 
                     
-                    class={item.link === activePath ? 'fill-yellow' : 'fill-white'}
+                    class={(item.link === activePath || item.submenu.map(({ link }) => link).includes(activePath)) ? 'fill-yellow' : 'fill-white'}
                   />
                 </svg>					
               </div>
@@ -179,7 +189,7 @@ const activePath = Astro.url.pathname
                     href={subitem.link}
                     class:list={[
                       "text-white font-semibold hover:underline font-display",
-                      // item.link === activePath && 'text-yellow'
+                      subitem.link === activePath && 'text-primary'
                     ]}
                   >{subitem.title}</a>
                 </div>
@@ -260,18 +270,23 @@ const activePath = Astro.url.pathname
                 </div>
               </div>
             </div>
-            <div class='subMenu'>
-              {item.submenu.map(subMenuItem => (
-                <div class='relative py-[14px] px-5 mr-8 max-md:mr-0 w-full' style={{ 
-                  borderBottom: '1px solid rgba(255, 255, 255, 0.2)'
-                }}>
-                  <a 
-                    href={subMenuItem.link}
-                    class="text-white font-semibold hover:underline pl-5"
-                  >{subMenuItem.title}</a>
-                </div>
-              ))}
-            </div>
+            <div class="subMenu">
+                {item.submenu.map((subMenuItem) => (
+                  <div
+                    class="relative py-[14px] px-5 mr-8 max-md:mr-0 w-full"
+                    style={{
+                      borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
+                    }}
+                  >
+                    <a
+                      href={subMenuItem.link}
+                      class="text-white font-semibold hover:underline pl-5"
+                    >
+                      {subMenuItem.title}
+                    </a>
+                  </div>
+                ))}
+              </div>
           </div>
         )
       } else {

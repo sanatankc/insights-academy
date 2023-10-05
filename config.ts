@@ -328,7 +328,7 @@ const data: Data = {
           image: topper1,
         },
         {
-          name: 'Hasini Gupta PS',
+          name: 'Hasini Gupta P S',
           ranks: 'Rank 2',
           marks: '97.2%',
           image: topper2,
@@ -516,7 +516,7 @@ const data: Data = {
           image: topper3,
         },
         {
-          name: 'Hasini Gupta PS',
+          name: 'Hasini Gupta P S',
           ranks: 'Rank 4',
           marks: '98.8%',
           image: topper4,
@@ -538,7 +538,7 @@ const data: Data = {
       // },
       {
         image: testimonial3,
-        quote: "Since the last 12 years, Insight Academy has shaped our daughter into a multifaceted achiever. She has excelled in sports, academics and also in culturally activities. She has also brought accolades to the school in several inter-school competitions. A large part of the credit of her success goes to the encouragement given by the Principal and staff at Insight Academy.",
+        quote: "Since the last 12 years, Insight Academy has shaped our daughter into a multifaceted achiever. She has excelled in sports, academics and also in cultural activities. She has also brought accolades to the school in several inter-school competitions. A large part of the credit of her success goes to the encouragement given by the Principal and staff at Insight Academy.",
         author: '- BHANU MURTHY, PARENT OF VIBHA MURTHY (Grade 10)',
       },
       {
