@@ -106,7 +106,7 @@ const hasCampusSelected = !!campusConfig
     <div class="flex p-xl  items-center text-white justify-between w-full max-sm:p-4 max-sm:pb-14 relative z-20">
       <div class={`flex gap-l flex-col relative z-10 max-sm:mt-auto`}>
         <div class="flex gap-r flex-col">
-          <slot name="topHeading font-display">
+          <slot name="topHeading" class="font-display">
             {topHeading ? <Text type="h4" class="uppercase">{topHeading}</Text> : null}
           </slot>
           <slot name="title">
