@@ -117,6 +117,13 @@ const rounded = [
   "rounded-tl-[250px]", "", "rounded-bl-[250px]"
 ]
 
+export function getStaticPaths() {
+  return [
+    { params: { campusName: "kanakapura" } },
+    { params: { campusName: "marathahalli" } },
+  ];
+}
+
 const capitalisedCampusName = campusName.charAt(0).toUpperCase() + campusName.slice(1)
 
 ---
