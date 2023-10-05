@@ -251,7 +251,7 @@ const activePath = Astro.url.pathname
     </form>
   </div>
 
-  <div class="mobileMenu absolute top-0 left-0 w-screen h-screen bg-black flex flex-col pt-20 overflow-scroll" class="max-md:visible hidden">
+  <div class="mobileMenu absolute pt- top-0 left-0 w-screen h-screen bg-black flex flex-col pt-24 overflow-scroll" class="max-md:visible hidden">
     {mobileMenu.map(item => {
       if (item.submenu && item.submenu.length > 0) {
         return (
@@ -270,41 +270,35 @@ const activePath = Astro.url.pathname
                 </div>
               </div>
             </div>
-            <div class="subMenu">
-                {item.submenu.map((subMenuItem) => (
-                  <div
-                    class="relative py-[14px] px-5 mr-8 max-md:mr-0 w-full"
-                    style={{
-                      borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
-                    }}
-                  >
-                    <a
-                      href={subMenuItem.link}
-                      class="text-white font-semibold hover:underline pl-5"
-                    >
-                      {subMenuItem.title}
-                    </a>
-                  </div>
-                ))}
-              </div>
+            <div class="subMenu flex flex-col">
+              {item.submenu.map((subMenuItem) => (
+                <a 
+                  href={subMenuItem.link}
+                  data-menu-mobile-item
+                  class="relative py-[14px] px-5 mr-8 max-md:mr-0 w-full text-white font-semibold hover:underline pl-10"
+                  style={{
+                    borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
+                  }}
+                >
+                    {subMenuItem.title}
+                </a>
+              ))}
+            </div>
           </div>
         )
       } else {
         return (
           <div class='mobileMenuParent'>
-            <div class='flex flex-row gap-2 items-center first-letter:relative py-[14px] px-5 mr-8 max-md:mr-0 w-full' style={{ 
+            <a data-menu-mobile-item href={item.link} class='text-white font-semibold hover:underline flex flex-row gap-2 items-center first-letter:relative py-[14px] px-5 mr-8 max-md:mr-0 w-full' style={{ 
               borderBottom: '1px solid rgba(255, 255, 255, 0.2)'
             }}>
-                <a 
-                  href={item.link}
-                  class="text-white font-semibold hover:underline"
-                >{item.title}</a>
+                {item.title}
                 {item.icon && (
                   <div class='w-4 h-4 ml-1 -rotate-90 menu-arrow -scale-y-100'>
                     <item.icon />
                   </div>
                 )}
-            </div>
+            </a>
           </div>
         )
       }
@@ -520,6 +514,14 @@ const activePath = Astro.url.pathname
       }
     })
   })
+
+  document.querySelectorAll('[data-menu-mobile-item]').forEach((el) => {
+    el.addEventListener('click', () => {
+      mobileMenu.classList.remove('visible')
+      menuToggle.querySelector('input').checked = false
+    })
+  })
+
   // document.addEventListener('astro:beforeload', () => {
   //   console.log('helllo... 11')
   //   const path = window.location.pathname
