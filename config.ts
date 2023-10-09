@@ -190,7 +190,7 @@ const data: Data = {
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
       description: 'Located near ISRO Layout amidst the lush greenery of South Banglore, we offer focussed learning in our ICSE affiliated institution.',
-      admissionLink: "https://admissions.neverskip.com/767a2f61336a6e5954447361627856657465723575773d3d/utms-705168We8&utmc-395849Sc9",
+      admissionLink: "http://admissions.neverskip.com/6a572b6c322f61674d62684c7a334b7a6d364d755a673d3d/utms-723458We8&utmc-305639Sc9",
       images: [
         {type: 'picture', slide: [
           { src: campusbg1, media: "(min-width: 768px)", position: 'center 64%' },
@@ -355,7 +355,7 @@ const data: Data = {
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
       description: 'Situated in the heart of Marathahalli, we offer a comprehensive CBSE-affiliated education framework.',
-      admissionLink: "https://admissions.neverskip.com/474e6133503443334b7142572f472b5a5474475363673d3d/utms-6271788&utmc-6f4d699",
+      admissionLink: "http://admissions.neverskip.com/6d652f7056524f56505837546f7352713344577770673d3d/utms-723458We8&utmc-305639Sc9",
       images: [
         {type: 'picture', slide: [
           { src: marthcampusbg1, media: "(min-width: 768px)", position: 'center 64%' },
