@@ -189,7 +189,7 @@ const data: Data = {
       internalName: 'kanakapura',
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
-      description: 'Located near ISRO Layout amidst the lush greenery of South Banglore, we offer focussed learning in our ICSE affiliated institution.',
+      description: 'Located near ISRO Layout amidst the lush greenery of South Bengaluru, we offer focussed learning in our ICSE affiliated institution.',
       admissionLink: "http://admissions.neverskip.com/6a572b6c322f61674d62684c7a334b7a6d364d755a673d3d/utms-723458We8&utmc-305639Sc9",
       images: [
         {type: 'picture', slide: [
