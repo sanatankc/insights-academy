@@ -1,7 +1,7 @@
 ---
 import Button from "../system/Button.astro";
 import Text from "../system/Text.astro";
-const { image=[], class: className, name, desc, link,ctaText,path,index,slideClass} = Astro.props as any
+const { image=[], class: className, name, desc, link,ctaText,path,index,slideClass, videoId} = Astro.props as any
 
 ---
 
@@ -10,16 +10,17 @@ const { image=[], class: className, name, desc, link,ctaText,path,index,slideCla
 <div class="slide-container absolute inset-0">
 
 {image.map((item: any,i: number) => {
-  return <div
-            style={{
-                  backgroundImage: `url(${item.uri || item.slide[0].src})`,
-                  transition: '1s all ease-in-out',
-                  zIndex: -1
-                }}
-            data-class={slideClass}
-            class:list={['w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover', i == 0 ? 'opacity-1' : 'opacity-0','slide-item']}
-          >
-        </div>
+  return (
+    <div
+      style={{
+            backgroundImage: `url(${item.uri || item.slide[0].src})`,
+            transition: '1s all ease-in-out',
+            zIndex: -1
+          }}
+      data-class={slideClass}
+      class:list={['w-full h-full absolute top-0 left-0 bg-no-repeat bg-cover', i == 0 ? 'opacity-1' : 'opacity-0','slide-item']}>
+    </div>
+    )
 })}
 </div>
 
@@ -27,11 +28,19 @@ const { image=[], class: className, name, desc, link,ctaText,path,index,slideCla
       <Text type="h3" class="text-neutral-dark-grey font-display font-bold text-[32px]">{name}</Text>
       <Text type="p" class="text-neutral-dark-grey max-w-[34ch]">{desc}</Text>
       <div class="pt-r max-sm:pt-r">
-        <a href={`insight-${path}`}>
-          <Button >
-            {ctaText}
-          </Button>
-        </a>
+        {videoId ? (
+          <div data-video-open={videoId}>
+            <Button >
+              Watch Video
+            </Button>
+          </div>
+        ) : ( 
+          <a href={`insight-${path}`}>
+            <Button >
+              {ctaText}
+            </Button>
+          </a>
+        )}
       </div>
       </div>
   </div>

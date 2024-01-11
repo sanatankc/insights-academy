@@ -3,6 +3,7 @@ import Heading from "../system/Heading.astro";
 import Text from "../system/Text.astro";
 import config from "../../../config";
 import CampusCard from "./campusCard.astro";
+import YoutubeEmbed from "../YoutubeEmbed.astro";
 
 const campus = config.campus;
 ---
@@ -16,6 +17,7 @@ const campus = config.campus;
     {
     campus.map((item,index) => {
       return <CampusCard
+                videoId={index === 0 ? "kanakpura-campus-tour" : null}
                 image={item.images}
                 name={item.title}
                 desc={item.description}
@@ -27,6 +29,7 @@ const campus = config.campus;
         </CampusCard>
     })
     }
-
+<!-- MAf7ML6JYaA -->
+  <YoutubeEmbed embedId={'MAf7ML6JYaA'} videoId='kanakpura-campus-tour' />
   </div>
   </div>

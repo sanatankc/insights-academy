@@ -2,6 +2,7 @@
 import config from '../../../config';
 import Heading from '../system/Heading.astro';
 import Text from '../system/Text.astro';
+import Button from '../system/Button.astro';
 import YoutubeEmbed from '../YoutubeEmbed.astro'
 import TestimonicalCard from './TestimonicalCard.astro';
 const testimonials = config.testimonials;
@@ -28,8 +29,10 @@ const subtitle = testimonials.subtitle;
             quote={data[0].quote}
             author={data[0]?.author}
             image={data[0].image}
+            videoId="testimonial-video"
             className="bg-transparent text-white width-full"
-        />
+        >
+        </TestimonicalCard>
       
     }
     <div class="flex flex-row gap-10 max-sm:flex-col max-sm:gap-0">
@@ -47,7 +50,7 @@ const subtitle = testimonials.subtitle;
       })}
     </div>
    
-    <YoutubeEmbed embedId={'d-A17Q46EvI'} videoId='0' />
+    <YoutubeEmbed embedId={'QkMpP_3C5S0'} videoId='testimonial-video' />
   </div>
   </div>
 
