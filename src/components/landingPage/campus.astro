@@ -17,7 +17,7 @@ const campus = config.campus;
     {
     campus.map((item,index) => {
       return <CampusCard
-                videoId={index === 0 ? "kanakpura-campus-tour" : null}
+                videoId={index === 0 ? "kanakpura-campus-tour" : "marathahalli-campus-tour"}
                 image={item.images}
                 name={item.title}
                 desc={item.description}
@@ -31,5 +31,6 @@ const campus = config.campus;
     }
 <!-- MAf7ML6JYaA -->
   <YoutubeEmbed embedId={'MAf7ML6JYaA'} videoId='kanakpura-campus-tour' />
+  <YoutubeEmbed embedId={'7MT_Q5LIWpc'} videoId='marathahalli-campus-tour' />
   </div>
   </div>

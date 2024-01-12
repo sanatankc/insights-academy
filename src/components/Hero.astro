@@ -3,6 +3,7 @@ import Button from "./system/Button.astro"
 import Text from "./system/Text.astro"
 import Image from "./system/Image.astro"
 import config from '../../config'
+import YoutubeEmbed from "./YoutubeEmbed.astro"
 
 const {
   showSlide, 
@@ -31,6 +32,7 @@ const hasCampusSelected = !!campusConfig
 // const { campusName = '' } = Astro.params
 
 
+let videoId = campusName === 'kanakapura' ? 'MAf7ML6JYaA' : '7MT_Q5LIWpc'
 ---
 <div 
   class=`font-roundo w-full h-full bg-cover bg-top relative bg-black flex flex-col ${className}`
@@ -120,9 +122,19 @@ const hasCampusSelected = !!campusConfig
         <slot name="ctaButton">
           {showCta ? (
             hasCampusSelected ? (
-              <a href={campusConfig.admissionLink} target="_blank">
-                <Button>Apply Now</Button>
-              </a>
+              <div class="flex flex-row gap-4 max-md:flex-col">
+                <a href={campusConfig.admissionLink} target="_blank">
+                  <Button>Apply Now</Button>
+                </a>
+                <div data-video-open={videoId}>
+                  <Button type="secondary">
+                    Watch Video
+                    <svg slot="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM13.2313 8.72996C12.9466 8.53003 12.6242 8.32321 12.2903 8.1202C11.0034 7.33764 10.36 6.94636 9.7829 7.37957C9.2058 7.81278 9.15335 8.71968 9.04846 10.5335C9.01879 11.0464 9 11.5493 9 12.0001C9 12.4508 9.01879 12.9537 9.04846 13.4666C9.15335 15.2804 9.2058 16.1873 9.7829 16.6205C10.36 17.0537 11.0034 16.6625 12.2903 15.8799C12.6242 15.6769 12.9466 15.4701 13.2313 15.2702C13.5559 15.0423 13.909 14.7688 14.2651 14.4783C15.555 13.426 16.2 12.8999 16.2 12.0001C16.2 11.1002 15.555 10.5741 14.2651 9.52182C13.909 9.23134 13.5559 8.95785 13.2313 8.72996Z" fill="#006BB3"/>
+                    </svg>
+                  </Button>
+                </div>
+              </div>
             ) : (
               <div data-modal-target='login-prompt'>
                 <Button>Apply Now</Button>
@@ -142,6 +154,8 @@ const hasCampusSelected = !!campusConfig
       </slot>
      
     </div>
+
+    <YoutubeEmbed embedId={videoId} videoId={videoId} />
     
     
   </div>
