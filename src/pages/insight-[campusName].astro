@@ -111,7 +111,6 @@ const colors = [
   ["#FCF8EB","black-100","neutral-dark-grey"],
   ["#EFFAF8","primary","neutral-dark-grey"],
   ["#FCF8EB","black-100","neutral-dark-grey"],
-
 ]
 const rounded = [
   "rounded-tl-[250px]", "", "rounded-bl-[250px]"
@@ -138,7 +137,7 @@ const capitalisedCampusName = campusName.charAt(0).toUpperCase() + campusName.sl
           title: campusConfig?.title,
         }
       }
-       slideImages={ campusConfig?.images.map(item => (item.type === 'picture' ? {
+       slideImages={ campusConfig?.images.map((item:any) => (item.type === 'picture' ? {
         "slide": item.slide, type: 'image', picture: true, position: 'center top'
       } : {
         "slide": item.uri, position: item.position, type: item.type

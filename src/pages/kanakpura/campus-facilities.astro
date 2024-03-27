@@ -1,0 +1,193 @@
+---
+import astronautKidsAdmissionBG from '../images/campus/knk/kindergartenknk.jpeg';
+import DeckCard from "../../components/DeckCard.astro";
+import TopNavigationBar from "../../components/TopNavigationBar.astro";
+import CarouselCard from "../../components/carousel/CarouselCard.astro";
+import Footer from "../../components/landingPage/Footer.astro";
+import Carousel from "../../components/system/Carousel.astro";
+import Heading from "../../components/system/Heading.astro";
+import Text from "../../components/system/Text.astro";
+
+import coScholastic1k from '../images/campus/knk/campus-facilities/co-scholastics/1.webp'
+import coScholastic2k from '../images/campus/knk/campus-facilities/co-scholastics/2.webp'
+
+import sportfacility1k from '../images/campus/knk/campus-facilities/sports/1.webp'
+import sportfacility2k from '../images/campus/knk/campus-facilities/sports/2.webp'
+// import sportfacility3k from '../images/campus/knk/campus-facilities/sports/3.webp'
+import sportfacility4k from '../images/campus/knk/campus-facilities/sports/4.webp'
+import sportfacility5k from '../images/campus/knk/campus-facilities/sports/5.webp'
+import sportfacility6k from '../images/campus/knk/campus-facilities/sports/6.webp'
+import sportfacility7k from '../images/campus/knk/campus-facilities/sports/7.webp'
+
+import aroundthecampus1 from '../images/campus/marth/campus-facilities/bus.jpeg'
+import aroundthecampus2 from '../images/campus/marth/campus-facilities/campusfront.jpeg'
+import aroundthecampus3 from '../images/campus/marth/campus-facilities/campus.jpeg'
+import aroundthecampus4 from '../images/campus/marth/campus-facilities/corridor.jpeg'
+
+import classrooms1k from  '../images/campus/knk/campus-facilities/classrooms/1.webp'
+import classrooms2k from  '../images/campus/knk/campus-facilities/primary-knk.jpg'
+import classrooms3k from  '../images/campus/knk/campus-facilities/classrooms/3.webp'
+
+import labs1k from '../images/campus/knk/campus-facilities/labs/1.webp'
+import labs2k from '../images/campus/knk/campus-facilities/labs/2.webp'
+import labs3k from '../images/campus/knk/campus-facilities/labs/3.webp'
+import labs4k from '../images/campus/knk/campus-facilities/labs/4.webp'
+import labs5k from '../images/campus/knk/campus-facilities/labs/5.webp'
+import labs6k from '../images/campus/knk/campus-facilities/labs/6.webp'
+import labs7k from '../images/campus/knk/campus-facilities/labs/7.webp'
+
+import coScholastic3k from '../images/campus/knk/campus-facilities/co-scholastics/3.jpg'
+import coScholastic4k from '../images/campus/knk/campus-facilities/co-scholastics/4.webp'
+import Gallery from "../../components/Gallery.astro";
+
+
+---
+
+<TopNavigationBar/>
+
+<div class='min-h-[512px] max-h-[512px] w-full flex justify-center items-center flex-col max-md:min-h-[350px]' style={{
+  background: `linear-gradient(180deg, rgba(18, 18, 18, 0) -21.78%, rgba(0, 0, 0, 0.7) 68.07%), url(${astronautKidsAdmissionBG})`,
+  backgroundPosition: '90% 50%',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+}}>
+  <Text type={'h2'} class='mt-14 font-bold max-md:mt-10 text-yellow'>Campus Facilities</Text>
+</div>
+
+<div id="campus-facilities" style="scroll-margin: 60px;" class="p-xl px-xl flex flex-col justify-center gap-l scroll-m-14 max-sm:p-r max-sm:gap-r max-md:mt-4">
+    <Heading first="Discover our" second={"Campus"} subtitle="Explore Insight" />
+    <div class="flex flex-row w-full justify-center max-md:flex-col">
+      <Text type="regular" class="text-neutral-dark-grey max-md:mb-5 max-w-5xl text-center flex-1 mr-4">
+        Discover a nurturing environment with well-designed classrooms, sprawling grounds, and a host of facilities, all dedicated to providing students with a holistic and enriching educational experience.
+      </Text>
+      <!-- <a href={campusName === 'marathahalli'
+        ? ""
+        : "https://drive.google.com/file/d/1VcI-cGbtwI0FaUyCanqv2AxzfNaTc6La/view?usp=sharing"
+      } target="_blank" class="">
+        <Button>Watch Campus Tour</Button>
+      </a> -->
+  
+    </div>
+
+      <Carousel class="gap-16 p-5 pt-8 mt-2 max-md:gap-14 max-md:pt-8 no-scrollbar" id="campus-showcase" stackOnMobile>
+        <!--
+          <CarouselCard>
+            <DeckCard
+              images={[
+                { src: aroundthecampus1, alt: '' },
+                { src: aroundthecampus2, alt: '' }
+              ]}
+              target="around-the-campus"
+            >
+              <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+                Around the campus
+              </Text>
+            </DeckCard>
+          </CarouselCard>
+          -->
+        <CarouselCard>
+          <DeckCard
+            images={[
+              { src: classrooms1k, alt: '' },
+              { src: classrooms2k, alt: '' }
+            ]}
+            target="classrooms-knk"
+          >
+            <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+              Classrooms
+            </Text>
+          </DeckCard>
+        </CarouselCard>
+        <CarouselCard>
+          <DeckCard
+            images={[
+              { src: labs1k, alt: '' },
+              { src: labs2k, alt: '' }
+            ]}
+            target="academic-labs-knk"
+          >
+            <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+              Academic Labs
+            </Text>
+          </DeckCard>
+        </CarouselCard>
+        <CarouselCard>
+          <DeckCard
+            images={[
+              { src: coScholastic1k, alt: '' },
+              { src: coScholastic2k, alt: '' }
+            ]}
+            target="extrafacility-knk"
+          >
+            <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+              Co-Scholastics
+            </Text>
+          </DeckCard>
+        </CarouselCard>
+        <CarouselCard>
+          <DeckCard
+            images={[
+              { src: sportfacility1k, alt: '' },
+              { src: sportfacility2k, alt: '' }
+            ]}
+            target="sportsfacility-knk"
+          >
+            <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+              Sports
+            </Text>
+          </DeckCard>
+        </CarouselCard>
+      </Carousel>
+
+  <Gallery
+    id="around-the-campusk"
+    gallery={[
+      { src: aroundthecampus1, caption: "Transport Buses" },
+      { src: aroundthecampus2, caption: "Campus Exterior" },
+      { src: aroundthecampus3, caption: "Campus Exterior" },
+      { src: aroundthecampus4, caption: "Campus Exterior" }
+    ]}
+  />
+  <Gallery
+    id="classrooms-knk"
+    gallery={[
+      { src: classrooms1k, caption: "Activity Room" },
+      { src: classrooms2k, caption: "Primary Classroom" },
+      { src: classrooms3k, caption: "Secondary Classroom" }
+    ]}
+  />
+  <Gallery
+    id="academic-labs-knk"
+    gallery={[
+      { src: labs1k, caption: "Montessori Lab" },
+      { src: labs2k, caption: "Robotics Lab" },
+      { src: labs4k, caption: "Computer Lab" },
+      { src: labs3k, caption: "Library" },
+      { src: labs5k, caption: "Biology Lab" },
+      { src: labs6k, caption: "Chemistry Lab" },
+      { src: labs7k, caption: "Physics Lab" }
+    ]}
+  />
+  <Gallery
+    id="extrafacility-knk"
+    gallery={[
+      // { src: coScholastic1k, caption: "Music Room" },
+      { src: coScholastic3k, caption: "Orchestra Room" },
+      { src: coScholastic2k, caption: "Robotics Lab" },
+      { src: coScholastic4k, caption: "Dance" },
+    ]}
+  />
+  <Gallery
+    id="sportsfacility-knk"
+    gallery={[
+      { src: sportfacility1k, caption: "Swimming" },
+      { src: sportfacility2k, caption: "Skating" },
+      { src: sportfacility4k, caption: "Basketball" },
+      { src: sportfacility5k, caption: "Basketball" },
+      { src: sportfacility6k, caption: "Nursery Playground" },
+      { src: sportfacility7k, caption: "Football" }
+    ]}
+  />
+  </div>
+
+<Footer/>

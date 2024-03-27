@@ -1,0 +1,87 @@
+---
+import config from "../../../config"
+import { Image } from "astro:assets"
+import Heading from "../../components/system/Heading.astro"
+import Text from "../../components/system/Text.astro"
+import Carousel from "../../components/system/Carousel.astro"
+import CarouselCard from "../../components/carousel/CarouselCard.astro"
+import TopNavigationBar from "../../components/TopNavigationBar.astro"
+import Footer from "../../components/landingPage/Footer.astro"
+
+const campus = config.campus
+const campusConfig = campus.find(c => c.internalName === "kanakapura")
+const facilities = campusConfig?.facilities
+---
+<TopNavigationBar/>
+
+<div id="life-at-insight" class="px-xl flex flex-col justify-center gap-l scroll-m-14 max-sm:p-m pt-10 pb-10">
+    <div class="flex flex-col gap-l px-xl max-sm:px-0">
+      <Heading first="Life at" second={"Insight"} subtitle="Experiencing the Full Spectrum of Learning">
+      </Heading>
+      <div class="flex items-center gap-20 max-md:flex-col">
+          <div class="flex gap-l flex-col">
+            <p class="text-lg max-sm:text-base">
+              At Insight Academy, we are dedicated to fostering well-rounded individuals by integrating academic education with essential life skills.
+            </p>
+          </div>
+          <img
+            class={`
+              h-[170px] min-w-[460px] max-md:min-w-[520px] flex-1 w-full max-w-md object-cover rounded-full max-sm:hidden border p-2 border-yellow
+            `}
+            src={campusConfig?.images[0].uri || campusConfig?.images[0].slide[0].src}
+          />
+      </div>
+  
+    </div>
+    <div class="flex justify-center flex-col gap-l">
+      <div class="flex gap-r items-center max-md:justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none" class="max-md:hidden">
+          <g clip-path="url(#clip0_1125_7345)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.689772 10.6337C0.689772 15.9661 5.01251 20.2889 10.3449 20.2889C15.6773 20.2889 20 15.9661 20 10.6337C20 5.3013 15.6773 0.978516 10.3449 0.978516C5.01251 0.978516 0.689772 5.3013 0.689772 10.6337ZM13.7535 11.0872C14.0363 11.37 14.0363 11.8285 13.7535 12.1113L10.8569 15.0078C10.5741 15.2906 10.1156 15.2906 9.83285 15.0078L6.93631 12.1113C6.65352 11.8285 6.65352 11.37 6.93631 11.0872C7.2191 10.8044 7.6776 10.8044 7.96039 11.0872L9.62075 12.7476V6.77164C9.62075 6.37171 9.94496 6.0475 10.3449 6.0475C10.7448 6.0475 11.069 6.37171 11.069 6.77164V12.7476L12.7294 11.0872C13.0122 10.8044 13.4707 10.8044 13.7535 11.0872Z" fill="#564101"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_1125_7345">
+              <rect width="20.6897" height="20.6896" fill="white" transform="matrix(0 1 -1 0 20.6895 0.289062)"/>
+            </clipPath>
+          </defs>
+        </svg>
+        <Text type="subtitle" class='text-black-100 text-[16px] text-center'>
+          EXPLORE THE activities OFFERED
+        </Text>
+        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none" class="max-md:hidden">
+          <g clip-path="url(#clip0_1125_7345)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.689772 10.6337C0.689772 15.9661 5.01251 20.2889 10.3449 20.2889C15.6773 20.2889 20 15.9661 20 10.6337C20 5.3013 15.6773 0.978516 10.3449 0.978516C5.01251 0.978516 0.689772 5.3013 0.689772 10.6337ZM13.7535 11.0872C14.0363 11.37 14.0363 11.8285 13.7535 12.1113L10.8569 15.0078C10.5741 15.2906 10.1156 15.2906 9.83285 15.0078L6.93631 12.1113C6.65352 11.8285 6.65352 11.37 6.93631 11.0872C7.2191 10.8044 7.6776 10.8044 7.96039 11.0872L9.62075 12.7476V6.77164C9.62075 6.37171 9.94496 6.0475 10.3449 6.0475C10.7448 6.0475 11.069 6.37171 11.069 6.77164V12.7476L12.7294 11.0872C13.0122 10.8044 13.4707 10.8044 13.7535 11.0872Z" fill="#564101"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_1125_7345">
+              <rect width="20.6897" height="20.6896" fill="white" transform="matrix(0 1 -1 0 20.6895 0.289062)"/>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <Carousel class="gap-16 p-5 pt-8 mt-2 max-md:gap-14 max-md:pt-8 no-scrollbar items-stretch" id="activities-offered" stackOnMobile>
+        {
+          facilities?.map(item => {
+              return  (
+                <CarouselCard>
+                  <div class={`flex flex-col max-w-[380px] h-full w-full border-t-0 flex-shrink-0`}>
+                    <img src={item.images[0]} class='border-b-[5px] border-yellow h-[380px] object-cover max-sm:h-[250px]' />
+                    <div class="p-l flex flex-col gap-r  border-[1px] border-t-0 border-gray-900" style="flex-grow: 1;">
+                      <Text type="h4" class="text-neutral-dark-grey font-display font-bold">
+                        {item.title}
+                      </Text>
+                      <Text type="p" class='text-neutral-dark-grey'>
+                        {item.description}
+                      </Text>
+                    </div>
+                </div>
+                </CarouselCard>
+          )})
+        }
+      </Carousel>
+    </div>
+  
+  
+  </div>
+
+  <Footer/>
