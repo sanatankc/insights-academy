@@ -1,24 +1,46 @@
 ---
+const { campusName = '' } = Astro.params
+import astronautKidsAdmissionBG from '../../images/astronautKidsAdmissionBG.png';
 import config from "../../../config"
 const campus = config.campus
 const campusConfig = campus.find(c => c.internalName === "kanakapura")
-import TopNavigationBar from "../../components/TopNavigationBar.astro";
-import Star from "../../components/icons/Star.astro";
-import StarStepIcon from "../../components/icons/StarStepIcon.astro";
-import Footer from "../../components/landingPage/Footer.astro";
-import Heading from "../../components/system/Heading.astro";
-import Text from "../../components/system/Text.astro";
+import { Image } from "astro:assets"
+import TopNavigationBar from '../../components/TopNavigationBar.astro';
+import Star from "../../components/icons/Star.astro"
+import StarStepIcon from "../../components/icons/StarStepIcon.astro"
+import Heading from "../../components/system/Heading.astro"
+import Text from "../../components/system/Text.astro"
+import Footer from "../../components/landingPage/Footer.astro"
 
 const academic = campusConfig?.academic
+
 const colors = [
   ["#EFFAF8","primary","neutral-dark-grey"],
   ["#FCF8EB","black-100","neutral-dark-grey"],
   ["#EFFAF8","primary","neutral-dark-grey"],
   ["#FCF8EB","black-100","neutral-dark-grey"],
+
 ]
+
+
+export function getStaticPaths() {
+  return [
+    { params: { campusName: "kanakapura" } },
+    { params: { campusName: "marathahalli" } },
+  ];
+}
 ---
 
 <TopNavigationBar/>
+
+<div class='min-h-[512px] max-h-[512px] w-full flex justify-center items-center flex-col max-md:min-h-[350px]' style={{
+  background: `linear-gradient(180deg, rgba(18, 18, 18, 0) -21.78%, rgba(0, 0, 0, 0.7) 68.07%), url(${astronautKidsAdmissionBG})`,
+  backgroundPosition: '90% 50%',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+}}>
+  <Text type={'h2'} class='mt-14 font-bold max-md:mt-10 text-yellow'>Academics</Text>
+</div>
 
 <div id="academics" style="scroll-margin: 60px;" class="p-xl px-0  flex flex-col justify-center gap-l scroll-m-14 max-sm:p-r max-sm:gap-r">
     <Heading first="Academic" second={"Landscape"} subtitle="Empowering Every Learner ">
@@ -77,8 +99,9 @@ const colors = [
                         <img
                           class={`${rounded} max-md:rounded-none h-[95%] max-md:h-[220px] object-cover`}
                           src={
-                            item.images[0]
+                            item?.images[0]
                           }
+                          alt="image"
                         />
                       </div>
                   </div>
@@ -89,4 +112,4 @@ const colors = [
     }
   </div>
 
-<Footer/>
+  <Footer/>

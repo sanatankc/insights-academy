@@ -1,19 +1,36 @@
 ---
 const { campusName = '' } = Astro.params
+import astronautKidsAdmissionBG from '../../images/astronautKidsAdmissionBG.png';
 import config from "../../../config"
+import { Image } from "astro:assets"
+import Heading from "../../components/system/Heading.astro"
+import Text from "../../components/system/Text.astro"
+import Carousel from "../../components/system/Carousel.astro"
+import CarouselCard from "../../components/carousel/CarouselCard.astro"
+import TopNavigationBar from "../../components/TopNavigationBar.astro"
+import Footer from "../../components/landingPage/Footer.astro"
+
 const campus = config.campus
 const campusConfig = campus.find(c => c.internalName === "kanakapura")
-import TopNavigationBar from "../../components/TopNavigationBar.astro";
-import CarouselCard from "../../components/carousel/CarouselCard.astro";
-import Footer from "../../components/landingPage/Footer.astro";
-import Carousel from "../../components/system/Carousel.astro";
-import Heading from "../../components/system/Heading.astro";
-import Text from "../../components/system/Text.astro";
-
 const facilities = campusConfig?.facilities
----
 
+export function getStaticPaths() {
+  return [
+    { params: { campusName: "kanakapura" } },
+    { params: { campusName: "marathahalli" } },
+  ];
+}
+---
 <TopNavigationBar/>
+
+<div class='min-h-[512px] max-h-[512px] w-full flex justify-center items-center flex-col max-md:min-h-[350px]' style={{
+  background: `linear-gradient(180deg, rgba(18, 18, 18, 0) -21.78%, rgba(0, 0, 0, 0.7) 68.07%), url(${astronautKidsAdmissionBG})`,
+  backgroundPosition: '90% 50%',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+}}>
+  <Text type={'h2'} class='mt-14 font-bold max-md:mt-10 text-yellow'>Co - Scholastics</Text>
+</div>
 
 <div id="life-at-insight" class="px-xl flex flex-col justify-center gap-l scroll-m-14 max-sm:p-m pt-10 pb-10">
     <div class="flex flex-col gap-l px-xl max-sm:px-0">
@@ -28,7 +45,6 @@ const facilities = campusConfig?.facilities
           <img
             class={`
               h-[170px] min-w-[460px] max-md:min-w-[520px] flex-1 w-full max-w-md object-cover rounded-full max-sm:hidden border p-2 border-yellow
-              ${campusName === 'marathahalli' ? 'object-center' : 'object-top'}
             `}
             src={campusConfig?.images[0].uri || campusConfig?.images[0].slide[0].src}
           />
@@ -81,9 +97,6 @@ const facilities = campusConfig?.facilities
           )})
         }
       </Carousel>
-      <!-- <div class="grid grid-flow-col grid-rows-1  gap-r overflow-auto no-scrollbar max-sm:flex-col max-w-[1600px] scroll-mt-24  max-sm:grid-flow-row max-sm:center max-sm:place-items-center max-sm:flex" style="grid-auto-columns: minmax(400px, 1fr)">
-  
-      </div> -->
     </div>
   
   

@@ -1,5 +1,6 @@
 ---
-import astronautKidsAdmissionBG from '../images/campus/knk/kindergartenknk.jpeg';
+const { campusName = '' } = Astro.params
+import astronautKidsAdmissionBG from '../../images/astronautKidsAdmissionBG.png';
 import DeckCard from "../../components/DeckCard.astro";
 import TopNavigationBar from "../../components/TopNavigationBar.astro";
 import CarouselCard from "../../components/carousel/CarouselCard.astro";
@@ -8,38 +9,44 @@ import Carousel from "../../components/system/Carousel.astro";
 import Heading from "../../components/system/Heading.astro";
 import Text from "../../components/system/Text.astro";
 
-import coScholastic1k from '../images/campus/knk/campus-facilities/co-scholastics/1.webp'
-import coScholastic2k from '../images/campus/knk/campus-facilities/co-scholastics/2.webp'
+import coScholastic1k from '../../images/campus/knk/campus-facilities/co-scholastics/1.webp'
+import coScholastic2k from '../../images/campus/knk/campus-facilities/co-scholastics/2.webp'
 
-import sportfacility1k from '../images/campus/knk/campus-facilities/sports/1.webp'
-import sportfacility2k from '../images/campus/knk/campus-facilities/sports/2.webp'
-// import sportfacility3k from '../images/campus/knk/campus-facilities/sports/3.webp'
-import sportfacility4k from '../images/campus/knk/campus-facilities/sports/4.webp'
-import sportfacility5k from '../images/campus/knk/campus-facilities/sports/5.webp'
-import sportfacility6k from '../images/campus/knk/campus-facilities/sports/6.webp'
-import sportfacility7k from '../images/campus/knk/campus-facilities/sports/7.webp'
+import sportfacility1k from '../../images/campus/knk/campus-facilities/sports/1.webp'
+import sportfacility2k from '../../images/campus/knk/campus-facilities/sports/2.webp'
+// import sportfacility3k from '../../images/campus/knk/campus-facilities/sports/3.webp'
+import sportfacility4k from '../../images/campus/knk/campus-facilities/sports/4.webp'
+import sportfacility5k from '../../images/campus/knk/campus-facilities/sports/5.webp'
+import sportfacility6k from '../../images/campus/knk/campus-facilities/sports/6.webp'
+import sportfacility7k from '../../images/campus/knk/campus-facilities/sports/7.webp'
 
-import aroundthecampus1 from '../images/campus/marth/campus-facilities/bus.jpeg'
-import aroundthecampus2 from '../images/campus/marth/campus-facilities/campusfront.jpeg'
-import aroundthecampus3 from '../images/campus/marth/campus-facilities/campus.jpeg'
-import aroundthecampus4 from '../images/campus/marth/campus-facilities/corridor.jpeg'
+import aroundthecampus1 from '../../images/campus/marth/campus-facilities/bus.jpeg'
+import aroundthecampus2 from '../../images/campus/marth/campus-facilities/campusfront.jpeg'
+import aroundthecampus3 from '../../images/campus/marth/campus-facilities/campus.jpeg'
+import aroundthecampus4 from '../../images/campus/marth/campus-facilities/corridor.jpeg'
 
-import classrooms1k from  '../images/campus/knk/campus-facilities/classrooms/1.webp'
-import classrooms2k from  '../images/campus/knk/campus-facilities/primary-knk.jpg'
-import classrooms3k from  '../images/campus/knk/campus-facilities/classrooms/3.webp'
+import classrooms1k from  '../../images/campus/knk/campus-facilities/classrooms/1.webp'
+import classrooms2k from  '../../images/campus/knk/campus-facilities/primary-knk.jpg'
+import classrooms3k from  '../../images/campus/knk/campus-facilities/classrooms/3.webp'
 
-import labs1k from '../images/campus/knk/campus-facilities/labs/1.webp'
-import labs2k from '../images/campus/knk/campus-facilities/labs/2.webp'
-import labs3k from '../images/campus/knk/campus-facilities/labs/3.webp'
-import labs4k from '../images/campus/knk/campus-facilities/labs/4.webp'
-import labs5k from '../images/campus/knk/campus-facilities/labs/5.webp'
-import labs6k from '../images/campus/knk/campus-facilities/labs/6.webp'
-import labs7k from '../images/campus/knk/campus-facilities/labs/7.webp'
+import labs1k from '../../images/campus/knk/campus-facilities/labs/1.webp'
+import labs2k from '../../images/campus/knk/campus-facilities/labs/2.webp'
+import labs3k from '../../images/campus/knk/campus-facilities/labs/3.webp'
+import labs4k from '../../images/campus/knk/campus-facilities/labs/4.webp'
+import labs5k from '../../images/campus/knk/campus-facilities/labs/5.webp'
+import labs6k from '../../images/campus/knk/campus-facilities/labs/6.webp'
+import labs7k from '../../images/campus/knk/campus-facilities/labs/7.webp'
 
-import coScholastic3k from '../images/campus/knk/campus-facilities/co-scholastics/3.jpg'
-import coScholastic4k from '../images/campus/knk/campus-facilities/co-scholastics/4.webp'
+import coScholastic3k from '../../images/campus/knk/campus-facilities/co-scholastics/3.jpg'
+import coScholastic4k from '../../images/campus/knk/campus-facilities/co-scholastics/4.webp'
 import Gallery from "../../components/Gallery.astro";
 
+export function getStaticPaths() {
+  return [
+    { params: { campusName: "kanakapura" } },
+    { params: { campusName: "marathahalli" } },
+  ];
+}
 
 ---
 
@@ -73,7 +80,7 @@ import Gallery from "../../components/Gallery.astro";
         <!--
           <CarouselCard>
             <DeckCard
-              images={[
+              ../images={[
                 { src: aroundthecampus1, alt: '' },
                 { src: aroundthecampus2, alt: '' }
               ]}
@@ -98,6 +105,7 @@ import Gallery from "../../components/Gallery.astro";
             </Text>
           </DeckCard>
         </CarouselCard>
+        
         <CarouselCard>
           <DeckCard
             images={[
