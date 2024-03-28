@@ -1,5 +1,6 @@
 ---
 const { campusName = '' } = Astro.params
+
 import astronautKidsAdmissionBG from '../../images/astronautKidsAdmissionBG.png';
 import DeckCard from "../../components/DeckCard.astro";
 import TopNavigationBar from "../../components/TopNavigationBar.astro";
@@ -83,6 +84,7 @@ export function getStaticPaths() {
   backgroundSize: 'cover',
 }}>
   <Text type={'h2'} class='mt-14 font-bold max-md:mt-10 text-yellow'>Campus Facilities</Text>
+  <Text type={'base'} class='mt-3 text-center max-md:w-[90%] text-white' >{`${campusName.charAt(0).toUpperCase() + campusName.substring(1)} Campus`}</Text>
 </div>
 
 <div id="campus-facilities" style="scroll-margin: 60px;" class="p-xl px-xl flex flex-col justify-center gap-l scroll-m-14 max-sm:p-r max-sm:gap-r max-md:mt-4">

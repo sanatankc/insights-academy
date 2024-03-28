@@ -362,7 +362,7 @@ const data: Data = {
           },
           address: {
             label: 'We are here',
-            value: '#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore – 560 062',
+            value: '#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore - 560 062',
             type: 'address'
           }
         },
@@ -559,7 +559,7 @@ const data: Data = {
           },
           address: {
             label: 'We are here',
-            value: 'Opp. Prestige Tech Park, Off. Marathahalli – Sarjapura Outer Ring Road, Kadubeesanahalli, Marathahalli, Bangalore – 560 103',
+            value: 'Opp. Prestige Tech Park, Off. Marathahalli - Sarjapura Outer Ring Road, Kadubeesanahalli, Marathahalli, Bangalore - 560 103',
             type: 'address'
           }
         },
@@ -595,7 +595,6 @@ const data: Data = {
       ]
 
     },
-
   ],
   testimonials: {
     title: 'Insight Voices',
