@@ -2,15 +2,14 @@
 const { embedId, videoId } = Astro.props
 ---
 
-<div id={"player" + videoId} class={`p-20 fixed w-screen h-screen z-[9999] top-0 left-0 bg-black/80 data-video-${videoId} opacity-0 pointer-events-none transition-opacity`}>
+<div id={"player" + videoId} class={`p-20 fixed w-screen h-screen z-[9999] top-0 bg-black/80 data-video-${videoId} opacity-0 pointer-events-none transition-opacity`}>
   
 </div>
 
 
 
 <script define:vars={{videoId, embedId}}>
-console.log(document.querySelector(`.data-video-${videoId} iframe`))
-if(!document.querySelector(`[data-video-open="${videoId}"]`)) return
+
   document.querySelector(`[data-video-open="${videoId}"]`).addEventListener('click', () => {
     document.querySelector(`.data-video-${videoId}`).classList.remove('opacity-0')
     document.querySelector(`.data-video-${videoId}`).classList.remove('pointer-events-none')
@@ -23,7 +22,7 @@ if(!document.querySelector(`[data-video-open="${videoId}"]`)) return
     document.querySelector(`.data-video-${videoId}`).innerHTML = ``
   })
 
-  // document.querySelector(`.data-video-${videoId} iframe`).addEventListener('click', (e) => {
-  //   e.stopPropagation()
-  // })
+  document.querySelector(`.data-video-${videoId} iframe`).addEventListener('click', (e) => {
+    e.stopPropagation()
+  })
 </script>

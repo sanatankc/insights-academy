@@ -1,15 +1,15 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 
-import vercel from "@astrojs/vercel/static";
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
   experimental: {
-    viewTransitions: false,
+    viewTransitions: true,
   },
-  output: "static",
+  output: "server",
   adapter: vercel(),
   // server: (command) => ({ port: command === 'dev' ? 3000 : 4000, host: true })
 });

@@ -23,6 +23,10 @@ import mission3 from '../images/aboutUs/mission3.png'
 import mission4 from '../images/aboutUs/mission4.png'
 import mission5 from '../images/aboutUs/mission5.png'
 import mission6 from '../images/aboutUs/mission6.png'
+
+import banner from '../images/aboutUs/banner.jpeg'
+
+import cupStarIcon from '../images/aboutUs/icons/Cup Star.svg'
 import fireSquareIcon from '../images/aboutUs/icons/Fire Square.svg'
 import globeIcon from '../images/aboutUs/icons/Global.svg'
 import LinkSquareIcon from '../images/aboutUs/icons/Link Square.svg'
@@ -31,277 +35,43 @@ import sledgeHammerIcon from '../images/aboutUs/icons/Sledgehammer.svg'
 import linkedinIcon from '../icons/linkedin.svg'
 import Constrain from '../components/system/Constrain.astro';
 import GoToCta from '../components/GoToCta.astro';
-import Hero from '../components/Hero.astro';
-import PreviewImage from "../images/aboutUs/aboutus-header.jpg";
-import Image from '../components/system/Image.astro';
-import Rank1 from "../images/aboutUs/awards/1.png"
-import Rank2 from "../images/aboutUs/awards/2.png"
-import Rank3 from "../images/aboutUs/awards/3.png"
-import Rank4 from "../images/aboutUs/awards/4.png"
- 
-import balancedLearning from '../images/curriculum/balancedLearning.png';
-import diversePrograms from '../images/curriculum/diversePrograms.png';
-import lifelongLearning from '../images/curriculum/lifelongLearning.png';
 
+const founderDesk = [
+  { name: 'Vittal Bhandary', title: 'CEO', linkedin: "https://www.linkedin.com/in/vittal-bhandary-51902519/", image: vittal, message: "Glentree Academy envisions a transformative approach to education, addressing the shortcomings of traditional learning. As a child, I found little joy in the stress of memorisation, yet I thrived in the immersive world of sports. Inspired by my own experiences and Preeti's vision of a happy learning environment, Glentree aims to create a place where children can freely explore their talents and passions without the burden of grades." },
+  { name: 'Preeti Bhandary', title: 'DIRECTOR', linkedin: 'https://www.linkedin.com/in/preeti-bhandary-0164231a', image: preeti, message: "Research shows that involved parents contribute to happier, healthier, and more successful children. However, in today's fast-paced world, lack of quality parenting time leads to increased pressure on children. We often neglect the present moment, consumed by daily crises. Engaging children in multiple activities is no substitute for parental presence, despite common misconceptions." },
+  { name: 'Sowmia Raguraman', title: 'MENTOR PRINCIPAL', linkedin: 'https://www.linkedin.com/in/sowmia-raguraman-9b51b364', image: sowmia, message: "As an educator, my goal is to nurture a growth mindset in children, teaching them to embrace failures as opportunities for progress. I strive to help them measure their advancement effectively, academically and personally. By encouraging a positive attitude towards change and letting go of past negative experiences, we can develop their mature thinking from an early age. This mindset enables them to persevere through setbacks, accept constructive criticism, refine their skills, and view mistakes as stepping stones to success." },
+  { name: 'Rachana Heda', title: 'COO', linkedin: 'https://www.linkedin.com/in/rachana-heda-b218881a6', image: rachna, message: "As the proud leader of this educational institution, I am thrilled to share our commitment to learning for life. Our vision is to cultivate lifelong learners who are curious, creative, and compassionate individuals. Through innovative teaching methods, personalized guidance, and a diverse range of opportunities, we strive to equip our students with the skills, knowledge, and values needed to thrive in an ever-changing world. Together with our dedicated educators, supportive parents, and enthusiastic students, we embark on a journey of academic excellence, character development, and holistic growth. Join us as we shape the leaders and innovators of tomorrow." },
+]
 
-import Heading from '../components/system/Heading.astro';
-import LeaderShipCTA from "../components/LeaderShipCTA.astro"
-import CommunityImage from "../images/campus/knk/slides/1.jpeg" 
-import SlideShow from '../components/SlideShow.astro';
-import Testimonial from '../components/landingPage/Testimonial.astro';
-
-
-
+const missions = [
+  { image: mission1, title: ['Empowering', 'Personal Growth'], icon: cupIcon, description: "Nurturing and empowering individuals to unleash their full potential in a supportive learning environment." },
+  { image: mission2, title: ['Education with a', 'Global Perspective'], icon: globeIcon, description: "Broadening horizons and cultivating future leaders through innovative teaching and learning approaches." },
+  { image: mission3, title: ['Igniting', 'Lifelong Learning'], icon: fireSquareIcon, description: "Sparking a passion for continuous exploration and discovery, making learning an engaging and enduring journey." },
+  { image: mission4, title: ['Building', 'Resilient Individuals'], icon: sledgeHammerIcon, description: "Equipping students with essential values, life skills, and character development for personal and professional success." },
+  { image: mission5, title: ['Strong Parents-School', 'Parternships'], icon: LinkSquareIcon, description: "Establishing collaborative communities that foster effective communication and engagement for optimal student development." },
+  { image: mission6, title: ['Innovation & Improvement', 'in Education'], icon: graphUpIcon, description: "Embracing change, innovation, and research to create a dynamic and progressive educational environment." },
+]
 ---
 
-<Layout title={'About Us | Best School in Bangalore | Insight Academy'}>
-  <div class="flex flex-col">
-    <TopNavigationBar />
-    <!-- section -->
-    
-    <div class="flex flex-col relative">
-      <div class="h-[510px] max-h-[800px] flex">
-      <div
-        class="absolute inset-0 bg-black-100 w-full h-full z-[9] hidden  max-sm:flex"
-        style={{
-          backgroundImage: `linear-gradient(0deg, #1b2226 -36.91%, #052b4cb0 69.9%, #1370a77a 131.56%), url(${PreviewImage})`
-        }}
-      ></div>
-
-          <Hero
-              config={
-                  {
-                      previewImage: PreviewImage,
-                  }
-              }
-              showCta={false}
-          >
-            
-              <Text type="h2" slot="title" class="font-displat font-bold  text-white">Empowering Learners, </Text>
-              <Text type="h2" slot="title" class="font-displat font-bold  text-yellow">Impacting Society </Text>
-
-
-              <Text type="p" slot="ctaButton" class="max-w-[60ch] max-md:text-left">{"Founded by visionary educationists, Insight Academy strives to make a profound impact on society. 'Quality Education for All' is not just a motto but the essence of our institution since its inception on August 15, 2007.  Guided by the Insight Educational Trust, our devoted members ensure this vision guides every endeavour."}</Text>
-              <Image slot="previewImage" src={PreviewImage} className="w-[50%] h-full object-cover object-center z-[90] absolute right-0 max-sm:hidden" /> 
-             
-          </Hero>
-      </div>
-      <!-- linear-gradient(270deg,_#0C4974_4.9%,_#142634_65.98%) -->
-
-      <div
-        slot="footer"
-        class=" w-full p-r flex flex-wrap h-[125px] items-center justify-center z-10 bg-black max-md:h-full">
-        <Constrain class="flex justify-between items-center max-md:flex-wrap max-md:gap-8 max-md:justify-center" width="1200px">
-          
-          <img class="w-[180px] max-md:w-[40%] max-md:max-w-[150px]" src={Rank1} alt="Rank 1" />
-          <img class="w-[180px] max-md:w-[40%] max-md:max-w-[150px]" src={Rank2} alt="Rank 1" />
-          <img class="w-[180px] max-md:w-[40%] max-md:max-w-[150px]" src={Rank3} alt="Rank 1" />
-          <img class="w-[180px] max-md:w-[40%] max-md:max-w-[150px]" src={Rank4} alt="Rank 1" />
-         
-         
-        </Constrain>
-      </div>
-  </div>
-  <div class="flex p-xl pb-8 flex-col gap-l justify-center z-10 max-sm:p-5">
-      <Constrain>
-     <div class="flex items-center flex-col gap-l">
-        <Heading
-          first="Quality Education"
-          second="For All"
-          subtitle="MISSION & VISION"
-        ></Heading>
-        <p class="text-xl text-neutral-dark-grey max-w-[90ch] text-center max-md:text-left max-md:text-base">
-          We aim to transform education for nation-building by harnessing the expertise of dedicated educators. Education, to us, is not confined to classrooms; it extends into life itself. Our innovative approach prioritises holistic development, nurturing curiosity and a love for learning that extends beyond school.
-        </p>
-      </div>
-  
-    </Constrain>
-  </div>
-    <!-- <SlideShow /> -->
-    <Text type={'subtitle'} class={`text-black-100 font-semibold font-display tracking-[1.8px] text-lg balance mb-8`}>Our Guiding Stars</Text>
-
-  <Constrain>
-    <div class='w-full flex flex-row flex-wrap justify-between items-stretch mt-0 px-5 max-md:gap-3'>
+<Layout title="Welcome to Astro.">
+  <main class="flex flex-col h-screen w-screen relative bg-white">
+    <div 
+      class="flex-1 main-container h-screen w-screen"
+      style={{
+        overflowY: 'overlay',
+        overflowX: 'hidden',
+      }}
+    >
+      <div class='flex flex-col bg-white'>
+        <TopNavigationBar />
       
-      <div class='w-full max-w-[413px] rounded-xl border-2 border-solid border-[#E2E2E2]'>
-        <Image src={lifelongLearning} className='w-full h-132px rounded-t-xl' alt="LFL Curriculum" />
-        <div class='w-full bg-white p-4 flex flex-col rounded-xl'>
-          <Text type={'h4'} class='flex font-bold font-display flex-row mt-1 w-max items-center max-md:flex-col max-md:items-start'><div>Beyond Grades: </div><div class='flex flex-row items-center'><div class='bg-primary text-white px-3 py-1 ml-1 mr-1 rounded max-md:ml-0 max-md:mr-1'>Lifelong</div> <div>Success</div></div></Text>
-          <Text type={'regular'} class='mt-3 font-[500] '>Deliver education that equips students for life, ensuring holistic growth in diverse facets of development.</Text>
-  
-        </div>
-      </div>
-      <div class='w-full max-w-[413px] rounded-xl border-2 border-solid border-[#E2E2E2] '>
-        <Image src={balancedLearning} className='w-full h-132px rounded-t-xl' alt="LFL Curriculum" />
-        <div class='w-full bg-white p-4 flex flex-col rounded-xl'>
-          <Text type={'h4'} class='flex font-bold font-display flex-row mt-1 w-max items-center max-md:flex-col max-md:items-start'><div class='bg-accent text-white px-3 py-1 mr-1 rounded'>Balanced</div> <div>Learning Approach</div></Text>
-          <Text type={'regular'} class='mt-3 font-[500] '>Foster positivity, stimulate growth, and boost self-esteem in academics, social, and personal development.</Text>
-  
-        </div>
-      </div>
-      <div class='w-full max-w-[413px] rounded-xl overflow-hidden border-2 border-solid border-[#E2E2E2]'>
-        <Image src={diversePrograms} className='w-full h-132px rounded-t-xl' alt="LFL Curriculum" />
-        <div class='w-full bg-white p-4 flex flex-col rounded-xl'>
-          <Text type={'h4'} class='flex font-bold font-display flex-row mt-1 w-max items-center max-md:flex-col max-md:items-start'><div class='flex flex-row items-center'><div>Enrich in </div><div class='bg-primary text-white px-3 py-1 mr-1 ml-1 rounded max-md:mr-1 max-md:ml-1'>Diverse</div></div> <div>Culture</div></Text>
-          <Text type={'regular'} class='mt-3 font-[500] '>Build a solid academic foundation in an inclusive, cross-cultural, and diverse environment.</Text>
-  
-        </div>
-        
-      </div>
+        <!-- <GoToCta /> -->
+        <!-- <Footer  /> -->
     </div>
-  </Constrain>
-  <!-- section -->
-  <!-- section -->
-    <div class="flex p-xl flex-col gap-l justify-center items-center  max-sm:p-r">
-      <div class="w-full">
-        <LeaderShipCTA />
-      </div>
-    </div>
-  <!-- section -->
-  <div class="flex p-xl flex-col gap-l justify-center items-center max-sm:p-r max-sm:gap-r">
-    <div class="max-w-[1440px] ">
-      <div class="flex container">
-
-        <div class="flex w-full community-section rounded-[27px] rounded-br-none  bg-primary overflow-clip ">
-          <div class="overflow-hidden">
-            <img 
-              src={CommunityImage}
-              alt="Image of community"
-              class="basis-[25%] object-cover h-full max-md:hidden" 
-    
-          />
-          </div>
-          
-          <div class="flex  gap-[12px] flex-col w-full py-xl px-r basis-[70%] rounded-tr-[27px] card max-sm:gap-r max-md:py-10">
-            <Text type="h3" class="text-yellow  font-bold max-sm:text-lg">
-              Work with us
-            </Text>
-            <Text type="h2" class="text-white font-bold leading-[60px] max-md:leading-[40px]">
-                Join the
-                Insight community
-            </Text>
-            <Text type='p' class="text-white">
-              To view open career positions, <a href="" class="underline" id="about-us-join-career-cta">click here</a>
-            </Text>
-          </div>
-         
-          <!-- <div class="absolute w-[100px] h-[100px] bg-primary z-10 right-0 border-[5px] border-[#fff]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="128" height="127" viewBox=" 0 128 127" fill="none">
-              <rect x="0.62207" y="0.146484" width="126.832" height="126.832" rx="17" fill="#006BB3"/>
-              <path d="M37.1755 84.138C35.6134 85.7001 35.6134 88.2327 37.1755 89.7948C38.7376 91.3569 41.2702 91.3569 42.8323 89.7948L37.1755 84.138ZM98.7122 32.2578C98.7122 30.0487 96.9213 28.2578 94.7122 28.2578L58.7122 28.2579C56.5031 28.2579 54.7122 30.0488 54.7122 32.2579C54.7122 34.467 56.5031 36.2579 58.7122 36.2579L90.7122 36.2578L90.7123 68.2578C90.7123 70.467 92.5032 72.2578 94.7123 72.2578C96.9215 72.2578 98.7123 70.4669 98.7123 68.2578L98.7122 32.2578ZM42.8323 89.7948L97.5407 35.0862L91.8838 29.4294L37.1755 84.138L42.8323 89.7948Z" fill="#F5CC4F"/>
-              </svg>
-          </div> -->
-        </div>
-        <div class="flex flex-col relative w-[130px] radius">
-          <div class="basis-[25%] relative rounded-[20px] rounded-br-[0px] bg-white forward-btn top-[20px] bt-[19px] w-[90%]"
-          >
-              <div class="absolute bg-primary h-[110%] w-full rounded-[18px] left-[16px] top-[-24px] text-yellow p-r button" id="arrow-button-about-us-career">
-                <svg fill="none" viewBox="0 0 24 24" stroke-width="2"  stroke="currentColor" class="w-full h-full">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                </svg>
-              </div>
-          </div>
-          <div class="basis-[70%] bg-primary radius-bottom mt-auto rounded-tr-[28px]"></div>
-<!--       
-          <div class="bg-primary basis-[70%]  flex overflow-hidden rounded-tr-[27px] mt-auto">
-            
-          </div> -->
-          <!-- <div class="radius"></div> -->
-        </div>
-        
-      </div>
-      
-    </div>
-  </div>
-
-  <Testimonial />
-  <Footer /> 
-
-
-  </div>
-
+  </main>
 </Layout>
 
 <style>
-  .button{
-    transition: transform 0.2s ease;
-  }
-  .button.hovered{
-    transform: translatex(10px) translatey(-10px);
-  }
-  .card{
-    position: relative;
-  }
-  .card::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #006BB3;
-    left: -100px;
-    height: 100%;
-    width: 200px;
-    clip-path: polygon(50% 0%, 0% 100%, 53% 100%);
-  }
-  .dotted{
-    z-index: 99;
-  }
-  .radius{
-    
-  }
-  .forward-btn{
-    display: flex;
-  }
-  .forward-btn::before{
-    /* content: "";
-    position: absolute;
-    inset: 0;
-    background: #006BB3;
-    color: red;
-    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2024%2024%22%20stroke-width%3D%221.5%22%20stroke%3D%22%23F5CC4F%22%20class%3D%22w-6%20h-6%22%3E%0A%20%20%3Cpath%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20d%3D%22M4.5%2019.5l15-15m0%200H8.25m11.25%200v11.25%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
-
-    height: 100%;
-    width: 100%;
-    left: 20px;
-    top: -20px;
-   
-    border-radius: 18px; */
-
-  }
-  .radius-bottom{
-    position: relative;
-    z-index: -2;
-  }
-  .radius-bottom::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #006BB3;
-    width: 80%;
-    top: -20px;
-    height: 20px;
-  }
-  
-  
-  /* .radius::before{
-    content: "";
-    position: absolute;
-    
-    background-color: #fff;
-    bottom: -50px;
-  height: 50px;
-  
-  width: 25px;
-  border-top-left-radius: 25px;
-  box-shadow: 0 -25px 0 0 #F66969;
-  } */
-  .community-section{
-    position: relative;
-    display: grid;
-    grid-template-columns: 3fr 6fr 1fr;
-    grid-column: 1fr;
-
-  }
- 
   .mission-card {
     transition: 0.3s all ease-in-out;
     background-image: linear-gradient(45deg, rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)), url()
@@ -310,14 +80,3 @@ import Testimonial from '../components/landingPage/Testimonial.astro';
     background-image: linear-gradient(45deg, rgba(10, 94, 47, 0.8), rgba(10, 94, 47, 0.8), )
   }
 </style>
-
-<script>
-  const joinCareerCta = document.getElementById('about-us-join-career-cta')
-  const arrowButton = document.getElementById('arrow-button-about-us-career')
-  joinCareerCta?.addEventListener('mouseenter', () => {
-    arrowButton.classList.add('hovered')
-  })
-  joinCareerCta?.addEventListener('mouseleave', () => {
-    arrowButton.classList.remove('hovered')
-  })
-</script>

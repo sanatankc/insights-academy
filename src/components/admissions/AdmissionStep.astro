@@ -1,13 +1,7 @@
 ---
 import Text from "../system/Text.astro";
 
-let { title, titleBG, textColor, thumbnailBG, step, themeColor } = Astro.props;
-if (!titleBG) {
-  titleBG = themeColor;
-}
-if (!textColor) {
-  textColor = themeColor;
-}
+const { title, titleBG, thumbnailBG, step } = Astro.props;
 ---
 
 <div 
@@ -17,25 +11,20 @@ if (!textColor) {
     border: '3px solid #E6E6E6'
 }}>
   <div 
-    class='w-[233px] h-full bg-slate-500 max-md:h-[200px] max-md:w-full flex justify-center items-center relative flex-col'
+    class='w-[233px] h-full bg-slate-500 max-md:h-[200px] max-md:w-full flex justify-center items-center flex-col'
     style={{
       background: thumbnailBG,
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }}
   >
-    <div class="absolute top-0 left-0 w-full h-full mix-blend-multiply" style={{
-      background: themeColor,
-      opacity: 0.8
-    }}>
-
-    </div>
-    <div class="w-full h-full  flex justify-center items-center flex-col relative z-10">
-      <Text type={'subtitle'} class="text-white text-[26px] text-center">Step</Text>
-      <div class='font-display text-white font-bold text-8xl'>{step}</div>
-    </div>
+    <Text type={'subtitle'}>Step</Text>
+    <div class='font-display text-transparent text-8xl' style={{
+      // textShadow: '0 0 2px #fff',
+      '-webkit-text-stroke': '2.4px #fff'
+    }}>{step}</div>
   </div>
-  <div class='flex-1 h-full p-7 py-[69px] max-md:py-[24px]'>
+  <div class='flex-1 h-full p-7'>
     <div class='flex flex-row'>
       <div 
         class='w-2 h-7 mr-2 mb-4 max-md:hidden'
@@ -45,7 +34,7 @@ if (!textColor) {
         }}
       >
       </div>
-      <Text class='max-md:mb-4 font-display font-bold' style={{ color: textColor }} type={'h4'}>{title}</Text>
+      <Text class='text-black max-md:mb-4' type={'h4'}>{title}</Text>
     </div>
     <slot />
     

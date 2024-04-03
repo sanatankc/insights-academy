@@ -20,136 +20,49 @@ const menu: Array<Menu> = [
   {
     title: 'About Us',
     link: '/about-us',
-    submenu: [
-      {
-        title: 'Mission & Vision',
-        link: '/about-us'
-      },
-      {
-        title: 'Our Visionaries',
-        link: '/leadership'
-      },
-    ]
   },
   {
-    title: 'Kanakapura Campus',
-    link: '/insight-kanakapura',
+    title: 'Branches',
     submenu: [
-     {
-        title: 'Overview',
+      {
+        title: 'Kanakapura Road (ICSE)',
         link: '/insight-kanakapura'
       },
       {
-        title: "Principal's Note",
-        link: '/insight-kanakapura#principal-note'
-      },
-      {
-        title: 'Campus Facilities',
-        link: '/kanakapura/campus-facilities'
-      },
-      {
-        title: 'Academics',
-        link: '/kanakapura/academics'
-      },
-      {
-        title: 'Co-Scholastics',
-        link: '/kanakapura/co-scholastics'
-      },
-      {
-        title: 'Our Achievements',
-        link: '/insight-kanakapura#achievements'
-      },
-      {
-        title: 'Contact Us',
-        link: '/insight-kanakapura#contact-us'
-      },
-      
-    ]
-  },
-  {
-    title: 'Marathahalli Campus',
-    link: '/insight-marathahalli',
-    submenu: [
-    {
-        title: 'Overview',
+        title: 'Marathahalli (CBSE)',
         link: '/insight-marathahalli'
       },
-      {
-        title: "Principal's Note",
-        link: '/insight-marathahalli#principal-note'
-      },
-      {
-        title: 'Campus Facilities',
-        link: '/marathahalli/campus-facilities'
-      },
-      {
-        title: 'Academics',
-        link: '/marathahalli/academics'
-      },
-      {
-        title: 'Co-Scholastics',
-        link: '/marathahalli/co-scholastics'
-      },
-      // {
-      //   title: 'Our Achievements',
-      //   link: '/insight-marathahalli#achievements'
-      // },
-      {
-        title: 'Contact Us',
-        link: '/insight-marathahalli#contact-us'
-      },
       
     ]
-  },
-  {
-    title: 'Admissions',
-    link: '/admissions',
-  },
+  }
 ]
 
-
-
-// get route from path
-const {campusName} = Astro.params
-const campusConfig = config.campus.find(c => c.internalName === campusName)
-const admissionLink = campusConfig?.admissionLink || config.campus[0].admissionLink
 const ctaButtons: Array<{
   title: string
-  link: string | undefined,
+  link: string,
   type?: 'primary' | 'secondary' | 'default',
   icon?: any,
-  className?: string,
   menu?: boolean
-  mobile?: boolean
 }> = [
   {
     title: 'Apply Now',
-    link: admissionLink,
+    link: config.ctaLink,
     menu: true,
-    className: "apply-now-button",
     type: 'primary',
-    mobile: false,
-    'data-modal-target': 'login-prompt',
   },
   {
     title: 'Login',
     link: config.ctaLink,
     type: 'default',
     menu: true,
-    mobile: true,
+
     icon: ExternalIcon,
   }
 ]
-
-const mobileMenu = [
-  ...menu,
-  ...ctaButtons.filter(button =>!! button.mobile)
-]
-const activePath = Astro.url.pathname
 ---
-<header  class="font-roundo w-screen bg-black py-1 px-14 max-md:px-5 box-border flex flex-row justify-between items-center backdrop-blur-md fixed z-[999] h-[100px]">
+<header transition:persist  class="font-roundo w-screen bg-black py-1 px-14 max-md:px-5 box-border flex flex-row justify-between items-center backdrop-blur-md fixed z-[99] h-[100px]">
   <a href="/" class='relative z-10 daisy daisy-fixed daisy-1'>
-    <img src={logo} alt="Insight's Logo" width="180px" >
+    <img src={logo} alt="Glentree's Logo" width="130px" >
   </a>
   <div class='flex flex-row items-center max-md:hidden'>
     {menu.map((item, i) => {
@@ -157,56 +70,29 @@ const activePath = Astro.url.pathname
         return (
           <div class={`relative menu-parent cursor-pointer daisy daisy-2 daisy-fixed`}>
             <div class:list={['flex flex-row items-center mr-8 max-md:mr-0', i >= menu.length - 1 && 'mr-0 max-md:mr-0']}>
-              {item.link ? (
-                <a
-                  href={item.link}
-                  class:list={[
-                    "text-white font-semibold hover:underline font-display",
-                    (item.link === activePath || item.submenu.map(({ link }) => link).includes(activePath)) && 'text-yellow'
-                  ]}
-                >{item.title}</a> 
-              ) : (
-                <span class="text-white font-semibold hover:underline font-display">{item.title}</span> 
-              )}
+              <span class="text-white font-bold hover:underline font-display">{item.title}</span>
               <div class='w-6 h-6 ml-1'>
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M5.94524 9.20954C6.16089 8.95794 6.53967 8.9288 6.79127 9.14446L12.0008 13.6098L17.2103 9.14446C17.4619 8.9288 17.8407 8.95794 18.0563 9.20954C18.272 9.46113 18.2429 9.83991 17.9913 10.0556L12.3913 14.8556C12.1666 15.0482 11.835 15.0482 11.6103 14.8556L6.01032 10.0556C5.75872 9.83991 5.72958 9.46113 5.94524 9.20954Z" 
-                    
-                    class={(item.link === activePath || item.submenu.map(({ link }) => link).includes(activePath)) ? 'fill-yellow' : 'fill-white'}
-                  />
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M5.94524 9.20954C6.16089 8.95794 6.53967 8.9288 6.79127 9.14446L12.0008 13.6098L17.2103 9.14446C17.4619 8.9288 17.8407 8.95794 18.0563 9.20954C18.272 9.46113 18.2429 9.83991 17.9913 10.0556L12.3913 14.8556C12.1666 15.0482 11.835 15.0482 11.6103 14.8556L6.01032 10.0556C5.75872 9.83991 5.72958 9.46113 5.94524 9.20954Z" fill="white"/>
                 </svg>					
               </div>
             </div>
-            <div class='absolute w-[250px] pt-[10px] menu' style={{
+            <div class='absolute w-[250px] bg-[#121212] top-[40px] menu' style={{
                 boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.5)',
             }}>
-            <div class="w-full h-full bg-[#121212]">
-              {item.submenu.map((subitem, j) => (
-                <div class='py-[14px] px-3' style={{
-                  borderBottom: j >= item?.submenu?.length - 1 ? 'none' : '1px solid rgba(255, 255, 255, 0.2)'
-                }}>
-                  <a
-                    href={subitem.link}
-                    class:list={[
-                      "text-white font-semibold hover:underline font-display",
-                      subitem.link === activePath && 'text-primary'
-                    ]}
-                  >{subitem.title}</a>
-                </div>
-              ))}
+            {item.submenu.map((subitem, j) => (
+              <div class='py-[14px] px-3' style={{
+                borderBottom: j >= item?.submenu?.length - 1 ? 'none' : '1px solid rgba(255, 255, 255, 0.2)'
+              }}>
+                <a href={subitem.link} class="text-white font-bold hover:underline font-display">{subitem.title}</a>
               </div>
+            ))}
             </div>
           </div>
         )
       } else if (item.link) {
         return (
-          <a
-            href={item?.link}
-            class:list={[
-              "text-white hover:underline mr-8 max-md:mr-0 daisy daisy-fixed daisy-2 font-display font-semibold",
-              item.link === activePath && 'text-yellow'
-            ]}
-          >{item.title}</a>
+          <a href={item?.link} class="text-white hover:underline mr-8 max-md:mr-0 daisy daisy-fixed daisy-2 font-display font-bold">{item.title}</a>
         )
       }
     })}
@@ -214,27 +100,11 @@ const activePath = Astro.url.pathname
   <div class="flex gap-3">
     {
       ctaButtons.map(item => {
-        if (item['data-modal-target']) {
-          return (
-            <div class={`${item.menu && 'max-md:hidden'} ${item?.className}`} {...item}>
-              <Button
-                class="font-display"
-                type={item.type}
-                icon={item?.icon}
-              >{item.title}</Button>
-            </div>
-          )
-        }
         return (
-          <a href={item.link} class={`${item.menu && 'max-md:hidden'} ${item?.className}`} target="_blank">
-            <Button
-              class="font-display"
-              type={item.type}
-              icon={item?.icon}
-            >{item.title}</Button>
-          </a>
+            <a href={item.link} target='_blank' class={`${item.menu && 'max-md:hidden'}`}>
+              <Button class="font-display" type={item.type} icon={item?.icon}>{item.title}</Button>
+            </a>
         )
-
       })
     }
   </div>
@@ -251,8 +121,8 @@ const activePath = Astro.url.pathname
     </form>
   </div>
 
-  <div class="mobileMenu absolute pt- top-0 left-0 w-screen h-screen bg-black flex flex-col pt-24 overflow-scroll" class="max-md:visible hidden">
-    {mobileMenu.map(item => {
+  <div class="mobileMenu absolute top-0 left-0 w-screen h-screen bg-black flex flex-col pt-20 overflow-scroll" class="max-md:visible hidden">
+    {menu.map(item => {
       if (item.submenu && item.submenu.length > 0) {
         return (
           <div class='mobileMenuParent'>
@@ -270,18 +140,16 @@ const activePath = Astro.url.pathname
                 </div>
               </div>
             </div>
-            <div class="subMenu flex flex-col">
-              {item.submenu.map((subMenuItem) => (
-                <a 
-                  href={subMenuItem.link}
-                  data-menu-mobile-item
-                  class="relative py-[14px] px-5 mr-8 max-md:mr-0 w-full text-white font-semibold hover:underline pl-10"
-                  style={{
-                    borderBottom: "1px solid rgba(255, 255, 255, 0.2)",
-                  }}
-                >
-                    {subMenuItem.title}
-                </a>
+            <div class='subMenu'>
+              {item.submenu.map(subMenuItem => (
+                <div class='relative py-[14px] px-5 mr-8 max-md:mr-0 w-full' style={{ 
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.2)'
+                }}>
+                  <a 
+                    href={subMenuItem.link}
+                    class="text-white font-semibold hover:underline pl-5"
+                  >{subMenuItem.title}</a>
+                </div>
               ))}
             </div>
           </div>
@@ -289,16 +157,14 @@ const activePath = Astro.url.pathname
       } else {
         return (
           <div class='mobileMenuParent'>
-            <a data-menu-mobile-item href={item.link} class='text-white font-semibold hover:underline flex flex-row gap-2 items-center first-letter:relative py-[14px] px-5 mr-8 max-md:mr-0 w-full' style={{ 
+            <div class='relative py-[14px] px-5 mr-8 max-md:mr-0 w-full' style={{ 
               borderBottom: '1px solid rgba(255, 255, 255, 0.2)'
             }}>
-                {item.title}
-                {item.icon && (
-                  <div class='w-4 h-4 ml-1 -rotate-90 menu-arrow -scale-y-100'>
-                    <item.icon />
-                  </div>
-                )}
-            </a>
+                <a 
+                  href={item.link}
+                  class="text-white font-semibold hover:underline"
+                >{item.title}</a>
+            </div>
           </div>
         )
       }
@@ -331,7 +197,6 @@ const activePath = Astro.url.pathname
     }}></div>
   </div>
 </header>
-<div class="h-[100px]"></div>
 
 
 <style>
@@ -459,37 +324,26 @@ const activePath = Astro.url.pathname
   }
 </style>
 
-<script >
-  import config from '../../config'; 
+<script>
   const menuParent = document.querySelectorAll('.menu-parent') as NodeListOf<HTMLDivElement>
   const menuCheckBox = document.querySelector('.menu-checkbox') as HTMLInputElement
-  const menuChild = document.querySelectorAll('.menu') as NodeListOf<HTMLDivElement>
   menuParent.forEach((el) => {
     let removeTimeout: any = null
     const menu = el.querySelector('.menu') as HTMLDivElement
     el.addEventListener('mouseover', () => {
       clearTimeout(removeTimeout)
-      menuChild.forEach((elC) => {
-        if (elC !== menu) {
-          console.log('elC...', elC)
-          console.log('el...', el)
-          elC.classList.remove('visible')
-        }
-      })
-      setTimeout(() => {
-        menu.classList.add('visible')
-      }, 0)
+      menu.classList.add('visible')
     })
     el.addEventListener('mouseout', () => {
       removeTimeout = setTimeout(() => {
         menu.classList.remove('visible')
-      }, 50)
+      }, 400)
     })
     menu.addEventListener('mouseover', () => {
       clearTimeout(removeTimeout)
     })
     menu.addEventListener('mouseout', () => {
-      // menu.classList.remove('visible')
+      menu.classList.remove('visible')
     })
   })
 
@@ -514,33 +368,10 @@ const activePath = Astro.url.pathname
       }
     })
   })
-
-  document.querySelectorAll('[data-menu-mobile-item]').forEach((el) => {
-    el.addEventListener('click', () => {
-      mobileMenu.classList.remove('visible')
-      menuToggle.querySelector('input').checked = false
-    })
+  document.addEventListener('astro:beforeload', () => {
+    mobileMenu.classList.remove('visible')
+    menuCheckBox.checked = false
   })
-
-  // document.addEventListener('astro:beforeload', () => {
-  //   console.log('helllo... 11')
-  //   const path = window.location.pathname
-  //   const campuseName = path.split('-')[1]
-  //   const campusConfig = config.campus.find(c => c.internalName === campuseName)
-  //   let admissionLink = campusConfig?.admissionLink
-  //   console.log('admissionLink...')
-  //   if (!admissionLink) {
-  //     admissionLink = config.campus[0].admissionLink
-  //   }
-  //   const button = document.querySelector('.apply-now-button') as HTMLDivElement
-  //   if(admissionLink){
-  //     button.setAttribute('href', admissionLink)
-  //   }
-
-
-  //   mobileMenu.classList.remove('visible')
-  //   menuCheckBox.checked = false
-  // })
  
   
 </script>
