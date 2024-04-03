@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import TopNavigationBar from "../components/TopNavigationBar.astro";
+
+
+
+import "../global.css";
+import mandatoryPDF from "./mandatory-insight.pdf"
+import Footer from "../components/landingPage/Footer.astro";
+import Text from "../components/system/Text.astro";
+
+
+
+---
+
+<Layout title={'Mandatory Disclosure | Best School in Bangalore | Insight Academy'}>
+  <div class="flex flex-col">
+    <TopNavigationBar />
+    
+    <div  class="flex flex-col items-center" slot="title">
+        <div class="p-6"></div>
+        <Text type="h2" class="font-display tracking-tight max-md:text-[2rem] font-bold text-center">
+            CBSE Mandatory Disclosure
+          </Text>  
+        <div class="p-6"> </div>
+        <iframe src={mandatoryPDF} class="w-[95%] h-[75vh]"></iframe>
+        <div class="p-6"></div>
+        </div>
+      
+
+  </div>
+
+  
+  <Footer />
+</Layout>
+

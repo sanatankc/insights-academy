@@ -2,23 +2,24 @@
 export interface Props {
 	title: string;
 }
-import { ViewTransitions } from 'astro:transitions';
+
 import "../global.css"
+import CampusModal from '../components/CampusModal.astro';
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<ViewTransitions />
+		<!-- <ViewTransitions /> -->
 
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<!-- <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css"> -->
 		<meta name="generator" content={Astro.generator} />
-		<title>Best CBSE School in Bangalore | Glentree Academy School</title>
-		<meta name="description" content="Glentree Academy school is affiliated to CBSE. It is ranked amongst the top CBSE schools in Bangalore. Enquire Now for AY 2023-24." />
+		<title>{title}</title>
+		<meta name="description" content="Insight Academy cbse affiliated school runs in Marathahalli, Bellandur & Kanakapura Road Bangalore.We are placed in list of top 10 cbse school in Bangalore." />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -26,14 +27,14 @@ const { title } = Astro.props;
 		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEL743GRSY"></script>
+		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEL743GRSY"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 
 			gtag('config', 'G-SEL743GRSY');
-		</script>
+		</script> -->
 		<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">  -->
 	</head>
 	<body>
@@ -42,6 +43,7 @@ const { title } = Astro.props;
 		<!-- <script src="./scroll.js" type="module"></script> -->
 		<!-- <script src="https://cdn.rawgit.com/michalsnik/aos/2.3.4/dist/aos.js"></script> -->
 
+    <CampusModal />
 	</body>
 </html>
 <style is:global>

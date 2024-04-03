@@ -4,15 +4,15 @@ const { title, secondary, icon, class: className ,type="primary" } = Astro.props
 const buttonType = type
 const Icon = icon ? icon : FilledArrowCircle;
 const buttonClassName = {
-    'primary': 'border-white/30 bg-primary primary border-[3px]',
-    'secondary': 'border-white bg-white secondary border-[3px]',
-    'default': 'default'
+    'primary': 'border-white/30 bg-primary primary border-[3px] text-white',
+    'secondary': 'border-primary hover:border-primary text-primary bg-white secondary border-[2px] text-white',
+    'yellow': 'bg-yellow text-shades-blue-dark',
+    'default': 'default text-white'
 }
-
-
+const primary = buttonType === 'primary'
 ---
 
-<div class=`font-display ${className}` >
+<div class=`font-display ${className} flex-shrink-0` >
   <button 
     class:list={[
       "flex flex-row items-center py-2 px-5 rounded-full  button overflow-hidden relative",
@@ -22,12 +22,15 @@ const buttonClassName = {
       boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
       // background: primary ? "linear-gradient(263.64deg, var(--primary) 6.11%, #028339 95.99%)" : 'white'
     }}>
-    <span class:list={[true ? "text-white" : "text-green-400", "font-semibold", "text-lg max-md:text-base"]}>
+    <span class:list={[primary ? "text-white" : "text-primary", "font-semibold", "text-lg max-md:text-base"]}>
       <slot/>
     </span>
-    <div class="w-5 h-5 ml-2 icon">
+    <div class:list={[
+      "w-5 h-5 ml-2 icon",
+      primary ? "text-white" : "text-primary"
+    ]}>
       <slot name="icon">
-        <Icon color={true ? "white" : "#3C674F"} />
+        <Icon />
       </slot>
     </div>
   </button>

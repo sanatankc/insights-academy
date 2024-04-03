@@ -1,23 +1,79 @@
+import type { StarProps } from "./src/components/icons/config"
+
 import campus1 from './src/images/campus/gas/gallery/1.jpeg';
-import campus2 from './src/images/campus/gas/gallery/2.jpeg';
-import campus3 from './src/images/campus/gas/gallery/3.jpeg';
+
+// putting knk campus bg images here
+import campusbg1 from './src/images/campus/knk/slides/1.jpeg';
+import campusbg2 from './src/images/campus/knk/slides/2.jpeg';
+import campusbg4 from './src/images/campus/knk/slides/4.jpeg';
+import campusbg5 from './src/images/campus/knk/slides/5.jpeg';
+import campusbg6 from './src/images/campus/knk/slides/6.jpeg';
+
+import campusbg1Mb from './src/images/campus/knk/slides/mb/1.jpeg';
+import campusbg2Mb from './src/images/campus/knk/slides/mb/2.jpeg';
+import campusbg4Mb from './src/images/campus/knk/slides/mb/4.jpeg';
+import campusbg5Mb from './src/images/campus/knk/slides/mb/5.jpeg';
+import campusbg6Mb from './src/images/campus/knk/slides/mb/6.jpeg';
+
+import principalknk from "./src/images/campus/knk/knk_principal.jpeg"
+import kindergartenknk from "./src/images/campus/knk/kindergartenknk.jpeg"
+import grade6knk from "./src/images/campus/knk/6-10knk.jpeg"
+import grade11knk from "./src/images/campus/knk/11knk.jpg"
+import grade1knk from "./src/images/campus/knk/1-5knk.jpeg"
+import principalmrth from "./src/images/campus/marth/marth_principal.jpeg"
+
+// putting marth campus bg images here
+import marthcampusbg1 from './src/images/campus/marth/slides/1.jpeg';
+import marthcampusbg2 from './src/images/campus/marth/slides/2.jpeg';
+// import marthcampusbg3 from './src/images/campus/marth/slides/3.jpeg';
+import marthcampusbg4 from './src/images/campus/marth/slides/4.jpeg';
+import marthcampusbg5 from './src/images/campus/marth/slides/6.jpeg';
+
+import marthcampusbgMb1 from './src/images/campus/marth/slides/mb/1.jpeg';
+import marthcampusbgMb2 from './src/images/campus/marth/slides/mb/2.jpeg';
+// import marthcampusbgMb3 from './src/images/campus/marth/slides/mb/3.jpeg';
+import marthcampusbgMb4 from './src/images/campus/marth/slides/mb/4.jpeg';
+import marthcampusbgMb5 from './src/images/campus/marth/slides/mb/6.jpeg';
+
+import RoboticClass from "./src/images/campus/knk/facilities/robotics.jpeg";
+import ComputerClass from "./src/images/campus/knk/facilities/preComputerClass.jpeg";
+import KgClass from "./src/images/campus/knk/facilities/acitivitiesroom.jpeg";
+import sports from "./src/images/campus/knk/facilities/sports.jpeg";
+import zumba from "./src/images/campus/knk/facilities/zumba.jpeg";
+import music from "./src/images/campus/knk/facilities/music.jpeg";
+
+import RoboticClassmarth from "./src/images/campus/marth/facilities/robotics.webp";
+import ComputerClassmarth from "./src/images/campus/marth/facilities/codingandcs.webp";
+import KgClassmarth from "./src/images/campus/marth/facilities/acitivitiesroom.webp";
+import sportsmarth from "./src/images/campus/marth/facilities/sports.webp";
+import zumbamarth from "./src/images/campus/marth/facilities/zumba.webp";
+import musicmarth from "./src/images/campus/marth/facilities/music.webp";
+
 
 import testimonial1 from './src/images/testimonial/1.png';
 import testimonial2 from './src/images/testimonial/2.png';
 import testimonial3 from './src/images/testimonial/3.png';
-import principalGAW from "./src/images/campus/gaw/principal.png"
+
 import leadership1 from "./src/images/leadership/1.png"
 import topper1 from "./src/images/campus/toppers/topper.png"
 import topper2 from "./src/images/campus/toppers/topper2.png"
 import topper3 from "./src/images/campus/toppers/topper3.png"
 import topper4 from "./src/images/campus/toppers/topper4.png"
 
+
+import kindergarten from "./src/images/campus/marth/academics/kindergarten.jpeg"
+import primary from "./src/images/campus/marth/academics/1-5.jpeg"
+import secondary from "./src/images/campus/marth/academics/6-8.jpg"
+import highSchool from "./src/images/campus/marth/academics/9-10.jpeg"
+
+
+
 type Campus = {
   title: string;
   description: string;
   hightlights?: string[];
   internalName: string;
-  images: string[];
+  images: any;
   topHeading?: string;
   subHeading?: string;
   bgImage?: string;
@@ -27,6 +83,7 @@ type Campus = {
   facilities?: Facilities[];
   contact?: Contact;
   toppers?: Toppers[];
+  admissionLink?: string;
 };
 export type ContactDetails = {
   label: string;
@@ -57,7 +114,11 @@ type Academic = {
   title: string;
   description: string;
   images: string[];
-  highlights?: string[];
+  starIcon: StarProps["step"];
+  list: {
+    title: string;
+    info: string[];
+  }[];
 }
 type LeaderMessage = {
   image: string;
@@ -84,14 +145,14 @@ type Testimonials = {
   subtitle: string;
   data: Testimonial[];
 };
-type indexPage =  {
-    hero : {
-      title: string;
-      subtitle: string; 
-      bgImage: string;
-      topHeading: string;
-      description: string;
-    }
+type indexPage = {
+  hero: {
+    title: string;
+    subtitle: string;
+    bgImage: string;
+    topHeading: string;
+    description: string;
+  }
 }
 type LeaderShipData = {
   name: string;
@@ -118,96 +179,174 @@ interface Data {
   school: School;
   campus: Campus[];
   testimonials: Testimonials;
-  leadership: LeaderShip; 
+  leadership: LeaderShip;
 }
 
 const data: Data = {
-  
-  ctaLink: 'https://www.insightacademy.in/',
+
+  ctaLink: 'https://parents.neverskip.com/',
   school: {
-    discription: 'Insight Academy, launched in 2007, ranks among the best schools in Bangalore. Upholding the principle of "Quality Education for All", we create an inclusive, secular educational landscape where all students can flourish, instilling strong academics and comprehensive growth beyond traditional classroom confines.',
-    
+    discription: "Established in 2007, Insight Academy ranks among the best Bangalore schools, driven by 'Quality Education for All'. Our inclusive, secular approach goes beyond traditional classrooms, focusing on robust academics and holistic personal growth. As a leading institution, we prepare students for academic success and life beyond the classroom.",
+
   },
   campus: [
     {
-      title: 'Kanakapura Road (ICSE)',
+      title: 'Kanakapura Campus (ICSE)',
       internalName: 'kanakapura',
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
-      description: 'Located near the peaceful ISRO Layout amidst greenery, we offer focused learning within our ICSE-affiliated institution.',
-     
-      images: [campus1,campus2,campus3],
+      description: 'Located near ISRO Layout amidst the lush greenery of South Bengaluru, we offer focussed learning in our ICSE affiliated institution.',
+      admissionLink: "http://admissions.neverskip.com/6a572b6c322f61674d62684c7a334b7a6d364d755a673d3d/utms-723458We8&utmc-305639Sc9",
+      images: [
+        {
+          type: 'picture', slide: [
+            { src: campusbg1, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: campusbg1Mb, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+        {
+          type: 'picture', slide: [
+            { src: campusbg2, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: campusbg2Mb, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+        {
+          type: 'picture', slide: [
+            { src: campusbg4, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: campusbg4Mb, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+        {
+          type: 'picture', slide: [
+            { src: campusbg5, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: campusbg5Mb, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+        {
+          type: 'picture', slide: [
+            { src: campusbg6, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: campusbg6Mb, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+      ],
       bgImage: campus1,
       ctaText: 'Explore Campus',
       leaderMessage: [
         {
-          image: principalGAW,
-          name: 'Mrs. Singupilla Ratna Kumari',
+          image: principalknk,
+          name: "Mrs. May Ruth D'Souza",
           role: 'PRINCIPAL',
-          body: "Insight Academy, founded in 2007, is a school dedicated to providing quality education for all children, regardless of their intelligence, physical condition, or challenges. With a focus on holistic development and a committed team of well-trained teachers, the school goes beyond the minimum requirements to offer additional facilities and enhance students' learning abilities. The strong partnership between students, parents, and the institution fosters a foundation for a better future."
+          body: "At Insight Academy, we're dedicated to offering quality education for every child, regardless of their abilities or challenges. We prioritize holistic development and our team of well-trained teachers go the extra mile to provide additional support. The strong partnership between students, parents, and the school lays the foundation for a brighter future."
         }
       ],
       academic: [
         {
-          title: 'Academic',
-          description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
-          images: [campus1],
-          highlights: [
-           "1:25 Student-to-Teacher ratio",
-           "Multi-sensory, experiential learning approach",
-           "Emphasis on communication skills",
-           "Extracurriculars activities like swimming, tennis, music & art"
-          ],
+          title: 'Kindergarten',
+          starIcon: "mini",
+          description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development.',
+          images: [kindergartenknk],
+          list: [{
+            title: "Highlights",
+            info: [
+              "1:25 Student-to-Teacher ratio",
+              "Multi-sensory, experiential learning approach",
+              "Emphasis on communication skills",
+              "Extracurriculars activities like swimming, tennis, music & art"
+            ]
+          }],
         },
         {
-          title: 'Academic',
-          description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
-          images: [campus1],
-          highlights: [
-            "1:25 Student-to-Teacher ratio",
-            "Multi-sensory, experiential learning approach",
-            "Emphasis on communication skills",
-            "Extracurriculars activities like swimming, tennis, music & art"
-           ],
+          title: 'Grade 1-5',
+          starIcon: "normal",
+          description: 'At Insight Academy, students from grade 1-5 are nurtured in an environment that is sensitive to their social and emotional needs, fostering them into compassionate individuals.',
+          images: [grade1knk],
+          list: [{
+            title: "Highlights",
+            info: [
+              "Limited class sizes",
+              "Innovative 'Creative Worksheet' monitoring",
+              "Engaging physical and skill-based activities",
+              "Experiential learning for lifelong passion."
+            ]
+          }],
         },
         {
-          title: 'Academic',
-          description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
-          images: [campus1],
-          highlights: [
-            "1:25 Student-to-Teacher ratio",
-            "Multi-sensory, experiential learning approach",
-            "Emphasis on communication skills",
-            "Extracurriculars activities like swimming, tennis, music & art"
-           ],
+          title: 'Grade 6-10',
+          starIcon: "big",
+          description: 'Preparation for board exams starts in grade 6 at Insight Academy, instilling not just academic rigor but also discipline, confidence, and time management skills.',
+          images: [grade6knk],
+          list: [{
+            title: "Highlights",
+            info: [
+              "Focus is to prepare students for Grade 10",
+              "Assessments would be 2 Tests & 2 exams/year",
+              "NEP focused learning in Robotics & Commerce",
+              "After-school activities focused on sports like Basketball, Football, Cricket & Swimming"
+            ]
+          }],
+        },
+        {
+          title: 'Grade 11',
+          starIcon: "double",
+          description: 'Affiliated with ISC Board, we offer specialized streams in Science and Commerce for Grade 11, providing students with tailored education pathways to pursue their academic interests and career goals.',
+          images: [grade11knk],
+          list: [
+            {
+              title: "Science Stream",
+              info: [
+                "Integrated curriculum for NEET, JEE, CET, and Pure Science, supported by fully equipped state-of-the-art labs.",
+                "Group 1: Physics, Chemistry, Mathematics, Biology",
+                "Group 2: Physics, Chemistry, Mathematics, Computer Science",
+              ]
+            },
+            {
+              title: "Commerce Stream",
+              info: [
+                "Accountancy, Business Studies, Economics, Computer Science"
+              ]
+            }
+          ]
         },
       ],
       facilities: [
         {
-          title: 'Smart-Classes',
-          description: 'Insight Academy emphasizes hands-on learning through our continually upgraded, modern labs. With ',
-          images: [campus1],
+          title: 'Robotics Class',
+          description: "Unleash innovation at our school's robotics classes. With an exclusive robotics lab, students engage in immersive, practical learning, nurturing a passion for technology and problem-solving.",
+          images: [RoboticClass],
           bgColor: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(245, 204, 79, 0.20) 100%);',
-          
+
         },
-        
+
         {
-          title: 'Smart-Classes',
-          description: "Insight Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse .",
-          images: [campus1],
-          
+          title: 'Coding & CS Class',
+          description: "Insight Academy integrates technology into education, offering computer learning with dedicated labs for both primary and senior grades. Each student has access to their individual computer, following a syllabus curated by expert computer educators.",
+          images: [ComputerClass],
+
         },
-        
+
         {
-          title: 'Smart-Classes',
-          description: "Insight Academy integrates technology into education, providing computer learning with a dedicated",
-          images: [campus1]
+          title: 'Curiosity Room for KG',
+          description: "Laughter and learning intertwine for our youngest explorers here. Bursting with playful adventures, this vibrant wonderland sparks joy, imagination, and endless learning.",
+          images: [KgClass]
         },
+
         {
-          title: 'Smart-Classes',
-          description: "Insight Academy integrates technology into education, providing computer learning with a dedicated",
-          images: [campus1]
+          title: 'Sports Academy',
+          description: "Our comprehensive campus facilities encompass a diverse range of sports. With expert trainers, students can engage in activities like football, basketball, cricket, and more. Our dedicated sports academy includes options like table tennis, throwball, volleyball, skating and swimming! ",
+          images: [sports]
         },
+
+        {
+          title: 'Yoga & Zumba',
+          description: "Our experienced yoga instructors  guide students through each pose, and help understand the magic of breathing, stretching, and finding their inner calm. Students also get their groove on with our super fun Zumba sessions, where they can dance, sweat, and be fit while having an absolute blast!",
+          images: [zumba]
+        },
+
+        {
+          title: 'Music Classes',
+          description: "Students unleash their musical potential with our diverse range of classes. From piano and guitar to drums, veena, and singing, our expert instructors help cultivate their passion, bringing melodies to life in an enriching and supportive environment. ",
+          images: [music]
+        }
       ],
       contact: {
         details: {
@@ -223,40 +362,41 @@ const data: Data = {
           },
           address: {
             label: 'We are here',
-            value: '#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore – 560 062',
+            value: '#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore - 560 062',
             type: 'address'
           }
         },
-        mapEmbedLink: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyAIyVF44QhoXfwwKHLd1h3N49cQTHS0Yvw&q=Whitefield Glentree Academy, Whitefield, Bengaluru',
+        mapLink: "https://maps.app.goo.gl/M1Hy8WB2h5nbsfto8",
+        mapEmbedLink: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.2290894404828!2d77.55730367661839!3d12.892985516593843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3fe19b3ba497%3A0x88e55fe492a8db63!2sInsight%20Academy!5e0!3m2!1sen!2sin!4v1694550190874!5m2!1sen!2sin',
         mindlerLink: 'https://www.mindler.com/schools/GLENTREE2023'
       },
       toppers: [
         {
           name: 'Aniksha <br> Raghuveera Kamat',
           ranks: 'Rank 1',
-          marks: '98.8%',
+          marks: '97.8%',
           image: topper1,
         },
         {
-          name: 'Anshul A Gadgoli',
+          name: 'Hasini Gupta P S',
           ranks: 'Rank 2',
-          marks: '98.8%',
+          marks: '97.2%',
           image: topper2,
         },
         {
           name: 'Harsh Shalgar',
           ranks: 'Rank 3',
-          marks: '98.8%',
+          marks: '96.4%',
           image: topper3,
         },
         {
-          name: 'Hasini Gupta PS',
-          ranks: 'Rank 4',
-          marks: '98.8%',
+          name: 'Anshul A Gadgoli',
+          ranks: 'Rank 3',
+          marks: '96.4%',
           image: topper4,
         },
       ]
-      
+
     },
 
     {
@@ -264,99 +404,167 @@ const data: Data = {
       internalName: 'marathahalli',
       subHeading: 'Marathahalli Campus (CBSE)',
       topHeading: "Welcome to",
-      description: 'Conveniently positioned in Marathahalli, we foster comprehensive education in a CBSE-affiliated framework.',
-      images: [campus1,campus2,campus3],
+      description: 'Situated in the heart of Marathahalli, we offer a comprehensive CBSE-affiliated education framework.',
+      admissionLink: "http://admissions.neverskip.com/6d652f7056524f56505837546f7352713344577770673d3d/utms-723458We8&utmc-305639Sc9",
+      images: [
+        {
+          type: 'picture', slide: [
+            { src: marthcampusbg1, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: marthcampusbgMb1, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+        {
+          type: 'picture', slide: [
+            { src: marthcampusbg2, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: marthcampusbgMb2, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+        {
+          type: 'picture', slide: [
+            { src: marthcampusbg4, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: marthcampusbgMb4, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+        {
+          type: 'picture', slide: [
+            { src: marthcampusbg5, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: marthcampusbgMb5, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+      ],
       bgImage: campus1,
       ctaText: 'Explore Campus',
       leaderMessage: [
         {
-          image: principalGAW,
-          name: 'Mrs. Singupilla Ratna Kumari',
+          image: principalmrth,
+          name: 'Mrs. Ramola Melita Dsouza',
           role: 'PRINCIPAL',
-          body: 'At Glentree, we embrace the belief that learning is a lifelong process. We foster curiosity and encourage our students to be self-motivated learners. Our holistic approach focuses on developing their intelligence, emotions, and spirituality. By providing an enlightened and innovative learning environment, we empower them to become global citizens, offering transformative experiences and opportunities for personal growth.'
+          body: 'At Insight, we cherish creativity and critical thinking. Our mission is to cultivate happiness, peace, and harmony, preparing students for a dynamic world. Our dedicated teachers inspire students to explore beyond the classroom. With a holistic curriculum and co-curricular engagement, we foster values like honesty, empathy, and respect, shaping them into future global citizens.'
         }
       ],
       academic: [
         {
-          title: 'Academic',
-          description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
-          images: [campus1],
-          highlights: [
-           "1:25 Student-to-Teacher ratio",
-           "Multi-sensory, experiential learning approach",
-           "Emphasis on communication skills",
-           "Extracurriculars activities like swimming, tennis, music & art"
-          ],
+          title: 'Kindergarten',
+          description: "Our kindergarten program, designed for children aged 3 to 5 years, plays a pivotal role in a child's development, often referred to as the 'foundation year'. At Insight Marathalli, we recognize its significance and provide a nurturing environment to foster cognitive, social, and emotional growth.",
+          images: [kindergarten],
+          starIcon: "mini",
+          list: [{
+            title: "Highlights",
+            info: [
+              "Introduction to early literacy, numeracy, and critical thinking",
+              "Multi-sensory, experiential learning approach",
+              "Emphasis on communication skills",
+              "Encouragement of independence and responsibility",
+              "Engaging extracurricular activities including swimming, music, and art",
+            ]
+          }],
         },
         {
-          title: 'Academic',
-          description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
-          images: [campus1],
-          highlights: [
-            "1:25 Student-to-Teacher ratio",
-            "Multi-sensory, experiential learning approach",
-            "Emphasis on communication skills",
-            "Extracurriculars activities like swimming, tennis, music & art"
-           ],
+          title: 'Elementary (1-5)',
+          description: "Elementary education at Insight lays the cornerstone of a child's learning journey, fostering vital skills for personal development and future success. The Formative Years, spanning grades 1 to 5, introduce fundamental subjects—mathematics, science, language arts, and social studies—forming a robust academic foundation for advanced learning.",
+          images: [primary],
+          starIcon: "mini",
+          list: [{
+            title: "Highlights",
+            info: [
+              "Emphasis on literacy, critical thinking, and problem-solving",
+              "Innovative Creative Worksheet monitoring",
+              "Engaging physical and skill-based activities",
+              "Fostering character and core values: honesty, respect, and empathy",
+            ]
+          }],
         },
         {
-          title: 'Academic',
-          description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development. Key features of our ECE program include a 1:25 teacher-student ratio, multisensory learning, teachers skilled in personalized attention, communication skills development, and a strong emphasis on extracurricular activities like fine arts and sports, creating a foundation for lifelong learning and wellbeing.',
-          images: [campus1],
-          highlights: [
-            "1:25 Student-to-Teacher ratio",
-            "Multi-sensory, experiential learning approach",
-            "Emphasis on communication skills",
-            "Extracurriculars activities like swimming, tennis, music & art"
-           ],
+          title: 'Higher Primary (6-8)',
+          description: "Insight's higher primary phase builds upon elementary foundations, preparing students for secondary education. Rigorous academics blend with character development and essential life skills. Through a nurturing environment, Insight empowers lifelong learners and responsible, contributing citizens, shaping the leaders of tomorrow.",
+          images: [secondary],
+          starIcon: "mini",
+          list: [{
+            title: "Highlights",
+            info: [
+              "Rigorous academic preparation for secondary education",
+              "NEP focused learning in Robotics",
+              "Personal growth, character development, and life skills",
+              "After-school activities focused on sports like Basketball, Football, Cricket & Swimming",
+            ]
+          }],
+        },
+        {
+          title: 'High School (9-10)',
+          description: "Insight's high school phase is a transformative period, guiding students from childhood to adulthood. Our rigorous academic program readies them for higher education and professional challenges. This nurturing environment fosters personal and academic growth, promising a bright future.",
+          images: [highSchool],
+          starIcon: "mini",
+          list: [{
+            title: "Highlights",
+            info: [
+              "Rigorous academic curriculum for higher education readiness",
+              "Emphasis on character, leadership, and core values",
+              "Career exploration and critical life skills",
+              "After-school activities including robotics, basketball, football, cricket, and swimming",
+            ]
+          }],
         },
       ],
       facilities: [
         {
-          title: 'Smart-Classes',
-          description: 'Insight Academy emphasizes hands-on learning through our continually upgraded, modern labs. With ',
-          images: [campus1],
+          title: 'Robotics Class',
+          description: "Unleash innovation at our school's robotics classes. With an exclusive robotics lab, students engage in immersive, practical learning, nurturing a passion for technology and problem-solving.",
+          images: [RoboticClassmarth],
           bgColor: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(245, 204, 79, 0.20) 100%);',
-          
+
         },
-        
+
         {
-          title: 'Smart-Classes',
-          description: "Insight Academy's library, a sanctuary for book enthusiasts, is spacious and bright, housing a diverse .",
-          images: [campus1],
-          
+          title: 'Coding & CS Class',
+          description: "Insight Academy integrates technology into education, offering computer learning with dedicated labs for both primary and senior grades. Each student has access to their individual computer, following a syllabus curated by expert computer educators.",
+          images: [ComputerClassmarth],
+
         },
-        
+
         {
-          title: 'Smart-Classes',
-          description: "Insight Academy integrates technology into education, providing computer learning with a dedicated",
-          images: [campus1]
+          title: 'Curiosity Room for KG',
+          description: "Laughter and learning intertwine for our youngest explorers here. Bursting with playful adventures, this vibrant wonderland sparks joy, imagination, and endless learning.",
+          images: [KgClassmarth]
         },
+
         {
-          title: 'Smart-Classes',
-          description: "Insight Academy integrates technology into education, providing computer learning with a dedicated",
-          images: [campus1]
+          title: 'Sports Academy',
+          description: "Our comprehensive campus facilities encompass a diverse range of sports. With expert trainers, students can engage in activities like football, basketball, cricket, and more. Our dedicated sports academy includes options like table tennis, throwball, volleyball, skating and swimming! ",
+          images: [sportsmarth]
         },
+
+        {
+          title: 'Yoga & Zumba',
+          description: "Our experienced yoga instructors  guide students through each pose, and help understand the magic of breathing, stretching, and finding their inner calm. Students also get their groove on with our super fun Zumba sessions, where they can dance, sweat, and be fit while having an absolute blast!",
+          images: [zumbamarth]
+        },
+
+        {
+          title: 'Music Classes',
+          description: "Students unleash their musical potential with our diverse range of classes. From piano and guitar to drums, veena, and singing, our expert instructors help cultivate their passion, bringing melodies to life in an enriching and supportive environment. ",
+          images: [musicmarth]
+        }
       ],
       contact: {
         details: {
           phoneNo: {
             label: 'Phone No',
-            value: '+91 7899738130',
+            value: '+91 89717 77444, +91 89717 77333',
             type: 'contact'
           },
           workingHours: {
-            label: 'Working Hours',
-            value: 'Monday to Saturday - 8:00 AM to 4:00 PM',
+            label: 'Mail us at',
+            value: 'info@insightacademy.in',
             type: 'mail'
           },
           address: {
-            label: 'Address',
-            value: 'Nallurhalli Rd, Palm Meadows, Nallurhalli, Whitefield, Bengaluru, Karnataka 560066',
+            label: 'We are here',
+            value: 'Opp. Prestige Tech Park, Off. Marathahalli - Sarjapura Outer Ring Road, Kadubeesanahalli, Marathahalli, Bangalore - 560 103',
             type: 'address'
           }
         },
-        mapEmbedLink: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyAIyVF44QhoXfwwKHLd1h3N49cQTHS0Yvw&q=Whitefield Glentree Academy, Whitefield, Bengaluru',
+        mapLink: "https://maps.app.goo.gl/ms3LtdJbJEHT9ByF8",
+        mapEmbedLink: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124455.25147306037!2d77.4774783226767!3d12.893145184611434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae124cb9470d67%3A0x3e746feb4a1d3908!2sInsight%20Academy%20School%20Bangalore!5e0!3m2!1sen!2sin!4v1694550265537!5m2!1sen!2sin',
         mindlerLink: 'https://www.mindler.com/schools/GLENTREE2023'
       },
       toppers: [
@@ -379,35 +587,39 @@ const data: Data = {
           image: topper3,
         },
         {
-          name: 'Hasini Gupta PS',
+          name: 'Hasini Gupta P S',
           ranks: 'Rank 4',
           marks: '98.8%',
           image: topper4,
         },
       ]
-      
+
     },
-    
   ],
   testimonials: {
     title: 'Insight Voices',
     subtitle: 'Stories of Transformation and Growth',
     data: [
+      // {
+      //   image: testimonial3,
+      //   quote: "For 12 years, Insight Academy has shaped our daughter into a well-rounded achiever. She's excelled in sports, academics, debates, culture, and inter-school competitions.",
+      //   ctaText: 'Watch Video',
+      //   ctaLink: '',
+      // },
       {
         image: testimonial3,
-        quote: '“This school offers more than just education. Teachers give individual attention, and activities add to the wholesome learning experience...',
-        ctaText: 'Watch Video',
-        ctaLink: '',
+        quote: "Since the last 12 years, Insight Academy has shaped our daughter into a multifaceted achiever. She has excelled in sports, academics and also in cultural activities. She has also brought accolades to the school in several inter-school competitions. A large part of the credit of her success goes to the encouragement given by the Principal and staff at Insight Academy.",
+        author: '- BHANU MURTHY, PARENT OF VIBHA MURTHY (Grade 10)',
       },
       {
         image: testimonial2,
-        quote: 'Insight Academy has enriched my life! The supportive teachers and engaging activities have truly made my school years memorable.',
-        author: '- SANATAN (grade 10)',
+        quote: 'This school has helped me develop a wide range of skills and is also continuously motivating me to reach perfection in each field, which aids me in all aspects of life, from studying to sports.',
+        author: '- Pramath K. Panyam (Grade 10)',
       },
       {
         image: testimonial1,
-        quote: 'At Insight Academy, every day is an adventure! The fascinating blend of academics and co-curriculars instills in us the love for learning.',
-        author: '- SANATAN (grade 10)',
+        quote: "The teachers and the whole environment here encourage you to push beyond your limits and that's why I feel like this is the perfect school for me! ",
+        author: '- Abhirav S Kashyap (Grade 10)',
 
       },
     ],
@@ -415,51 +627,51 @@ const data: Data = {
   leadership: {
     data: {
       trustee: [
-        { 
-          name: 'Mr. S. K. Gupdta',
-          role: 'Trustee',
+        {
+          name: "Mr. S. A. Wajid",
+          role: "Trustee",
           image: leadership1
         },
         {
-          name: ' S. K. Gupdta',
-          role: 'Trustee',
+          name: "Mr. Malcolm Rohan D’souza",
+          role: "Trustee",
           image: leadership1
         },
         {
-          name: ' S. K. Gupdta',
-          role: 'Trustee',
+          name: "Mrs Esha Hussain",
+          role: "Trustee",
           image: leadership1
         },
         {
-          name: ' S. K. Gupdta',
-          role: 'Trustee',
+          name: "Dr. Crystal D’souza",
+          role: "Trustee",
           image: leadership1
         }
       ],
       government: [
-        { 
-          name: 'Mr. S. K. Gupdta',
-          role: 'Governing Council',
+        {
+          name: "Mrs. May Ruth D’souza",
+          role: "Governing Council",
           image: leadership1
         },
         {
-          name: ' S. K. Gupdta',
-          role: 'Governing Council',
+          name: "Mrs. Rehana Shameem",
+          role: "Governing Council",
           image: leadership1
         },
         {
-          name: ' S. K. Gupdta',
-          role: 'Governing Council',
+          name: "Mr. S. A. Hussain",
+          role: "Governing Council",
           image: leadership1
         },
         {
-          name: ' S. K. Gupdta',
-          role: 'Governing Council',
+          name: "Mrs. Ramola Melita D'souza",
+          role: "Governing Council",
           image: leadership1
         }
-    ]
+      ]
+    }
   }
-}
 };
 
 
