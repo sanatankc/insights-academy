@@ -1,4 +1,5 @@
 ---
+import '../../global.css'
 const { campusName = '' } = Astro.params
 import astronautKidsAdmissionBG from '../../images/astronautKidsAdmissionBG.png';
 import config from "../../../config"
@@ -9,10 +10,14 @@ import Carousel from "../../components/system/Carousel.astro"
 import CarouselCard from "../../components/carousel/CarouselCard.astro"
 import TopNavigationBar from "../../components/TopNavigationBar.astro"
 import Footer from "../../components/landingPage/Footer.astro"
+import Testimonial from '../../components/landingPage/Testimonial.astro';
+import GoToCta from '../../components/GoToCta.astro';
+import Connect from '../../components/campus/Connect.astro';
 
 const campus = config.campus
 const campusConfig = campus.find(c => c.internalName === "kanakapura")
 const facilities = campusConfig?.facilities
+const contact = campusConfig?.contact;
 
 export function getStaticPaths() {
   return [
@@ -29,7 +34,7 @@ export function getStaticPaths() {
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
 }}>
-  <Text type={'h2'} class='mt-14 font-bold max-md:mt-10 text-yellow'>Campus Facilities</Text>
+  <Text type={'h2'} class='mt-14 font-bold max-md:mt-10 text-yellow'>Co-Scholastics</Text>
   <Text type={'base'} class='mt-3 text-center max-md:w-[90%] text-white' >{`${campusName.charAt(0).toUpperCase() + campusName.substring(1)} Campus`}</Text>
 </div>
 
@@ -102,5 +107,15 @@ export function getStaticPaths() {
   
   
   </div>
+
+  <Testimonial/>
+
+  <div id="contact-us" style="scroll-margin: 60px;">
+    <Connect {
+      ...contact
+    } />
+  </div>
+  
+  <GoToCta/>
 
   <Footer/>

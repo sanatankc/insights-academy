@@ -1,0 +1,73 @@
+---
+import '../../global.css'
+const { campusName = '' } = Astro.params
+import astronautKidsAdmissionBG from '../../images/astronautKidsAdmissionBG.png';
+import config from "../../../config"
+import Heading from "../../components/system/Heading.astro"
+import Text from "../../components/system/Text.astro"
+import TopNavigationBar from "../../components/TopNavigationBar.astro"
+import Footer from "../../components/landingPage/Footer.astro"
+import Testimonial from '../../components/landingPage/Testimonial.astro';
+import GoToCta from '../../components/GoToCta.astro';
+import TopperCard from '../../components/TopperCard.astro';
+import Connect from '../../components/campus/Connect.astro';
+
+const campus = config.campus;
+const campusConfig = campus.find(c => c.internalName === "kanakapura");
+const toppers = campusConfig?.toppers;
+const contact = campusConfig?.contact;
+
+export function getStaticPaths() {
+  return [
+    { params: { campusName: "kanakapura" } },
+    { params: { campusName: "marathahalli" } },
+  ];
+}
+---
+<TopNavigationBar/>
+
+<div class='min-h-[512px] max-h-[512px] w-full flex justify-center items-center flex-col max-md:min-h-[350px]' style={{
+  background: `linear-gradient(180deg, rgba(18, 18, 18, 0) -21.78%, rgba(0, 0, 0, 0.7) 68.07%), url(${astronautKidsAdmissionBG})`,
+  backgroundPosition: '90% 50%',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+}}>
+  <Text type={'h2'} class='mt-14 font-bold max-md:mt-10 text-yellow'>Our Achievements</Text>
+</div>
+
+{campusName !== 'marathahalli' && (
+  <div id="achievements" class="p-xl flex flex-col justify-center gap-l  scroll-m-14 max-sm:p-l">
+    <div class="px-0 flex flex-col gap-r max-sm:gap-r max-sm:px-0">
+      <Heading first="Celebrating" second={"Achievements"} subtitle="INSPIRING FEATS">
+      </Heading>
+      <Text type="p" class="text-center">We take immense pride in celebrating academic triumphs that reflect the students’ dedication.</Text>
+    </div>
+    <div class="flex items-center justify-center">
+      <div class="flex gap-[2px] overflow-scroll w-full max-sm:flex-col  max-sm:items-center max-sm:gap-[16px] max-w-[1200px] margin-auto">
+        {toppers?.map((item,index) => {
+          return <TopperCard
+                  topper={item}
+                />
+        })}
+    </div>
+    </div>
+
+  </div>
+)}
+{campusName === 'marathahalli' && (
+  <div class="pt-8" />
+)}
+
+
+
+<Testimonial/>
+
+<div id="contact-us" style="scroll-margin: 60px;">
+  <Connect {
+    ...contact
+  } />
+</div>
+
+<GoToCta/>
+
+<Footer/>

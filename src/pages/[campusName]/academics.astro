@@ -12,7 +12,8 @@ import Heading from "../../components/system/Heading.astro"
 import Text from "../../components/system/Text.astro"
 import Footer from "../../components/landingPage/Footer.astro"
 
-const academic = campusConfig?.academic
+const academic = campusConfig?.academic;
+const contact = campusConfig?.contact;
 
 const colors = [
   ["#EFFAF8","primary","neutral-dark-grey"],
@@ -29,6 +30,11 @@ export function getStaticPaths() {
     { params: { campusName: "marathahalli" } },
   ];
 }
+
+import '../../global.css'
+import Testimonial from '../../components/landingPage/Testimonial.astro';
+import GoToCta from '../../components/GoToCta.astro';
+import Connect from '../../components/campus/Connect.astro';
 ---
 
 <TopNavigationBar/>
@@ -39,7 +45,7 @@ export function getStaticPaths() {
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
 }}>
-  <Text type={'h2'} class='mt-14 font-bold max-md:mt-10 text-yellow'>Campus Facilities</Text>
+  <Text type={'h2'} class='mt-14 font-bold max-md:mt-10 text-yellow'>Academics</Text>
   <Text type={'base'} class='mt-3 text-center max-md:w-[90%] text-white' >{`${campusName.charAt(0).toUpperCase() + campusName.substring(1)} Campus`}</Text>
 </div>
 
@@ -113,4 +119,14 @@ export function getStaticPaths() {
     }
   </div>
 
-  <Footer/>
+<Testimonial/>
+
+<div id="contact-us" style="scroll-margin: 60px;">
+  <Connect {
+    ...contact
+  } />
+</div>
+
+<GoToCta/>
+
+<Footer/>
