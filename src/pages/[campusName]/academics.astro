@@ -11,6 +11,8 @@ import StarStepIcon from "../../components/icons/StarStepIcon.astro"
 import Heading from "../../components/system/Heading.astro"
 import Text from "../../components/system/Text.astro"
 import Footer from "../../components/landingPage/Footer.astro"
+import academicsBanner from '../../images/campus/knk/academicsBanner.jpeg';
+
 
 const academic = campusConfig?.academic;
 const contact = campusConfig?.contact;
@@ -43,7 +45,7 @@ const capitalisedCampusName = campusName.charAt(0).toUpperCase() + campusName.sl
 <TopNavigationBar/>
 
 <div class='min-h-[512px] max-h-[512px] w-full flex justify-center items-center flex-col max-md:min-h-[350px]' style={{
-  background: `linear-gradient(180deg, rgba(18, 18, 18, 0) -21.78%, rgba(0, 0, 0, 0.7) 68.07%), url(${astronautKidsAdmissionBG})`,
+  background: `linear-gradient(180deg, rgba(18, 18, 18, 0) -21.78%, rgba(0, 0, 0, 0.7) 68.07%), url(${academicsBanner})`,
   backgroundPosition: '90% 50%',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
