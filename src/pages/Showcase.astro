@@ -4,7 +4,7 @@ import janmashtami from "../images/campus/events/janmashtami.jpg"
 import rakshabandhan from "../images/campus/events/rakshabandhan.jpg" 
 import chess from "../images/campus/events/chess.jpg" 
 import principal from "../images/campus/events/insight-principal.jpg" 
-import CarouselCard from "../components/carousel/CarouselCard.astro";
+import CarouselCard from "../components/system/CarouselCard.astro";
 
 import Heading from "../components/system/Heading.astro";
 import arrow from "../icons/arrow.svg?raw"
@@ -51,6 +51,7 @@ const homePageEvents = new Array(maxEventsLength).fill(null).map((_, index) => {
   }
 })
 
+
 const config: Item[] = campusName === 'kanakapura' 
   ? kankapuraEvents 
   : campusName === 'marathahalli' 
@@ -61,6 +62,11 @@ const fbLink = campusName === 'kanakapura'
   ? 'https://www.facebook.com/InsightAcademy.KanakapuraRoad'
   : 'https://www.facebook.com/InsightAcademy.Marathahalli/'
 const heading = title || "Featured Updates"
+
+console.log("hello");
+
+console.log(config);
+
 ---
 
 <div

@@ -39,10 +39,6 @@ const menu: Array<Menu> = [
         title: 'Overview',
         link: '/kanakapura/overview'
       },
-      // {
-      //   title: "Principal's Note",
-      //   link: "/kanakapura/principal's-note"
-      // },
       {
         title: 'Campus Facilities',
         link: '/kanakapura/campus-facilities'
@@ -55,15 +51,6 @@ const menu: Array<Menu> = [
         title: 'Co-Scholastics',
         link: '/kanakapura/co-scholastics'
       },
-      // {
-      //   title: 'Our Achievements',
-      //   link: '/kanakapura/achievements'
-      // },
-      // {
-      //   title: 'Contact Us',
-      //   link: '/kanakapura/contact-us'
-      // },
-      
     ]
   },
   {
@@ -74,10 +61,6 @@ const menu: Array<Menu> = [
         title: 'Overview',
         link: '/marathahalli/overview'
       },
-      // {
-      //   title: "Principal's Note",
-      //   link: "/marathahalli/principal's-note"
-      // },
       {
         title: 'Campus Facilities',
         link: '/marathahalli/campus-facilities'
@@ -90,15 +73,6 @@ const menu: Array<Menu> = [
         title: 'Co-Scholastics',
         link: '/marathahalli/co-scholastics'
       },
-      // {
-      //   title: 'Our Achievements',
-      //   link: '/insight-marathahalli#achievements'
-      // },
-      // {
-      //   title: 'Contact Us',
-      //   link: '/marathahalli/contact-us'
-      // },
-      
     ]
   },
   {
@@ -471,8 +445,6 @@ const activePath = Astro.url.pathname
       clearTimeout(removeTimeout)
       menuChild.forEach((elC) => {
         if (elC !== menu) {
-          console.log('elC...', elC)
-          console.log('el...', el)
           elC.classList.remove('visible')
         }
       })

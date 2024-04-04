@@ -66,9 +66,14 @@ import sportsfacility2 from '../../images/campus/marth/campus-facilities/skating
 import sportsfacility3 from '../../images/campus/marth/campus-facilities/cricket.jpeg'
 import sportsfacility4 from '../../images/campus/marth/campus-facilities/swim.jpeg'
 import sportsfacility5 from '../../images/campus/marth/campus-facilities/football-2.jpeg'
+
+import classroom1 from '../../images/campus/marth/campus-facilities/activity-room.webp'
+import classroom2 from '../../images/campus/marth/campus-facilities/classroom-3.jpeg'
+
 import Testimonial from '../../components/landingPage/Testimonial.astro';
 import GoToCta from '../../components/GoToCta.astro';
 import Connect from '../../components/campus/Connect.astro';
+import Layout from '../../layouts/Layout.astro';
 
 export function getStaticPaths() {
   return [
@@ -80,8 +85,11 @@ export function getStaticPaths() {
 const campus = config.campus;
 const campusConfig = campus.find(c => c.internalName === "kanakapura");
 const contact = campusConfig?.contact;
----
 
+
+const capitalisedCampusName = campusName.charAt(0).toUpperCase() + campusName.slice(1)
+---
+<Layout title={`Best School in ${capitalisedCampusName} | Insight Academy`}>
 <TopNavigationBar/>
 
 <div class='min-h-[512px] max-h-[512px] w-full flex justify-center items-center flex-col max-md:min-h-[350px]' style={{
@@ -94,96 +102,166 @@ const contact = campusConfig?.contact;
   <Text type={'base'} class='mt-3 text-center max-md:w-[90%] text-white' >{`${campusName.charAt(0).toUpperCase() + campusName.substring(1)} Campus`}</Text>
 </div>
 
+
 <div id="campus-facilities" style="scroll-margin: 60px;" class="p-xl px-xl flex flex-col justify-center gap-l scroll-m-14 max-sm:p-r max-sm:gap-r max-md:mt-4">
-    <Heading first="Discover our" second={"Campus"} subtitle="Explore Insight" />
-    <div class="flex flex-row w-full justify-center max-md:flex-col">
-      <Text type="regular" class="text-neutral-dark-grey max-md:mb-5 max-w-5xl text-center flex-1 mr-4">
-        Discover a nurturing environment with well-designed classrooms, sprawling grounds, and a host of facilities, all dedicated to providing students with a holistic and enriching educational experience.
-      </Text>
-      <!-- <a href={campusName === 'marathahalli'
-        ? ""
-        : "https://drive.google.com/file/d/1VcI-cGbtwI0FaUyCanqv2AxzfNaTc6La/view?usp=sharing"
-      } target="_blank" class="">
-        <Button>Watch Campus Tour</Button>
-      </a> -->
-  
-    </div>
-
-      <Carousel class="gap-16 p-5 pt-8 mt-2 max-md:gap-14 max-md:pt-8 no-scrollbar" id="campus-showcase" stackOnMobile>
-        <!--
-          <CarouselCard>
-            <DeckCard
-              ../images={[
-                { src: aroundthecampus1, alt: '' },
-                { src: aroundthecampus2, alt: '' }
-              ]}
-              target="around-the-campus"
-            >
-              <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
-                Around the campus
-              </Text>
-            </DeckCard>
-          </CarouselCard>
-          -->
-        <CarouselCard >
-          <DeckCard
-            images={[
-              { src: classrooms1k, alt: '' },
-              { src: classrooms2k, alt: '' }
-            ]}
-            target="classrooms-knk"
-          >
-            <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
-              Classrooms
-            </Text>
-          </DeckCard>
-        </CarouselCard>
-        
-        <CarouselCard>
-          <DeckCard
-            images={[
-              { src: labs1k, alt: '' },
-              { src: labs2k, alt: '' }
-            ]}
-            target="academic-labs-knk"
-          >
-            <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
-              Academic Labs
-            </Text>
-          </DeckCard>
-        </CarouselCard>
-        <CarouselCard>
-          <DeckCard
-            images={[
-              { src: coScholastic1k, alt: '' },
-              { src: coScholastic2k, alt: '' }
-            ]}
-            target="extrafacility-knk"
-          >
-            <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
-              Co-Scholastics
-            </Text>
-          </DeckCard>
-        </CarouselCard>
-        <CarouselCard>
-          <DeckCard
-            images={[
-              { src: sportfacility1k, alt: '' },
-              { src: sportfacility2k, alt: '' }
-            ]}
-            target="sportsfacility-knk"
-          >
-            <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
-              Sports
-            </Text>
-          </DeckCard>
-        </CarouselCard>
-      </Carousel>
-
+  <Heading first="Discover our" second={"Campus"} subtitle="Explore Insight" />
+  <div class="flex flex-row w-full justify-center max-md:flex-col">
+    <Text type="regular" class="text-neutral-dark-grey max-md:mb-5 max-w-5xl text-center flex-1 mr-4">
+      Discover a nurturing environment with well-designed classrooms, sprawling grounds, and a host of facilities, all dedicated to providing students with a holistic and enriching educational experience.
+    </Text>
+    <!-- <a href={campusName === 'marathahalli'
+      ? ""
+      : "https://drive.google.com/file/d/1VcI-cGbtwI0FaUyCanqv2AxzfNaTc6La/view?usp=sharing"
+    } target="_blank" class="">
+      <Button>Watch Campus Tour</Button>
+    </a> -->
 
   </div>
-
   {campusName === 'marathahalli' && (
+    <Carousel class="gap-16 p-5 pt-8 mt-2 max-md:gap-14 max-md:pt-8 no-scrollbar" id="campus-showcase" stackOnMobile>
+      <!--
+        <CarouselCard>
+          <DeckCard
+            images={[
+              { src: aroundthecampus1, alt: '' },
+              { src: aroundthecampus2, alt: '' }
+            ]}
+            target="around-the-campus"
+          >
+            <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+              Around the campus
+            </Text>
+          </DeckCard>
+        </CarouselCard>
+      -->
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: classroom1, alt: '' },
+            { src: classroom2, alt: '' }
+          ]}
+          target="classrooms"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Classrooms
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: academiclabs1, alt: '' },
+            { src: academiclabs2, alt: '' }
+          ]}
+          target="academic-labs"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Academic Labs
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: extrafacility1, alt: '' },
+            { src: extrafacility2, alt: '' }
+          ]}
+          target="extrafacility"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Co-Scholastics
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: sportsfacility1, alt: '' },
+            { src: sportsfacility2, alt: '' }
+          ]}
+          target="sportsfacility"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Sports
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+    </Carousel>
+  )}
+  {campusName === 'kanakapura' && (
+    <Carousel class="gap-16 p-5 pt-8 mt-2 max-md:gap-14 max-md:pt-8 no-scrollbar" id="campus-showcase" stackOnMobile>
+      <!--
+        <CarouselCard>
+          <DeckCard
+            images={[
+              { src: aroundthecampus1, alt: '' },
+              { src: aroundthecampus2, alt: '' }
+            ]}
+            target="around-the-campus"
+          >
+            <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+              Around the campus
+            </Text>
+          </DeckCard>
+        </CarouselCard>
+        -->
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: classrooms1k, alt: '' },
+            { src: classrooms2k, alt: '' }
+          ]}
+          target="classrooms-knk"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Classrooms
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: labs1k, alt: '' },
+            { src: labs2k, alt: '' }
+          ]}
+          target="academic-labs-knk"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Academic Labs
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: coScholastic1k, alt: '' },
+            { src: coScholastic2k, alt: '' }
+          ]}
+          target="extrafacility-knk"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Co-Scholastics
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+      <CarouselCard>
+        <DeckCard
+          images={[
+            { src: sportfacility1k, alt: '' },
+            { src: sportfacility2k, alt: '' }
+          ]}
+          target="sportsfacility-knk"
+        >
+          <Text type="xs" class='uppercase text-center mt-8 max-md:mt-5 text-[#006BB3] font-bold underline max-md:text-sm'>
+            Sports
+          </Text>
+        </DeckCard>
+      </CarouselCard>
+    </Carousel>
+  )}
+</div>
+
+{campusName === 'marathahalli' && (
   <Gallery
     id="around-the-campus"
     gallery={[
@@ -290,14 +368,8 @@ const contact = campusConfig?.contact;
   />
 )}
 
-<Testimonial/>
-
-<div id="contact-us" style="scroll-margin: 60px;">
-  <Connect {
-    ...contact
-  } />
-</div>
 
 <GoToCta/>
 
 <Footer/>
+</Layout>
