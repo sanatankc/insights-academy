@@ -92,7 +92,7 @@ const contact = campusConfig?.contact;
 
 const capitalisedCampusName = campusName.charAt(0).toUpperCase() + campusName.slice(1)
 ---
-<Layout title={`Best School in ${capitalisedCampusName} | Campus-Facilities |Insight Academy`}>
+<Layout title={`Best School in ${capitalisedCampusName} | Campus-Facilities | Insight Academy`}>
 <TopNavigationBar/>
 
 {campusName !== 'marathahalli' ? (
@@ -102,7 +102,7 @@ const capitalisedCampusName = campusName.charAt(0).toUpperCase() + campusName.sl
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
   }}>
-      <Text type={'h2'} class='mt-14 font-bold max-md:mt-10 text-yellow'>{`${capitalisedCampusName} Campus Facilities`}</Text>
+      <Text type={'h2'} class='mt-14 text-center font-bold max-md:mt-10 text-yellow'>{`${capitalisedCampusName} Campus Facilities`}</Text>
       <Text type={'base'} class='mt-3 text-center max-md:w-[90%] text-white' >Explore our state-of-the-art campus facilities</Text>
     </div> ) : 
     <div class='min-h-[512px] max-h-[512px] w-full flex justify-center items-center flex-col max-md:min-h-[350px]' style={{
