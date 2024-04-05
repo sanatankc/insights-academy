@@ -33,72 +33,46 @@ const menu: Array<Menu> = [
   },
   {
     title: 'Kanakapura Campus',
-    link: '/insight-kanakapura',
+    link: '/kanakapura/overview',
     submenu: [
      {
         title: 'Overview',
-        link: '/insight-kanakapura'
-      },
-      {
-        title: 'Principal’s Note',
-        link: '/insight-kanakapura#principal-note'
+        link: '/kanakapura/overview'
       },
       {
         title: 'Campus Facilities',
-        link: '/insight-kanakapura#campus-facilities'
+        link: '/kanakapura/campus-facilities'
       },
       {
         title: 'Academics',
-        link: '/insight-kanakapura#academics'
+        link: '/kanakapura/academics'
       },
       {
         title: 'Co-Scholastics',
-        link: '/insight-kanakapura#life-at-insight'
+        link: '/kanakapura/co-scholastics'
       },
-      {
-        title: 'Our Achievements',
-        link: '/insight-kanakapura#achievements'
-      },
-      {
-        title: 'Contact Us',
-        link: '/insight-kanakapura#contact-us'
-      },
-      
     ]
   },
   {
     title: 'Marathahalli Campus',
-    link: '/insight-marathahalli',
+    link: '/marathahalli/overview',
     submenu: [
     {
         title: 'Overview',
-        link: '/insight-marathahalli'
-      },
-      {
-        title: 'Principal’s Note',
-        link: '/insight-marathahalli#principal-note'
+        link: '/marathahalli/overview'
       },
       {
         title: 'Campus Facilities',
-        link: '/insight-marathahalli#campus-facilities'
+        link: '/marathahalli/campus-facilities'
       },
       {
         title: 'Academics',
-        link: '/insight-marathahalli#academics'
+        link: '/marathahalli/academics'
       },
       {
         title: 'Co-Scholastics',
-        link: '/insight-marathahalli#life-at-insight'
+        link: '/marathahalli/co-scholastics'
       },
-      // {
-      //   title: 'Our Achievements',
-      //   link: '/insight-marathahalli#achievements'
-      // },
-      {
-        title: 'Contact Us',
-        link: '/insight-marathahalli#contact-us'
-      },
-      
     ]
   },
   {
@@ -231,7 +205,7 @@ const activePath = Astro.url.pathname
               class="font-display"
               type={item.type}
               icon={item?.icon}
-            >{item.title}</Button>
+            ><span class="text-white">{item.title}</span></Button>
           </a>
         )
 
@@ -471,8 +445,6 @@ const activePath = Astro.url.pathname
       clearTimeout(removeTimeout)
       menuChild.forEach((elC) => {
         if (elC !== menu) {
-          console.log('elC...', elC)
-          console.log('el...', el)
           elC.classList.remove('visible')
         }
       })

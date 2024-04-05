@@ -1,0 +1,129 @@
+---
+const { campusName = '' } = Astro.params
+import astronautKidsAdmissionBG from '../../images/astronautKidsAdmissionBG.png';
+import config from "../../../config"
+const campus = config.campus
+const campusConfig = campus.find(c => c.internalName === campusName)
+import Image from '../../components/system/Image.astro'
+import TopNavigationBar from '../../components/TopNavigationBar.astro';
+import Star from "../../components/icons/Star.astro"
+import StarStepIcon from "../../components/icons/StarStepIcon.astro"
+import Heading from "../../components/system/Heading.astro"
+import Text from "../../components/system/Text.astro"
+import Footer from "../../components/landingPage/Footer.astro"
+import academicsBanner from '../../images/campus/knk/academicsBanner.jpeg';
+
+
+const academic = campusConfig?.academic;
+const contact = campusConfig?.contact;
+
+const colors = [
+  ["#EFFAF8","primary","neutral-dark-grey"],
+  ["#FCF8EB","black-100","neutral-dark-grey"],
+  ["#EFFAF8","primary","neutral-dark-grey"],
+  ["#FCF8EB","black-100","neutral-dark-grey"],
+
+]
+
+
+export function getStaticPaths() {
+  return [
+    { params: { campusName: "kanakapura" } },
+    { params: { campusName: "marathahalli" } },
+  ];
+}
+
+import '../../global.css'
+import Testimonial from '../../components/landingPage/Testimonial.astro';
+import GoToCta from '../../components/GoToCta.astro';
+import Connect from '../../components/campus/Connect.astro';
+import Layout from '../../layouts/Layout.astro';
+const capitalisedCampusName = campusName.charAt(0).toUpperCase() + campusName.slice(1)
+---
+<Layout title={`Best School in ${capitalisedCampusName} | Academics | Insight Academy`}>
+
+<TopNavigationBar/>
+
+<div class='min-h-[512px] max-h-[512px] w-full flex justify-center items-center flex-col max-md:min-h-[350px]' style={{
+  background: `linear-gradient(180deg, rgba(18, 18, 18, 0) -21.78%, rgba(0, 0, 0, 0.7) 68.07%), url(${academicsBanner})`,
+  backgroundPosition: '90% 50%',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+}}>
+  <Text type={'h2'} class='mt-14 text-center font-bold max-md:mt-10 text-yellow'>Academics</Text>
+  <Text type={'base'} class='mt-3 text-center max-md:w-[90%] text-white' >Discover our tailored educational stages for all ages.</Text>
+</div>
+
+<div id="academics" style="scroll-margin: 60px;" class="p-xl px-0  flex flex-col justify-center gap-l scroll-m-14 max-sm:p-r max-sm:gap-r">
+  <Heading first="Academic" second={"Landscape"} subtitle="Empowering Every Learner ">
+  </Heading>
+  {
+    academic?.map((item,index) => {
+      const rounded = index === 0
+        ? "rounded-tl-[250px]"
+        : index === academic.length - 1
+          ? "rounded-bl-[250px]"
+          : ""
+      return <div class={`flex flex-col px-xl  justify-center gap-l max-sm:p-0`}>
+                <div style={`background: ${colors[index][0]}`}>
+                  <div class="flex p-xl pr-0 justify-center gap-xl item-center max-md:flex-col max-md:p-r">
+                    <div class="flex gap-r flex-col">
+                      <div class="flex gap-r items-center">
+                        <Text type='span'>
+                          <StarStepIcon
+                            step={item.starIcon || 'mini'}
+                            class={`w-10 h-10 text-${colors[index][1]}`}
+                          />
+                        </Text>
+                        <Text type="h3" class={`text-${colors[index][1]} font-bold`}>
+                          {item.title}
+                        </Text>
+                      </div>
+                      <p class="max-w-[70ch] text-xl max-sm:text-base">
+                        {item.description}
+                      </p>
+
+
+                      {item.list?.map?.((value, idx) => (
+                        <Fragment key={idx}>
+                          <Text type="subtitle" class={`text-${colors[index][1]} `} style={{textAlign: "left"}}>
+                            {value.title}:
+                          </Text>
+
+                          <ul class="flex flex-col gap-r">
+                            {value.info?.map(item => (
+                              <li class="text-xl flex gap-[7px] items-center max-sm:text-base">
+                                  <span class={`text-${colors[index][1]} w-6 h-6`}>
+                                    <Star
+                                      class={`text-${colors[index][1]} w-6 h-6 max-sm:w-5 max-sm:h-5`}
+                                    />
+                                  </span>
+                                  {item}
+
+                                </li>
+                            ))}
+                          </ul>
+                        </Fragment>
+                    ))}
+
+                    </div>
+                    <div class="">
+                      <Image
+                        className={`${rounded} max-md:rounded-none h-[95%] max-md:h-[220px] object-cover`}
+                        src={
+                          item.images[0]
+                        }
+                      />
+                    </div>
+                </div>
+                </div>
+
+              </div>
+    })
+  }
+</div>
+
+<GoToCta/>
+
+<Footer/>
+</Layout>

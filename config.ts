@@ -1,3 +1,5 @@
+import type { StarProps } from "./src/components/icons/config"
+
 import campus1 from './src/images/campus/gas/gallery/1.jpeg';
 
 // putting knk campus bg images here
@@ -16,6 +18,7 @@ import campusbg6Mb from './src/images/campus/knk/slides/mb/6.jpeg';
 import principalknk from "./src/images/campus/knk/knk_principal.jpeg"
 import kindergartenknk from "./src/images/campus/knk/kindergartenknk.jpeg"
 import grade6knk from "./src/images/campus/knk/6-10knk.jpeg"
+import grade11knk from "./src/images/campus/knk/11knk.jpg"
 import grade1knk from "./src/images/campus/knk/1-5knk.jpeg"
 import principalmrth from "./src/images/campus/marth/marth_principal.jpeg"
 
@@ -65,7 +68,6 @@ import highSchool from "./src/images/campus/marth/academics/9-10.jpeg"
 
 
 
-
 type Campus = {
   title: string;
   description: string;
@@ -112,7 +114,11 @@ type Academic = {
   title: string;
   description: string;
   images: string[];
-  highlights?: string[];
+  starIcon: StarProps["step"];
+  list: {
+    title: string;
+    info: string[];
+  }[];
 }
 type LeaderMessage = {
   image: string;
@@ -139,14 +145,14 @@ type Testimonials = {
   subtitle: string;
   data: Testimonial[];
 };
-type indexPage =  {
-    hero : {
-      title: string;
-      subtitle: string; 
-      bgImage: string;
-      topHeading: string;
-      description: string;
-    }
+type indexPage = {
+  hero: {
+    title: string;
+    subtitle: string;
+    bgImage: string;
+    topHeading: string;
+    description: string;
+  }
 }
 type LeaderShipData = {
   name: string;
@@ -173,15 +179,15 @@ interface Data {
   school: School;
   campus: Campus[];
   testimonials: Testimonials;
-  leadership: LeaderShip; 
+  leadership: LeaderShip;
 }
 
 const data: Data = {
-  
+
   ctaLink: 'https://parents.neverskip.com/',
   school: {
     discription: "Established in 2007, Insight Academy ranks among the best Bangalore schools, driven by 'Quality Education for All'. Our inclusive, secular approach goes beyond traditional classrooms, focusing on robust academics and holistic personal growth. As a leading institution, we prepare students for academic success and life beyond the classroom.",
-    
+
   },
   campus: [
     {
@@ -192,26 +198,36 @@ const data: Data = {
       description: 'Located near ISRO Layout amidst the lush greenery of South Bengaluru, we offer focussed learning in our ICSE affiliated institution.',
       admissionLink: "http://admissions.neverskip.com/6a572b6c322f61674d62684c7a334b7a6d364d755a673d3d/utms-723458We8&utmc-305639Sc9",
       images: [
-        {type: 'picture', slide: [
-          { src: campusbg1, media: "(min-width: 768px)", position: 'center 64%' },
-          { src: campusbg1Mb, media: "(max-width: 768px)" },
-        ], position: 'center 10%'},
-        {type: 'picture', slide: [
-          { src: campusbg2, media: "(min-width: 768px)", position: 'center 64%' },
-          { src: campusbg2Mb, media: "(max-width: 768px)" },
-        ], position: 'center 10%'},
-        {type: 'picture', slide: [
-          { src: campusbg4, media: "(min-width: 768px)", position: 'center 64%' },
-          { src: campusbg4Mb, media: "(max-width: 768px)" },
-        ], position: 'center 10%'},
-        {type: 'picture', slide: [
-          { src: campusbg5, media: "(min-width: 768px)", position: 'center 64%' },
-          { src: campusbg5Mb, media: "(max-width: 768px)" },
-        ], position: 'center 10%'},
-        {type: 'picture', slide: [
-          { src: campusbg6, media: "(min-width: 768px)", position: 'center 64%' },
-          { src: campusbg6Mb, media: "(max-width: 768px)" },
-        ], position: 'center 10%'},
+        {
+          type: 'picture', slide: [
+            { src: campusbg1, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: campusbg1Mb, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+        {
+          type: 'picture', slide: [
+            { src: campusbg2, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: campusbg2Mb, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+        {
+          type: 'picture', slide: [
+            { src: campusbg4, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: campusbg4Mb, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+        {
+          type: 'picture', slide: [
+            { src: campusbg5, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: campusbg5Mb, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+        {
+          type: 'picture', slide: [
+            { src: campusbg6, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: campusbg6Mb, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
       ],
       bgImage: campus1,
       ctaText: 'Explore Campus',
@@ -226,36 +242,70 @@ const data: Data = {
       academic: [
         {
           title: 'Kindergarten',
+          starIcon: "mini",
           description: 'Our Early Childhood Education (ECE) program, designed for 3 to 5-year-olds, goes beyond primary school preparation, focusing on holistic child development.',
           images: [kindergartenknk],
-          highlights: [
-           "25:1 Student-to-Teacher ratio",
-           "Multi-sensory, experiential learning approach",
-           "Emphasis on communication skills",
-           "Extracurriculars activities like swimming, tennis, music & art"
-          ],
+          list: [{
+            title: "Highlights",
+            info: [
+              "1:25 Student-to-Teacher ratio",
+              "Multi-sensory, experiential learning approach",
+              "Emphasis on communication skills",
+              "Extracurriculars activities like swimming, tennis, music & art"
+            ]
+          }],
         },
         {
           title: 'Grade 1-5',
+          starIcon: "normal",
           description: 'At Insight Academy, students from grade 1-5 are nurtured in an environment that is sensitive to their social and emotional needs, fostering them into compassionate individuals.',
           images: [grade1knk],
-          highlights: [
-            "Limited class sizes",
-            "Innovative 'Creative Worksheet' monitoring",
-            "Engaging physical and skill-based activities",
-            "Experiential learning for lifelong passion."
-           ],
+          list: [{
+            title: "Highlights",
+            info: [
+              "Limited class sizes",
+              "Innovative 'Creative Worksheet' monitoring",
+              "Engaging physical and skill-based activities",
+              "Experiential learning for lifelong passion."
+            ]
+          }],
         },
         {
           title: 'Grade 6-10',
+          starIcon: "big",
           description: 'Preparation for board exams starts in grade 6 at Insight Academy, instilling not just academic rigor but also discipline, confidence, and time management skills.',
           images: [grade6knk],
-          highlights: [
-            "Focus is to prepare students for Grade 10",
-            "Assessments would be 2 Tests & 2 exams/year",
-            "NEP focused learning in Robotics & Commerce",
-            "After-school activities focused on sports like Basketball, Football, Cricket & Swimming"
-           ],
+          list: [{
+            title: "Highlights",
+            info: [
+              "Focus is to prepare students for Grade 10",
+              "Assessments would be 2 Tests & 2 exams/year",
+              "NEP focused learning in Robotics & Commerce",
+              "After-school activities focused on sports like Basketball, Football, Cricket & Swimming"
+            ]
+          }],
+        },
+        {
+          title: 'Grade 11',
+          starIcon: "double",
+          description: 'Affiliated with ISC Board, we offer specialized streams in Science and Commerce for Grade 11, providing students with tailored education pathways to pursue their academic interests and career goals.',
+          images: [grade11knk],
+          list: [
+            {
+              title: "Science Stream",
+              info: [
+                "Integrated curriculum for NEET, JEE, CET, and Pure Science, supported by fully equipped state-of-the-art labs.",
+                "Group 1: Physics, Chemistry, Mathematics, Biology",
+                "Group 2: Physics, Chemistry, Mathematics, Computer Science",
+              ]
+            },
+            {
+              title: "Commerce Stream",
+              info: [
+                "Accountancy, Business Studies, Economics, Computer Science"
+              ]
+            }
+          ]
         },
       ],
       facilities: [
@@ -264,16 +314,16 @@ const data: Data = {
           description: "Unleash innovation at our school's robotics classes. With an exclusive robotics lab, students engage in immersive, practical learning, nurturing a passion for technology and problem-solving.",
           images: [RoboticClass],
           bgColor: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(245, 204, 79, 0.20) 100%);',
-          
+
         },
-        
+
         {
           title: 'Coding & CS Class',
           description: "Insight Academy integrates technology into education, offering computer learning with dedicated labs for both primary and senior grades. Each student has access to their individual computer, following a syllabus curated by expert computer educators.",
           images: [ComputerClass],
-          
+
         },
-        
+
         {
           title: 'Curiosity Room for KG',
           description: "Laughter and learning intertwine for our youngest explorers here. Bursting with playful adventures, this vibrant wonderland sparks joy, imagination, and endless learning.",
@@ -312,7 +362,7 @@ const data: Data = {
           },
           address: {
             label: 'We are here',
-            value: '#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore – 560 062',
+            value: '#20, Vasanthpura Main Road, Off Kanakapura Road, Bangalore - 560 062',
             type: 'address'
           }
         },
@@ -346,7 +396,7 @@ const data: Data = {
           image: topper4,
         },
       ]
-      
+
     },
 
     {
@@ -357,22 +407,30 @@ const data: Data = {
       description: 'Situated in the heart of Marathahalli, we offer a comprehensive CBSE-affiliated education framework.',
       admissionLink: "http://admissions.neverskip.com/6d652f7056524f56505837546f7352713344577770673d3d/utms-723458We8&utmc-305639Sc9",
       images: [
-        {type: 'picture', slide: [
-          { src: marthcampusbg1, media: "(min-width: 768px)", position: 'center 64%' },
-          { src: marthcampusbgMb1, media: "(max-width: 768px)" },
-        ], position: 'center 10%'},
-        {type: 'picture', slide: [
-          { src: marthcampusbg2, media: "(min-width: 768px)", position: 'center 64%' },
-          { src: marthcampusbgMb2, media: "(max-width: 768px)" },
-        ], position: 'center 10%'},
-        {type: 'picture', slide: [
-          { src: marthcampusbg4, media: "(min-width: 768px)", position: 'center 64%' },
-          { src: marthcampusbgMb4, media: "(max-width: 768px)" },
-        ], position: 'center 10%'},
-        {type: 'picture', slide: [
-          { src: marthcampusbg5, media: "(min-width: 768px)", position: 'center 64%' },
-          { src: marthcampusbgMb5, media: "(max-width: 768px)" },
-        ], position: 'center 10%'},
+        {
+          type: 'picture', slide: [
+            { src: marthcampusbg1, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: marthcampusbgMb1, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+        {
+          type: 'picture', slide: [
+            { src: marthcampusbg2, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: marthcampusbgMb2, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+        {
+          type: 'picture', slide: [
+            { src: marthcampusbg4, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: marthcampusbgMb4, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
+        {
+          type: 'picture', slide: [
+            { src: marthcampusbg5, media: "(min-width: 768px)", position: 'center 64%' },
+            { src: marthcampusbgMb5, media: "(max-width: 768px)" },
+          ], position: 'center 10%'
+        },
       ],
       bgImage: campus1,
       ctaText: 'Explore Campus',
@@ -389,49 +447,62 @@ const data: Data = {
           title: 'Kindergarten',
           description: "Our kindergarten program, designed for children aged 3 to 5 years, plays a pivotal role in a child's development, often referred to as the 'foundation year'. At Insight Marathalli, we recognize its significance and provide a nurturing environment to foster cognitive, social, and emotional growth.",
           images: [kindergarten],
-          highlights: [
-            "Introduction to early literacy, numeracy, and critical thinking",
-            "Multi-sensory, experiential learning approach",
-            "Emphasis on communication skills",
-            "Encouragement of independence and responsibility",
-            "Engaging extracurricular activities including swimming, music, and art",
-           
-
-
-          ],
+          starIcon: "mini",
+          list: [{
+            title: "Highlights",
+            info: [
+              "Introduction to early literacy, numeracy, and critical thinking",
+              "Multi-sensory, experiential learning approach",
+              "Emphasis on communication skills",
+              "Encouragement of independence and responsibility",
+              "Engaging extracurricular activities including swimming, music, and art",
+            ]
+          }],
         },
         {
           title: 'Elementary (1-5)',
           description: "Elementary education at Insight lays the cornerstone of a child's learning journey, fostering vital skills for personal development and future success. The Formative Years, spanning grades 1 to 5, introduce fundamental subjects—mathematics, science, language arts, and social studies—forming a robust academic foundation for advanced learning.",
           images: [primary],
-          highlights: [
-            "Emphasis on literacy, critical thinking, and problem-solving",
-            "Innovative Creative Worksheet monitoring",
-            "Engaging physical and skill-based activities",
-            "Fostering character and core values: honesty, respect, and empathy",
-           ],
+          starIcon: "mini",
+          list: [{
+            title: "Highlights",
+            info: [
+              "Emphasis on literacy, critical thinking, and problem-solving",
+              "Innovative Creative Worksheet monitoring",
+              "Engaging physical and skill-based activities",
+              "Fostering character and core values: honesty, respect, and empathy",
+            ]
+          }],
         },
         {
           title: 'Higher Primary (6-8)',
           description: "Insight's higher primary phase builds upon elementary foundations, preparing students for secondary education. Rigorous academics blend with character development and essential life skills. Through a nurturing environment, Insight empowers lifelong learners and responsible, contributing citizens, shaping the leaders of tomorrow.",
           images: [secondary],
-          highlights: [
-            "Rigorous academic preparation for secondary education",
-            "NEP focused learning in Robotics",
-            "Personal growth, character development, and life skills",
-            "After-school activities focused on sports like Basketball, Football, Cricket & Swimming",
-           ],
+          starIcon: "mini",
+          list: [{
+            title: "Highlights",
+            info: [
+              "Rigorous academic preparation for secondary education",
+              "NEP focused learning in Robotics",
+              "Personal growth, character development, and life skills",
+              "After-school activities focused on sports like Basketball, Football, Cricket & Swimming",
+            ]
+          }],
         },
         {
           title: 'High School (9-10)',
           description: "Insight's high school phase is a transformative period, guiding students from childhood to adulthood. Our rigorous academic program readies them for higher education and professional challenges. This nurturing environment fosters personal and academic growth, promising a bright future.",
           images: [highSchool],
-          highlights: [
-            "Rigorous academic curriculum for higher education readiness",
-            "Emphasis on character, leadership, and core values",
-            "Career exploration and critical life skills",
-            "After-school activities including robotics, basketball, football, cricket, and swimming",
-           ],
+          starIcon: "mini",
+          list: [{
+            title: "Highlights",
+            info: [
+              "Rigorous academic curriculum for higher education readiness",
+              "Emphasis on character, leadership, and core values",
+              "Career exploration and critical life skills",
+              "After-school activities including robotics, basketball, football, cricket, and swimming",
+            ]
+          }],
         },
       ],
       facilities: [
@@ -440,16 +511,16 @@ const data: Data = {
           description: "Unleash innovation at our school's robotics classes. With an exclusive robotics lab, students engage in immersive, practical learning, nurturing a passion for technology and problem-solving.",
           images: [RoboticClassmarth],
           bgColor: 'linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(245, 204, 79, 0.20) 100%);',
-          
+
         },
-        
+
         {
           title: 'Coding & CS Class',
           description: "Insight Academy integrates technology into education, offering computer learning with dedicated labs for both primary and senior grades. Each student has access to their individual computer, following a syllabus curated by expert computer educators.",
           images: [ComputerClassmarth],
-          
+
         },
-        
+
         {
           title: 'Curiosity Room for KG',
           description: "Laughter and learning intertwine for our youngest explorers here. Bursting with playful adventures, this vibrant wonderland sparks joy, imagination, and endless learning.",
@@ -488,7 +559,7 @@ const data: Data = {
           },
           address: {
             label: 'We are here',
-            value: 'Opp. Prestige Tech Park, Off. Marathahalli – Sarjapura Outer Ring Road, Kadubeesanahalli, Marathahalli, Bangalore – 560 103',
+            value: 'Opp. Prestige Tech Park, Off. Marathahalli - Sarjapura Outer Ring Road, Kadubeesanahalli, Marathahalli, Bangalore - 560 103',
             type: 'address'
           }
         },
@@ -522,9 +593,8 @@ const data: Data = {
           image: topper4,
         },
       ]
-      
+
     },
-    
   ],
   testimonials: {
     title: 'Insight Voices',
@@ -558,49 +628,50 @@ const data: Data = {
     data: {
       trustee: [
         {
-          name:"Mr. S. A. Wajid",
-          role:"Trustee",
-          image:leadership1
-       },      
-  {        name:"Mr. Malcolm Rohan D’souza",
-          role:"Trustee",
-          image:leadership1
-       },      
-        { 
-          name:"Mrs Esha Hussain",
-          role:"Trustee",
-          image:leadership1
-       },     
-         {
-          name:"Dr. Crystal D’souza",
-          role:"Trustee",
-          image:leadership1
-       }
+          name: "Mr. S. A. Wajid",
+          role: "Trustee",
+          image: leadership1
+        },
+        {
+          name: "Mr. Malcolm Rohan D’souza",
+          role: "Trustee",
+          image: leadership1
+        },
+        {
+          name: "Mrs Esha Hussain",
+          role: "Trustee",
+          image: leadership1
+        },
+        {
+          name: "Dr. Crystal D’souza",
+          role: "Trustee",
+          image: leadership1
+        }
       ],
       government: [
         {
-          name:"Mrs. May Ruth D’souza",
-          role:"Governing Council",
-          image:leadership1
-       },
-       {
-          name:"Mrs. Rehana Shameem",
-          role:"Governing Council",
-          image:leadership1
-       },
-       {
-          name:"Mr. S. A. Hussain",
-          role:"Governing Council",
-          image:leadership1
-       },
-       {
-          name:"Mrs. Ramola Melita D'souza",
-          role:"Governing Council",
-          image:leadership1
-       }
-    ]
+          name: "Mrs. May Ruth D’souza",
+          role: "Governing Council",
+          image: leadership1
+        },
+        {
+          name: "Mrs. Rehana Shameem",
+          role: "Governing Council",
+          image: leadership1
+        },
+        {
+          name: "Mr. S. A. Hussain",
+          role: "Governing Council",
+          image: leadership1
+        },
+        {
+          name: "Mrs. Ramola Melita D'souza",
+          role: "Governing Council",
+          image: leadership1
+        }
+      ]
+    }
   }
-}
 };
 
 

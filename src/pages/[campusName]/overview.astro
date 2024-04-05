@@ -1,0 +1,132 @@
+---
+import '../../global.css'
+const { campusName = '' } = Astro.params
+
+import astronautKidsAdmissionBG from '../../images/astronautKidsAdmissionBG.png';
+import config from "../../../config"
+import Heading from "../../components/system/Heading.astro"
+import Text from "../../components/system/Text.astro"
+import TopNavigationBar from "../../components/TopNavigationBar.astro"
+import Footer from "../../components/landingPage/Footer.astro"
+import Testimonial from '../../components/landingPage/Testimonial.astro';
+import GoToCta from '../../components/GoToCta.astro';
+import Hero from '../../components/Hero.astro';
+import Showcase from '../Showcase.astro';
+import TopperCard from '../../components/TopperCard.astro';
+import Connect from '../../components/campus/Connect.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const campus = config.campus;
+const campusConfig = campus.find(c => c.internalName === campusName)
+const leaderMessages = campusConfig?.leaderMessage
+const toppers = campusConfig?.toppers
+const contact = campusConfig?.contact;
+
+export function getStaticPaths() {
+  return [
+    { params: { campusName: "kanakapura" } },
+    { params: { campusName: "marathahalli" } },
+  ];
+}
+const capitalisedCampusName = campusName.charAt(0).toUpperCase() + campusName.slice(1)
+---
+
+<Layout title={`Best School in ${capitalisedCampusName} | Overview | Insight Academy`}>
+<TopNavigationBar/>
+
+<div
+  class="h-[91vh]"
+>
+    <Hero
+      config={
+        {
+          title: campusConfig?.title,
+        }
+      }
+       slideImages={ campusConfig?.images.map((item:any) => (item.type === 'picture' ? {
+        "slide": item.slide, type: 'image', picture: true, position: 'center top'
+      } : {
+        "slide": item.uri, position: item.position, type: item.type
+      }))}
+      heroOpacity={campusName === 'marathahalli' ? 0.9 : 0.8}
+      showSlide={true}
+      contentDirection="items-end"
+      bgImageBgColor="linear-gradient(359deg, #1B2226 0%, rgba(19, 112, 167, 0.00) 100%)"
+    >
+    <div slot="title">
+      {campusConfig?.title ? <Text type="h2" class="mt-auto font-bold text-yellow">{campusConfig?.title}</Text> : null}
+    </div>
+    <div slot="subHeading">
+      {campusConfig?.description ? <Text type="p" class="max-w-[57ch]">{campusConfig?.description}</Text> : null}
+    </div>
+    </Hero>
+</div>
+
+<Showcase
+  title="Events Bulletin"
+  campusName={campusName}
+/>
+
+{
+    campusName !== 'marathahalli' ? (
+      <div class="flex p-xl justify-center gap-l flex-col scroll-mt-24 max-sm:p-l" id="principal-note">
+        <Heading first="Principal's" second={"Note"} subtitle="A GUIDING MESSAGE FROM OUR LEADER" />
+        <div class="flex items-center justify-center gap-l max-sm:flex-col">
+          <img class="w-[450px] h-[350px] object-cover " src={leaderMessages?.[0].image} alt="" />
+          <div class="flex flex-col gap-r">
+            <Text type="regular" class="max-w-[73ch] text-neutral-dark-grey">
+              {leaderMessages?.[0].body}
+            </Text>
+            <Text type="span" class='text-black-100 uppercase font-display tracking-[1.8px] font-semibold max-md:text-sm'>
+              {leaderMessages?.[0].name}
+            </Text>
+          </div>
+        </div>
+      </div>
+    ) :
+     <div class="flex p-xl justify-center gap-l flex-col scroll-mt-24 max-sm:p-l" id="principal-note">
+        <Heading first="Principal's" second={"Note"} subtitle="A GUIDING MESSAGE FROM OUR LEADER" />
+        <div class="flex items-center justify-center gap-l max-sm:flex-col">
+          <img class="w-[450px] h-[350px] object-cover " src={leaderMessages?.[0].image} alt="" />
+          <div class="flex flex-col gap-r">
+            <Text type="regular" class="max-w-[73ch] text-neutral-dark-grey">
+              {leaderMessages?.[0].body}
+            </Text>
+            <Text type="span" class='text-black-100 uppercase font-display tracking-[1.8px] font-semibold max-md:text-sm'>
+              {leaderMessages?.[0].name}
+            </Text>
+          </div>
+        </div>
+      </div>
+  }
+
+<Testimonial/>
+
+  <div id="achievements" class="p-xl flex flex-col justify-center gap-l  scroll-m-14 max-sm:p-l">
+    <div class="px-0 flex flex-col gap-r max-sm:gap-r max-sm:px-0">
+      <Heading first="Celebrating" second={"Achievements"} subtitle="INSPIRING FEATS">
+      </Heading>
+      <Text type="p" class="text-center">We take immense pride in celebrating academic triumphs that reflect the students’ dedication.</Text>
+    </div>
+    <div class="flex items-center justify-center">
+      <div class="flex gap-[2px] overflow-scroll w-full max-sm:flex-col  max-sm:items-center max-sm:gap-[16px] max-w-[1200px] margin-auto">
+        {toppers?.map((item,index) => {
+          return <TopperCard
+                  topper={item}
+                />
+        })}
+    </div>
+    </div>
+
+  </div>
+
+  <div id="contact-us" style="scroll-margin: 60px;">
+    <Connect {
+      ...contact
+    } />
+  </div>
+
+<GoToCta/>
+
+<Footer/>
+</Layout>
